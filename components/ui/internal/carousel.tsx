@@ -344,11 +344,13 @@ function SmallCarousel({
               }}
               transition={{ type: "spring", stiffness: 400, damping: 40 }}
             >
-              <NewsCard
-                newsObject={item}
-                bgColor={"primary-12"}
-                tagColor={"primary-2"}
-              />
+              <Box>
+                <NewsCard
+                  newsObject={item}
+                  bgColor={"primary-12"}
+                  tagColor={"primary-2"}
+                />
+              </Box>
             </motion.div>
           ))}
         </motion.div>
