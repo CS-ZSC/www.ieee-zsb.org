@@ -505,6 +505,13 @@ export const chaptersData: ChapterData[] = [
             linkedin: "https://www.linkedin.com/in/ahmed-medhat-212847271/",
             email: "ahmedmedhat749d1@gmail.com",
           },
+          {
+            name: "Sohaila bakr",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/chapters/ras/tracks-heads/ros/vice-head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-bakr-awad-25309b254",
+            email: "sohailabakr797@gmail.com",
+          }
         ],
       },
       {
