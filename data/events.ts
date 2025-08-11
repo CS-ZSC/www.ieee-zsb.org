@@ -22,7 +22,7 @@ const eventsData: EventsData[] = [
     description:
       "MUTEX Summit is back as the biggest technological event in the Delta region, where technology meets entrepreneurship in an extraordinary experience. Under the theme 'Pirates and the Lost Treasure', participants will embark on an epic voyage through seas, storms, and challenges! The summit features expert-led sessions and workshops across diverse fields, showcases innovative startups solving real-world problems with cutting-edge technology, and hosts exciting competitions that push participants' skills and creativity to their limits. After a successful journey since 2017 and a brief pause due to COVID, MUTEX Summit 2025 promises to be a transformative adventure.",
     location: "Zagazig University",
-    date: "Comeing Soon",
+    date: "30/8/2025",
     photo: "/Events/mutex.png",
     link: "https://ieee-zsb-events.netlify.app/events/mutex"
   },
