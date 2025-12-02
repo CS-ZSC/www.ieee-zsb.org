@@ -18,7 +18,7 @@ type Props = {
 export default function NewsCard({
   newsObject,
   bgColor = "primary-5",
-  tagColor = "primary-1",
+  tagColor = "neutral-1",
 }: Props) {
   const { isDesktop } = useWindowType();
   const router = useRouter();

@@ -34,7 +34,7 @@ export default function Committee({
           fontWeight="bold"
           paddingLeft={isDesktop ? "20px" : "0px"}
           textAlign={isDesktop ? "left" : "center"}
-          color={"neutral-1git"}
+          color={"neutral-1"}
         >
           {committee.name}
         </Heading>

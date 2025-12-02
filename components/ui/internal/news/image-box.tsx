@@ -1,4 +1,5 @@
 import { Image } from "@chakra-ui/react";
+import NextImage from "next/image";
 import React from "react";
 
 interface ImageBoxProps {
@@ -20,9 +21,9 @@ export default function ImageBox({
 }: ImageBoxProps) {
   return (
     <Image
-      src={path}
+      asChild
       alt={alt}
-      width="full"
+      width={"100%"}
       maxWidth={maxWidth}
       mx={mx}
       position="relative"
@@ -35,6 +36,17 @@ export default function ImageBox({
       style={{
         aspectRatio: aspectRatio,
       }}
-    />
+    >
+      <NextImage
+        width={500}
+        height={500}
+        src={path}
+        alt={alt}
+        loading="lazy"
+        style={{
+          aspectRatio: aspectRatio,
+        }}
+      />
+    </Image>
   );
 }
