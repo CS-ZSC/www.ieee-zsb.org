@@ -239,7 +239,7 @@ const committeesData: CommitteesData[] = [
         name: "Mohamed Eldeeb",
         position: "Leader",
         avatarSrc: "/Images/board/committees/multimedia/leader.webp",
-        linkedin: "https://www.linkedin.com",
+        linkedin: "https://www.linkedin.com/in/mohamed-tarek-eldeeb" ,
         email: "mohamed_eldeeb@ieee-zsb.org",
       },
       {

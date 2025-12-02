@@ -14,21 +14,22 @@ export interface EventsData {
 let idCounter: number = 1;
 
 const eventsData: EventsData[] = [
-  // {
-  //   id: idCounter++,
-  //   homeItem: true,
-  //   upcomingEvent: true,
-  //   title: "Mutex 2025",
-  //   description:
-  //     "MUTEX is the biggest annual technological event in the Delta region, hosted by IEEE Zagazig SB. The event focuses on introducing the latest technologies to the audience and setting a clear path for them to follow. This year, MUTEX is different. In addition to sessions and workshops on the latest technologies, we will have competitions in three different fields: a Problem Solving Contest, a Formula Firefighting Robot Competition, and a Smart Homes Hackathon.",
-  //   location: "Zagazig University",
-  //   date: "Suspended",
-  //   photo: "/Fake-Images/8.webp",
-  // },
   {
     id: idCounter++,
     homeItem: true,
-    currentEvent: true,
+    upcomingEvent: true,
+    title: "Mutex Summit 2025",
+    description:
+      "MUTEX Summit is back as the biggest technological event in the Delta region, where technology meets entrepreneurship in an extraordinary experience. Under the theme 'Pirates and the Lost Treasure', participants will embark on an epic voyage through seas, storms, and challenges! The summit features expert-led sessions and workshops across diverse fields, showcases innovative startups solving real-world problems with cutting-edge technology, and hosts exciting competitions that push participants' skills and creativity to their limits. After a successful journey since 2017 and a brief pause due to COVID, MUTEX Summit 2025 promises to be a transformative adventure.",
+    location: "Zagazig University",
+    date: "30/8/2025",
+    photo: "/Events/mutex.png",
+    link: "https://ieee-zsb-events.netlify.app/events/mutex"
+  },
+  {
+    id: idCounter++,
+    homeItem: true,
+    // currentEvent: true,
     title: "PES Day 2025",
     description:
       "On PES Day 2025, we celebrated the importance of power and energy innovation in shaping the future. The event featured technical workshops, inspiring talks from industry professionals, and engaging activities that emphasized sustainability and clean energy. Students and professionals came together to explore emerging technologies and their applications in solving real-world energy challenges.",
