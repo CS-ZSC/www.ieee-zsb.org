@@ -46,25 +46,25 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Aya Mahmoud",
+        name: "Ahmed Elsherbiny",
         position: "Chairperson",
         avatarSrc: "/Images/board/chapters/cs/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/aya-mahmoud-850a0a223",
-        email: "aya_mahmoud@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
+        email: "ahmed-elsherbiny@ieee-zsb.org",
       },
       {
-        name: "Mohamed Emad",
+        name: "Asmaa Mohamed Saleh",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/hulxv",
-        email: "mohamed.elsawy@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
+        email: "asmaa.saleh@ieee-zsb.org",
       },
       {
-        name: "Essam Shenhab",
+        name: "Omar Salama",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-2.webp",
-        linkedin: "https://www.linkedin.com/in/essam-shenhab/",
-        email: "essam.shenhab@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
+        email: "omar.salama@ieee-zsb.org",
       },
     ],
     tracks: [
@@ -100,12 +100,11 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Elsherbiny",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74/",
-            email: "ahmedelsherbiny7474@gmail.com",
+            name: "Manar Ahmed Mohamed",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
+            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
+            email: "eng.manar.ahmed20@gmail.com",
           },
         ],
       },
@@ -135,20 +134,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Khaled Mahmoud",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/khaled-mahmoud-",
-            email: "khaild22k12m71f@gmail.com",
+            name: "Mohamed Abbas",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
+            email: "mohamedadel96e@gmail.com",
           },
           {
-            name: "Asmaa Saleh",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-            email: "asmaasaleh185@gmail.com",
+            name: "Abdallah Awadallah",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
+            email: "abdallahhamada2103@gmail.com",
           },
         ],
       },
@@ -178,12 +175,11 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ibrahim Eid",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/ibrahimeideng",
-            email: "ebrahimeid1134@gmail.com",
+            name: "Mohamed Wael",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
+            email: "waelm7860@gmail.com",
           },
         ],
       },
@@ -212,12 +208,11 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ali Dosoky",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ali-dosoqi/",
-            email: "amjdos0190edu@gmail.com",
+            name: "Sohaila Samy Galal Elsaid",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
+            email: "sohailasamy59@gmail.com",
           },
         ],
       },
@@ -253,20 +248,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Almohamdy",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedalmohamdy/",
-            email: "ahmedalmohamdy.work@gmail.com",
+            name: "Ayman Yasser",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
+            email: "ayman.yasser227@gmail.com",
           },
           {
-            name: "Ahmed Sharaf",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedsharaf9/",
-            email: "ahmed.sharaf.connect@gmail.com",
+            name: "Mostafa Mahmoud Mohamed Elshahat",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
+            email: "mostafa.mahmoud.elshahat1@gmail.com",
           },
         ],
       },
@@ -301,20 +294,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Sayed Ahmed",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/elsayed-ahmed-elsayed",
-            email: "sayedahmed.ieee.25@gmail.com",
+            name: "Marwan Hossam",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
+            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
+            email: "marwanhossam630@gmail.com",
           },
           {
-            name: "Ahmed Ali",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-ali-abd-elrahman",
-            email: "aali571110@gmail.com",
+            name: "Shahd Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
+            email: "eng.shahda@gmail.com",
           },
         ],
       },
@@ -348,16 +339,7 @@ export const chaptersData: ChapterData[] = [
               "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
           },
         ],
-        board: [
-          {
-            name: "Salma Swailem",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/game-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/salma-swailem/",
-            email: "salma.4sa.u@gmail.com",
-          },
-        ],
+        board: [],
       },
     ],
     seasons: [
