@@ -106,11 +106,18 @@ const committeesData: CommitteesData[] = [
     ],
     board: [
       {
-        name: "Ahmed Raiyah",
+        name: "Mohamed Ahmed Othman",
         position: "Leader",
         avatarSrc: "/Images/board/committees/business-development/leader.webp",
-        linkedin: "http://linkedin.com/in/ahmed-raiyah",
-        email: "ahmed.raiyah@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/mohamed--othman",
+        email: "mohamed.othman@ieee-zsb.org",
+      },
+      {
+        name: "Mai Mahmoud Mohamed",
+        position: "Vice Leader",
+        avatarSrc: "/Images/board/committees/business-development/vice-leader-1.webp",
+        linkedin: "https://www.linkedin.com/in/mai-mahmoud-362b602ba",
+        email: "maim61366@gmail.com",
       },
     ],
   },
