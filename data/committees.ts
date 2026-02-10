@@ -249,29 +249,30 @@ const committeesData: CommitteesData[] = [
         description: "Full event coverage and content production for IEEE ZSB",
       },
     ],
-    board: [
-      {
-        name: "Mohamed Eldeeb",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/multimedia/leader.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed-tarek-eldeeb" ,
-        email: "mohamed_eldeeb@ieee-zsb.org",
-      },
-      {
-        name: "Ziad Elnemr",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/multimedia/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/ziad-ahmed-529304330",
-        email: "ziadelnemr@ieee-zsb.org",
-      },
-      {
-        name: "Mohammad Hijazi",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/multimedia/vice-leader-2.webp",
-        linkedin: "https://www.linkedin.com/in/mohammadmhijazi",
-        email: "mhijazi@ieee-zsb.org",
-      },
-    ],
+   board: [
+  {
+    name: "Shahd Moatz",
+    position: "Leader",
+    avatarSrc: "/Images/board/committees/multimedia/leader.webp",
+    linkedin: "https://www.linkedin.com/in/shahdmoatz",
+    email: "shahdmoatz@ieee-zsb.org",
+  },
+  {
+    name: "Ziad Ashraf",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/multimedia/vice-leader-1.webp",
+    linkedin: "https://www.linkedin.com/in/ziad-ashraf-3a77412b8",
+    email: "ziad.abdelwahed@ieee-zsb.org",
+  },
+  {
+    name: "Mohamed Mohsen",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/multimedia/vice-leader-2.webp",
+    linkedin: "https://www.linkedin.com/in/mohamed-mohsen-29a9392b1",
+    email: "mohsn9165@gmail.com",
+  },
+],
+
   },
   {
     id: idCounter++,
