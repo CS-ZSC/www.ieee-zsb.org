@@ -495,7 +495,7 @@ export const newsData: NewsItem[] = [
         id: 2,
         heading: "Phase Two",
         descriptions: [
-          "After the foundation is set, each participant selects a technical or managerial track offered within IEEE-ZSB. Through guided sessions and basic hands-on tasks, they begin exploring the field that interests them most, such as Technical Track, Marketing, Event Management, Talent & Tech, Multimedia, or Business Development.",
+          "After the foundation is set, each participant selects a technical or managerial track offered within IEEE-ZSB. Through guided sessions and basic hands-on tasks, they begin exploring the field that interests them most, such as Technical Track, Marketing, Operations, Talent & Tech, Multimedia, or Business Development.",
           "Each track provides simplified content tailored to their level—focusing on practical, beginner-friendly learning without overwhelming the participants.",
         ],
       },
