@@ -940,18 +940,18 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Walaa Elshahat",
-        position: "Chairperson",
+        name: "Aida Abdelazez",
+        position: "Lead",
         avatarSrc: "/Images/board/chapters/wie/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/walaa-elshahat-0b0317259",
-        email: "walaa_elshahat@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/aida-abdelazez-b54106330",
+        email: "aida.abdelazez@ieee-zsb.org",
       },
       {
-        name: "Nouran Yasser",
-        position: "Vice Chairperson",
+        name: "Hager Salah Mohamed Ismail",
+        position: "Vice Lead",
         avatarSrc: "/Images/board/chapters/wie/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/nouran-yasser-elsayed",
-        email: "nouran.yasser@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/hager-ismail-",
+        email: "salahhager852@gmail.com",
       },
     ],
     seasons: [
