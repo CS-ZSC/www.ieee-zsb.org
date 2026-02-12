@@ -99,12 +99,8 @@ export const sections: Section[] = [
         href: "/chapters/pes/#advanced-automation",
       },
       {
-        name: "Basic Distribution",
-        href: "/chapters/pes/#basic-distribution",
-      },
-      {
-        name: "Advanced Distribution",
-        href: "/chapters/pes/#advanced-distribution",
+        name: "Distribution",
+        href: "/chapters/pes/#distribution",
       },
       {
         name: "Smart Home",
@@ -113,10 +109,6 @@ export const sections: Section[] = [
       {
         name: "E-Mobility",
         href: "/chapters/pes/#e-mobility",
-      },
-      {
-        name: "Mechanical",
-        href: "/chapters/pes/#mechanical",
       },
     ],
   },
