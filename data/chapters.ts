@@ -1,3 +1,4 @@
+import Home from "@/app/page";
 import { CommitteesData } from "./committees";
 import { Position } from "./position";
 
@@ -590,28 +591,36 @@ export const chaptersData: ChapterData[] = [
         "To empower students with practical skills, technical expertise, and industry connections in power and energy engineering. We are dedicated to providing impactful learning experiences through workshops, research projects, and professional networking opportunities that prepare our members to excel in the evolving energy landscape.",
     },
     board: [
-      {
-        name: "Ali Abdelaziz",
-        position: "Chairperson",
-        avatarSrc: "/Images/board/chapters/pes/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/ali-abdelazez-zaghlol",
-        email: "ali.abdelaziz@ieee-zsb.org",
-      },
-      {
-        name: "Eslam Mahmoud",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/pes/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/eslam-mahmoud-magdy",
-        email: "eslam.mahmoud@ieee-zsb.org",
-      },
-      {
-        name: "Ziad Elharony",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/pes/vice-chairperson-2.webp",
-        linkedin: "https://www.linkedin.com/in/ziad-elharony-308139249",
-        email: "ziad.elharony@ieee-zsb.org",
-      },
-    ],
+  {
+    name: "Eslam Mahmoud",
+    position: "Chairperson",
+    avatarSrc: "/Images/board/chapters/pes/chairperson.webp",
+    linkedin: "https://www.linkedin.com/in/eslam-mahmoud-magdy",
+    email: "eslam.mahmoud@ieee-zsb.org",
+  },
+  {
+    name: "Mohamed Shaban",
+    position: "Vice Chairperson",
+    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-1.webp",
+    linkedin: "https://www.linkedin.com/in/mohamed-shaban-2660a4277",
+    email: "mohamedshabaan2453@gmail.com",
+  },
+  {
+    name: "Ibrahim Mohamed",
+    position: "Vice Chairperson",
+    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-2.webp",
+    linkedin: "https://www.linkedin.com/in/ibrahim-askar-66b436254",
+    email: "ibrahim.askar@ieee-zsb.org",
+  },
+  {
+    name: "Abdelrahman Khedr",
+    position: "Vice Chairperson",
+    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-3.webp",
+    linkedin: "https://www.linkedin.com/in/abdelrahman-yasser-883077279",
+    email: "abdelrahman.yasser@ieee-zsb.org",
+  },
+],
+
     tracks: [
       {
         id: ++trackId,
@@ -638,12 +647,20 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ziad Ahmed",
+            name: "Kyrillos Nabil",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-automation/head.webp",
-            linkedin: "http://linkedin.com/in/ziadahmed90",
-            email: "Ziad20155555@gmail.com ",
+            linkedin: "https://www.linkedin.com/in/kyrillos-nabil-288421312",
+            email: "kyrillos.nabil.ghaly@gmail.com",
+          },
+          {
+            name: "Samira mohammed",
+            position: "Vice Head",
+            avatarSrc:
+              "/Images/board/chapters/pes/tracks-heads/basic-automation/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/samira-mohammed-0912852a2",
+            email: "samiramohammed6123@gmail.com",
           },
         ],
       },
@@ -670,27 +687,21 @@ export const chaptersData: ChapterData[] = [
           },
         ],
         board: [
+          
           {
-            name: "Amr Rady",
+            name: "Mostafa Ahmed",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/advanced-automation/head.webp",
-            linkedin: "https://www.linkedin.com/in/amr-rady/",
-            email: "amr.raadyy@gmail.com",
+            linkedin: "https://www.linkedin.com/in/mostafa-ahmed-m",
+            email: "mostafaahmed5332442@gmail.com",
           },
-          {
-            name: "Ahmed Saeed",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/advanced-automation/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-saeed12/",
-            email: "ahmedsaeeed907@gmail.com",
-          },
+          
         ],
       },
       {
         id: ++trackId,
-        name: "Basic Distribution",
+        name: "Distribution",
         hashtag: "basic-distribution",
         description:
           "This track covers the core concepts of electrical power distribution, including lighting systems, power planning, and safety standards. It's ideal for students aiming to understand infrastructure projects.",
@@ -711,46 +722,22 @@ export const chaptersData: ChapterData[] = [
           },
         ],
         board: [
+          		
           {
-            name: "Mahmoud Elkhwaga",
+            name: "Ziad Mohamed",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-distribution/head.webp",
-            linkedin: "https://www.linkedin.com/in/mahmoud-shehta/",
-            email: "Mahmoudshehta103@gmail.com",
-          },
-        ],
-      },
-      {
-        id: ++trackId,
-        name: "Advanced Distribution",
-        hashtag: "advanced-distribution",
-        description:
-          "Advanced Distribution track delves into low current systems, fire alarm systems, and Revit MEP design. It's tailored for students interested in building services and smart infrastructure.",
-        image: "/Tracks/PES/advanced-distribution.webp",
-        goals: [
-          "Design fire alarm systems",
-          "Implement low current solutions",
-          "using REVIT in Distribution Design",
-        ],
-        activities: [
-          {
-            title: "Session",
-            description: "Overview of low current and ELV systems",
+            linkedin: "https://www.linkedin.com/in/ziad-saeed-011b92335/",
+            email: "ziadmohamedsaeed00@gmail.com",
           },
           {
-            title: "Session",
-            description: "Fire alarm design and Revit workshop",
-          },
-        ],
-        board: [
-          {
-            name: "Eslam Heikal",
-            position: "Head",
+            name: "Eslam Mahmoud",
+            position: "Vice Head",
             avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/advanced-distribution/head.webp",
-            linkedin: "https://www.linkedin.com/in/eslamheikal/",
-            email: "eslam.heikal@ieee-zsb.org",
+              "/Images/board/chapters/pes/tracks-heads/basic-distribution/vice-head.webp",
+            linkedin: "https://www.linkedin.com/in/eslam-abuelela",
+            email: "eslamabuelela111@gmail.com",
           },
         ],
       },
@@ -775,13 +762,14 @@ export const chaptersData: ChapterData[] = [
           },
         ],
         board: [
+          
           {
-            name: "Abdelrahman Ali",
+            name: "Mohammad Abowarda",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/smart-home/head.webp",
-            linkedin: "https://www.linkedin.com/in/abdelrahmanali11/",
-            email: "workworkey@gmail.com",
+            linkedin: "https://www.linkedin.com/in/mohammad-abowarda",
+            email: "mohammadabowarda.eng@gmail.com",
           },
         ],
       },
@@ -805,44 +793,20 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Elsayed",
+            name: "Mina Mahfouz",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/e-mobility/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedelsayed1133/",
-            email: "ahmedazd267@gmail.com",
+            linkedin: "https://www.linkedin.com/in/mina-mahfouz-9b9875286/",
+            email: "minamahfouz22@gmail.com",
           },
-        ],
-      },
-      {
-        id: ++trackId,
-        name: "Mechanical",
-        hashtag: "mechanical",
-        description:
-          "Mechanical Track explores the design of renewable energy systems and internal combustion engines, using powerful tools like SolidWorks and ANSYS for simulation and design verification.",
-        image: "/Tracks/PES/mechanical.webp",
-        goals: [
-          "Design mechanical renewable systems",
-          "Simulate components using SolidWorks and ANSYS",
-        ],
-        activities: [
-          {
-            title: "session",
-            description: "Introduction to SolidWorks and energy system design",
-          },
-          {
-            title: "session",
-            description: "ANSYS mechanical simulation for engine components",
-          },
-        ],
-        board: [
-          {
-            name: "Mahmoud Mostafa",
+         {
+            name: "Mohamed Akrm",
             position: "Vice Head",
             avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/mechanical/vice-head-1.webp",
-            linkedin: "http://www.linkedin.com/in/ma7moud-mostafa-el-kial",
-            email: "elkial1582@gmail.com",
+              "/Images/board/chapters/pes/tracks-heads/e-mobility/vice-head.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-akrm-695145335/",
+            email: "akrm73011@gmail.com",
           },
         ],
       },
