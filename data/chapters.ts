@@ -46,25 +46,25 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Aya Mahmoud",
+        name: "Ahmed Elsherbiny",
         position: "Chairperson",
         avatarSrc: "/Images/board/chapters/cs/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/aya-mahmoud-850a0a223",
-        email: "aya_mahmoud@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
+        email: "ahmed-elsherbiny@ieee-zsb.org",
       },
       {
-        name: "Mohamed Emad",
+        name: "Asmaa Mohamed",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/hulxv",
-        email: "mohamed.elsawy@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
+        email: "asmaa.saleh@ieee-zsb.org",
       },
       {
-        name: "Essam Shenhab",
+        name: "Omar Salama",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-2.webp",
-        linkedin: "https://www.linkedin.com/in/essam-shenhab/",
-        email: "essam.shenhab@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
+        email: "omar.salama@ieee-zsb.org",
       },
     ],
     tracks: [
@@ -100,12 +100,11 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Elsherbiny",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74/",
-            email: "ahmedelsherbiny7474@gmail.com",
+            name: "Manar Ahmed",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
+            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
+            email: "eng.manar.ahmed20@gmail.com",
           },
         ],
       },
@@ -135,20 +134,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Khaled Mahmoud",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/khaled-mahmoud-",
-            email: "khaild22k12m71f@gmail.com",
+            name: "Mohamed Abbas",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
+            email: "mohamedadel96e@gmail.com",
           },
           {
-            name: "Asmaa Saleh",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-            email: "asmaasaleh185@gmail.com",
+            name: "Abdallah Awadallah",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
+            email: "abdallahhamada2103@gmail.com",
           },
         ],
       },
@@ -178,19 +175,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ibrahim Eid",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/ibrahimeideng",
-            email: "ebrahimeid1134@gmail.com",
+            name: "Mohamed Wael",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
+            email: "waelm7860@gmail.com",
           },
         ],
       },
       {
         id: ++trackId,
-        name: "Basic AI",
-        hashtag: "basic-ai",
+        name: "Data Science",
+        hashtag: "data-science",
         description:
           "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
         image: "/Tracks/CS/basic-ai.webp",
@@ -212,21 +208,20 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ali Dosoky",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ali-dosoqi/",
-            email: "amjdos0190edu@gmail.com",
+            name: "Sohaila Samy",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
+            email: "sohailasamy59@gmail.com",
           },
         ],
       },
       {
         id: ++trackId,
-        name: "Advanced AI",
-        hashtag: "advanced-ai",
+        name: "Artificial Intelligence",
+        hashtag: "ai",
         description:
-          "The Advanced AI Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+          "The Artificial Intelligence Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
         image: "/Tracks/CS/advanced-ai.webp",
         goals: [
           "Equip learners with essential AI skills",
@@ -253,20 +248,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Almohamdy",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedalmohamdy/",
-            email: "ahmedalmohamdy.work@gmail.com",
+            name: "Ayman Yasser",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
+            email: "ayman.yasser227@gmail.com",
           },
           {
-            name: "Ahmed Sharaf",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedsharaf9/",
-            email: "ahmed.sharaf.connect@gmail.com",
+            name: "Mostafa Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
+            email: "mostafa.mahmoud.elshahat1@gmail.com",
           },
         ],
       },
@@ -301,64 +294,22 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Sayed Ahmed",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/elsayed-ahmed-elsayed",
-            email: "sayedahmed.ieee.25@gmail.com",
+            name: "Marwan Hossam",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
+            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
+            email: "marwanhossam630@gmail.com",
           },
           {
-            name: "Ahmed Ali",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-ali-abd-elrahman",
-            email: "aali571110@gmail.com",
+            name: "Shahd Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
+            email: "eng.shahda@gmail.com",
           },
         ],
       },
-      {
-        id: ++trackId,
-        name: "Game Development",
-        hashtag: "game-development",
-        description:
-          "Dive into the exciting world of Game Development and bring your creative ideas to life. This track covers the fundamentals of game engines, interactive mechanics, 2D/3D graphics, and scripting. Participants will learn to build games using tools like Unity or Unreal Engine, exploring game physics, animation, UI, and publishing strategies.",
-        image: "/Tracks/CS/game-development.webp",
-        goals: [
-          "Understand the core components of game engines including scenes, physics, and scripting",
-          "Design and build interactive 2D and 3D games using Unity or Unreal Engine",
-          "Implement game mechanics such as player movement, scoring systems, and collision detection",
-          "Explore visual effects, animation, audio integration, and game deployment strategies",
-        ],
-        activities: [
-          {
-            title: "Game Engine Basics Bootcamp",
-            description:
-              "Learn the fundamentals of Unity or Unreal Engine, including scene creation, asset importing, and scripting with C# or Blueprints.",
-          },
-          {
-            title: "Mechanics & Physics Integration",
-            description:
-              "Hands-on practice building core gameplay elements like character control, camera systems, and object interactions with realistic physics.",
-          },
-          {
-            title: "Game Jam Challenge",
-            description:
-              "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
-          },
-        ],
-        board: [
-          {
-            name: "Salma Swailem",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/game-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/salma-swailem/",
-            email: "salma.4sa.u@gmail.com",
-          },
-        ],
-      },
+      //game development track had been removed 
     ],
     seasons: [
       {
