@@ -947,7 +947,7 @@ export const chaptersData: ChapterData[] = [
         email: "aida.abdelazez@ieee-zsb.org",
       },
       {
-        name: "Hager Salah Mohamed Ismail",
+        name: "Hager Salah",
         position: "Vice Lead",
         avatarSrc: "/Images/board/chapters/wie/vice-chairperson-1.webp",
         linkedin: "https://www.linkedin.com/in/hager-ismail-",
