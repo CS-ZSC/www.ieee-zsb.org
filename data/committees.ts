@@ -159,7 +159,7 @@ const committeesData: CommitteesData[] = [
     email: "youssefebrahim299@gmail.com",
   },
   {
-    name: "Maximus Helmy Nashed Kamel",
+    name: "Maximus Helmy",
     position: "Vice Leader",
     avatarSrc: "/Images/board/committees/operations/vice-leader-1.webp",
     linkedin: "https://www.linkedin.com/in/maximus-helmy-664148335",
