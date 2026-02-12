@@ -116,10 +116,10 @@ const committeesData: CommitteesData[] = [
   },
   {
     id: idCounter++,
-    name: "Event Management",
-    hashtag: "event-management",
+    name: "Operations",
+    hashtag: "operations",
     description:
-      "The Event Management Committee at IEEE ZSB is responsible for planning, organizing, and executing all events held under the branch. From technical workshops and competitions to social gatherings and mega conferences, the committee ensures that every detail is wellprepared and smoothly delivered. Members of the committee handle logistics, coordination, venue setup, time management, and follow-up tasks making sure that each event reflects the professionalism and values of IEEE.",
+      "The Operations Committee at IEEE ZSB is responsible for planning, organizing, and executing all events held under the branch. From technical workshops and competitions to social gatherings and mega conferences, the committee ensures that every detail is wellprepared and smoothly delivered. Members of the committee handle logistics, coordination, venue setup, time management, and follow-up tasks making sure that each event reflects the professionalism and values of IEEE.",
     image: "/Committees/event-management.webp",
     goals: [
       "Ensure the smooth execution of all IEEE ZSB events through effective planning and coordination.",
@@ -144,14 +144,29 @@ const committeesData: CommitteesData[] = [
       },
     ],
     board: [
-      {
-        name: "Mohamed Abdalaziz",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/event-management/leader.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed-abdalaziz",
-        email: "mohamed.abdalaziz@ieee-zsb.org",
-      },
-    ],
+  {
+    name: "Ziad Awad",
+    position: "Leader",
+    avatarSrc: "/Images/board/committees/operations/leader.webp",
+    linkedin: "https://www.linkedin.com/in/ziadawad",
+    email: "ziad.awad@ieee-zsb.org",
+  },
+  {
+    name: "Youssef Ebrahim",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/operations/vice-leader-2.webp",
+    linkedin: "https://www.linkedin.com/in/youssef-ebrahim01",
+    email: "youssefebrahim299@gmail.com",
+  },
+  {
+    name: "Maximus Helmy",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/operations/vice-leader-1.webp",
+    linkedin: "https://www.linkedin.com/in/maximus-helmy-664148335",
+    email: "maxsimoushelmy@gmail.com",
+  },
+],
+
   },
   {
     id: idCounter++,
