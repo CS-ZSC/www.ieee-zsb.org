@@ -648,14 +648,14 @@ export const chaptersData: ChapterData[] = [
     email: "eslam.mahmoud@ieee-zsb.org",
   },
   {
-    name: "Mohamed Shaban Abdelhalim",
+    name: "Mohamed Shaban",
     position: "Vice Chairperson",
     avatarSrc: "/Images/board/chapters/pes/vice-chairperson-1.webp",
     linkedin: "https://www.linkedin.com/in/mohamed-shaban-2660a4277",
     email: "mohamedshabaan2453@gmail.com",
   },
   {
-    name: "Ibrahim Mohamed Askar",
+    name: "Ibrahim Mohamed",
     position: "Vice Chairperson",
     avatarSrc: "/Images/board/chapters/pes/vice-chairperson-2.webp",
     linkedin: "https://www.linkedin.com/in/ibrahim-askar-66b436254",
@@ -696,7 +696,7 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Kyrillos Nabil Ghaly",
+            name: "Kyrillos Nabil",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-automation/head.webp",
@@ -704,7 +704,7 @@ export const chaptersData: ChapterData[] = [
             email: "kyrillos.nabil.ghaly@gmail.com",
           },
           {
-            name: "Samira mohammed Abdelaaty",
+            name: "Samira mohammed",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-automation/vice-head-1.webp",
@@ -750,7 +750,7 @@ export const chaptersData: ChapterData[] = [
       },
       {
         id: ++trackId,
-        name: "Basic Distribution",
+        name: "Distribution",
         hashtag: "basic-distribution",
         description:
           "This track covers the core concepts of electrical power distribution, including lighting systems, power planning, and safety standards. It's ideal for students aiming to understand infrastructure projects.",
@@ -773,7 +773,7 @@ export const chaptersData: ChapterData[] = [
         board: [
           		
           {
-            name: "Ziad Mohamed Saeed Mohamed",
+            name: "Ziad Mohamed",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-distribution/head.webp",
@@ -781,7 +781,7 @@ export const chaptersData: ChapterData[] = [
             email: "ziadmohamedsaeed00@gmail.com",
           },
           {
-            name: "Eslam Mahmoud Abuelela",
+            name: "Eslam Mahmoud",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-distribution/vice-head.webp",
@@ -790,39 +790,6 @@ export const chaptersData: ChapterData[] = [
           },
         ],
       },
-      // {
-      //   id: ++trackId,
-      //   name: "Advanced Distribution",
-      //   hashtag: "advanced-distribution",
-      //   description:
-      //     "Advanced Distribution track delves into low current systems, fire alarm systems, and Revit MEP design. It's tailored for students interested in building services and smart infrastructure.",
-      //   image: "/Tracks/PES/advanced-distribution.webp",
-      //   goals: [
-      //     "Design fire alarm systems",
-      //     "Implement low current solutions",
-      //     "using REVIT in Distribution Design",
-      //   ],
-      //   activities: [
-      //     {
-      //       title: "Session",
-      //       description: "Overview of low current and ELV systems",
-      //     },
-      //     {
-      //       title: "Session",
-      //       description: "Fire alarm design and Revit workshop",
-      //     },
-      //   ],
-      //   board: [
-      //     {
-      //       name: "Eslam Heikal",
-      //       position: "Head",
-      //       avatarSrc:
-      //         "/Images/board/chapters/pes/tracks-heads/advanced-distribution/head.webp",
-      //       linkedin: "https://www.linkedin.com/in/eslamheikal/",
-      //       email: "eslam.heikal@ieee-zsb.org",
-      //     },
-      //   ],
-      // },
       {
         id: ++trackId,
         name: "Smart Home",
@@ -883,7 +850,7 @@ export const chaptersData: ChapterData[] = [
             email: "minamahfouz22@gmail.com",
           },
          {
-            name: "Mohamed Akrm Abdelrahman",
+            name: "Mohamed Akrm",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/e-mobility/vice-head.webp",
@@ -892,38 +859,6 @@ export const chaptersData: ChapterData[] = [
           },
         ],
       },
-      // {
-      //   id: ++trackId,
-      //   name: "Mechanical",
-      //   hashtag: "mechanical",
-      //   description:
-      //     "Mechanical Track explores the design of renewable energy systems and internal combustion engines, using powerful tools like SolidWorks and ANSYS for simulation and design verification.",
-      //   image: "/Tracks/PES/mechanical.webp",
-      //   goals: [
-      //     "Design mechanical renewable systems",
-      //     "Simulate components using SolidWorks and ANSYS",
-      //   ],
-      //   activities: [
-      //     {
-      //       title: "session",
-      //       description: "Introduction to SolidWorks and energy system design",
-      //     },
-      //     {
-      //       title: "session",
-      //       description: "ANSYS mechanical simulation for engine components",
-      //     },
-      //   ],
-      //   board: [
-      //     {
-      //       name: "Mahmoud Mostafa",
-      //       position: "Vice Head",
-      //       avatarSrc:
-      //         "/Images/board/chapters/pes/tracks-heads/mechanical/vice-head-1.webp",
-      //       linkedin: "http://www.linkedin.com/in/ma7moud-mostafa-el-kial",
-      //       email: "elkial1582@gmail.com",
-      //     },
-      //   ],
-      // },
     ],
     seasons: [
       {
