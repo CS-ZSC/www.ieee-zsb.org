@@ -54,7 +54,7 @@ const committeesData: CommitteesData[] = [
     ],
     board: [
       {
-        name: "Hanem Reda Attia Elghamry",
+        name: "Hanem Reda",
         position: "Leader",
         avatarSrc: "/Images/board/committees/ambassadors/leader.webp",
         linkedin: "https://www.linkedin.com/in/hanem-elghamry",
