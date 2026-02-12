@@ -53,7 +53,7 @@ export const chaptersData: ChapterData[] = [
         email: "ahmed-elsherbiny@ieee-zsb.org",
       },
       {
-        name: "Asmaa Mohamed Saleh",
+        name: "Asmaa Mohamed",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-1.webp",
         linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
@@ -100,7 +100,7 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Manar Ahmed Mohamed",
+            name: "Manar Ahmed",
             position: "Track Lead",
             avatarSrc: "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
             linkedin: "https://www.linkedin.com/in/manar-ahmed20",
@@ -185,8 +185,8 @@ export const chaptersData: ChapterData[] = [
       },
       {
         id: ++trackId,
-        name: "Basic AI",
-        hashtag: "basic-ai",
+        name: "Data Science",
+        hashtag: "data-science",
         description:
           "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
         image: "/Tracks/CS/basic-ai.webp",
@@ -208,7 +208,7 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Sohaila Samy Galal Elsaid",
+            name: "Sohaila Samy",
             position: "Track Lead",
             avatarSrc: "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
             linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
@@ -218,10 +218,10 @@ export const chaptersData: ChapterData[] = [
       },
       {
         id: ++trackId,
-        name: "Advanced AI",
-        hashtag: "advanced-ai",
+        name: "Artificial Intelligence",
+        hashtag: "ai",
         description:
-          "The Advanced AI Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+          "The Artificial Intelligence Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
         image: "/Tracks/CS/advanced-ai.webp",
         goals: [
           "Equip learners with essential AI skills",
@@ -255,7 +255,7 @@ export const chaptersData: ChapterData[] = [
             email: "ayman.yasser227@gmail.com",
           },
           {
-            name: "Mostafa Mahmoud Mohamed Elshahat",
+            name: "Mostafa Mahmoud",
             position: "Track Vice-Lead",
             avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
             linkedin: "https://www.linkedin.com/in/mostafaelshahat",
@@ -309,38 +309,7 @@ export const chaptersData: ChapterData[] = [
           },
         ],
       },
-      {
-        id: ++trackId,
-        name: "Game Development",
-        hashtag: "game-development",
-        description:
-          "Dive into the exciting world of Game Development and bring your creative ideas to life. This track covers the fundamentals of game engines, interactive mechanics, 2D/3D graphics, and scripting. Participants will learn to build games using tools like Unity or Unreal Engine, exploring game physics, animation, UI, and publishing strategies.",
-        image: "/Tracks/CS/game-development.webp",
-        goals: [
-          "Understand the core components of game engines including scenes, physics, and scripting",
-          "Design and build interactive 2D and 3D games using Unity or Unreal Engine",
-          "Implement game mechanics such as player movement, scoring systems, and collision detection",
-          "Explore visual effects, animation, audio integration, and game deployment strategies",
-        ],
-        activities: [
-          {
-            title: "Game Engine Basics Bootcamp",
-            description:
-              "Learn the fundamentals of Unity or Unreal Engine, including scene creation, asset importing, and scripting with C# or Blueprints.",
-          },
-          {
-            title: "Mechanics & Physics Integration",
-            description:
-              "Hands-on practice building core gameplay elements like character control, camera systems, and object interactions with realistic physics.",
-          },
-          {
-            title: "Game Jam Challenge",
-            description:
-              "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
-          },
-        ],
-        board: [],
-      },
+      //game development track had been removed 
     ],
     seasons: [
       {
