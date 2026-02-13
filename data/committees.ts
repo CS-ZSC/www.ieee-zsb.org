@@ -309,25 +309,26 @@ const committeesData: CommitteesData[] = [
     ],
     board: [
       {
-        name: "Ahmed El-ghrabawy",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/leader.webp",
-        linkedin: "https://www.linkedin.com/in/ahmed-elghrabawy",
-        email: "ahmed-elghrabawy@ieee-zsb.org",
-      },
-      {
-        name: "Salsabeel Ahmed",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/salsabeel-ahmed-2392b8257",
-        email: "salsabeelahmed619@gmail.com",
-      },
-      {
         name: "Mahmoud Said",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/vice-leader-2.webp",
+        position: "Leader",
+        avatarSrc: "/Images/board/committees/talent&tech/Mahmoud Said.webp",
         linkedin: "https://www.linkedin.com/in/0xcode7/",
-        email: "mahmoudsaid1704@gmail.com",
+        email: "mahmoud.said@ieee-zsb.org",
+      },
+      {
+        name: "Nada Gamal Eldek",
+        position: "Vice Leader",
+        avatarSrc: "/Images/board/committees/talent&tech/Nada Gamal.webp",
+        linkedin:
+          "https://www.linkedin.com/in/nada-gamal-569417284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        email: "nadagamal.sch@gmail.com",
+      },
+      {
+        name: "Yousef Mokhles Mostafa",
+        position: "Vice Leader",
+        avatarSrc: "/Images/board/committees/talent&tech/Yousef Mokhles.webp",
+        linkedin: "https://www.linkedin.com/in/yousef-mokhles-3b2966224",
+        email: "yousef.mokhles@ieee-zsb.org",
       },
     ],
   },
