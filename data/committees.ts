@@ -54,25 +54,18 @@ const committeesData: CommitteesData[] = [
     ],
     board: [
       {
-        name: "Mariam Fareed",
+        name: "Hanem Reda",
         position: "Leader",
         avatarSrc: "/Images/board/committees/ambassadors/leader.webp",
-        linkedin: "http://linkedin.com/in/mariam-fareed",
-        email: "mariam.fareed@ieee-zsb.org ",
+        linkedin: "https://www.linkedin.com/in/hanem-elghamry",
+        email: "hanem.reda@ieee-zsb.org",
       },
       {
         name: "Beshoy Seleman",
         position: "Vice Leader",
         avatarSrc: "/Images/board/committees/ambassadors/vice-leader-1.webp",
         linkedin: "https://www.linkedin.com/in/beshoy-seleman",
-        email: "beshoyselemanzakaria@gmail.com",
-      },
-      {
-        name: "Menna Allah Amr",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/ambassadors/vice-leader-2.webp",
-        linkedin: "https://www.linkedin.com/in/menna-allah-amr-mohamed",
-        email: "Mennaamr740@gmail.com",
+        email: "beshoy.seleman@ieee-zsb.org",
       },
     ],
   },
@@ -106,20 +99,27 @@ const committeesData: CommitteesData[] = [
     ],
     board: [
       {
-        name: "Ahmed Raiyah",
+        name: "Mohamed Ahmed",
         position: "Leader",
         avatarSrc: "/Images/board/committees/business-development/leader.webp",
-        linkedin: "http://linkedin.com/in/ahmed-raiyah",
-        email: "ahmed.raiyah@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/mohamed--othman",
+        email: "mohamed.othman@ieee-zsb.org",
+      },
+      {
+        name: "Mai Mahmoud",
+        position: "Vice Leader",
+        avatarSrc: "/Images/board/committees/business-development/vice-leader-1.webp",
+        linkedin: "https://www.linkedin.com/in/mai-mahmoud-362b602ba",
+        email: "maim61366@gmail.com",
       },
     ],
   },
   {
     id: idCounter++,
-    name: "Event Management",
-    hashtag: "event-management",
+    name: "Operations",
+    hashtag: "operations",
     description:
-      "The Event Management Committee at IEEE ZSB is responsible for planning, organizing, and executing all events held under the branch. From technical workshops and competitions to social gatherings and mega conferences, the committee ensures that every detail is wellprepared and smoothly delivered. Members of the committee handle logistics, coordination, venue setup, time management, and follow-up tasks making sure that each event reflects the professionalism and values of IEEE.",
+      "The Operations Committee at IEEE ZSB is responsible for planning, organizing, and executing all events held under the branch. From technical workshops and competitions to social gatherings and mega conferences, the committee ensures that every detail is wellprepared and smoothly delivered. Members of the committee handle logistics, coordination, venue setup, time management, and follow-up tasks making sure that each event reflects the professionalism and values of IEEE.",
     image: "/Committees/event-management.webp",
     goals: [
       "Ensure the smooth execution of all IEEE ZSB events through effective planning and coordination.",
@@ -144,14 +144,29 @@ const committeesData: CommitteesData[] = [
       },
     ],
     board: [
-      {
-        name: "Mohamed Abdalaziz",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/event-management/leader.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed-abdalaziz",
-        email: "mohamed.abdalaziz@ieee-zsb.org",
-      },
-    ],
+  {
+    name: "Ziad Awad",
+    position: "Leader",
+    avatarSrc: "/Images/board/committees/operations/leader.webp",
+    linkedin: "https://www.linkedin.com/in/ziadawad",
+    email: "ziad.awad@ieee-zsb.org",
+  },
+  {
+    name: "Youssef Ebrahim",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/operations/vice-leader-2.webp",
+    linkedin: "https://www.linkedin.com/in/youssef-ebrahim01",
+    email: "youssefebrahim299@gmail.com",
+  },
+  {
+    name: "Maximus Helmy",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/operations/vice-leader-1.webp",
+    linkedin: "https://www.linkedin.com/in/maximus-helmy-664148335",
+    email: "maxsimoushelmy@gmail.com",
+  },
+],
+
   },
   {
     id: idCounter++,
@@ -234,29 +249,30 @@ const committeesData: CommitteesData[] = [
         description: "Full event coverage and content production for IEEE ZSB",
       },
     ],
-    board: [
-      {
-        name: "Mohamed Eldeeb",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/multimedia/leader.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed-tarek-eldeeb",
-        email: "mohamed_eldeeb@ieee-zsb.org",
-      },
-      {
-        name: "Ziad Elnemr",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/multimedia/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/ziad-ahmed-529304330",
-        email: "ziadelnemr@ieee-zsb.org",
-      },
-      {
-        name: "Mohammad Hijazi",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/multimedia/vice-leader-2.webp",
-        linkedin: "https://www.linkedin.com/in/mohammadmhijazi",
-        email: "mhijazi@ieee-zsb.org",
-      },
-    ],
+   board: [
+  {
+    name: "Shahd Moatz",
+    position: "Leader",
+    avatarSrc: "/Images/board/committees/multimedia/leader.webp",
+    linkedin: "https://www.linkedin.com/in/shahdmoatz",
+    email: "shahdmoatz@ieee-zsb.org",
+  },
+  {
+    name: "Ziad Ashraf",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/multimedia/vice-leader-1.webp",
+    linkedin: "https://www.linkedin.com/in/ziad-ashraf-3a77412b8",
+    email: "ziad.abdelwahed@ieee-zsb.org",
+  },
+  {
+    name: "Mohamed Mohsen",
+    position: "Vice Leader",
+    avatarSrc: "/Images/board/committees/multimedia/vice-leader-2.webp",
+    linkedin: "https://www.linkedin.com/in/mohamed-mohsen-29a9392b1",
+    email: "mohsn9165@gmail.com",
+  },
+],
+
   },
   {
     id: idCounter++,
