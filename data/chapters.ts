@@ -471,7 +471,7 @@ export const chaptersData: ChapterData[] = [
             name: "Jesy Ahmed",
             position: "Track Vice-Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.webp",
+              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.jpg",
             linkedin:
               "https://www.linkedin.com/in/jasmine-ahmed-892226335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             email: "jesyahmedabdelaal@gmail.com",
@@ -619,7 +619,7 @@ export const chaptersData: ChapterData[] = [
             name: "Mohamed Akram",
             position: "Track Vice-Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/mechanica/Mohamed Akram.webp",
+              "/Images/board/chapters/ras/tracks-heads/mechanical/Mohamed Akram.webp",
             linkedin: "https://www.linkedin.com/in/mohamed-akram-",
             email: "mohamedakram0900@gmail.com",
           },
@@ -649,7 +649,7 @@ export const chaptersData: ChapterData[] = [
             name: "Mohammed Taher",
             position: "Track Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/ic-design//Mohammed Taher.webp",
+              "/Images/board/chapters/ras/tracks-heads/ic-design/Mohammed Taher.jpeg",
             linkedin:
               "https://www.linkedin.com/in/mohammed-taher-halawaty2004/",
             email: "motaher20004@gmail.com",
