@@ -7,6 +7,7 @@ interface CardProps {
   gap?: string | number;
   bgColor?: string;
   rounded?: string;
+  borderColor?: string;
 }
 
 export default function Card({
@@ -15,6 +16,7 @@ export default function Card({
   gap = 10,
   bgColor = "primary-5",
   rounded = "2xl",
+  borderColor = "primary-3",
 }: CardProps) {
   return (
     <Flex w="full" h="full">
@@ -24,7 +26,7 @@ export default function Card({
         justify="center"
         bgColor={bgColor}
         border="1px solid"
-        borderColor="primary-3"
+        borderColor={borderColor}
         padding={padding}
         rounded={rounded}
         gapY={gap}

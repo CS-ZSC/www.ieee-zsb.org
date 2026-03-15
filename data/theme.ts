@@ -56,6 +56,12 @@ const config: SystemConfig = defineConfig({
             _dark: "rgba(2, 134, 200, 0.2)",
           },
         },
+        "primary-dialog-bg": {
+          value: {
+            _light: "rgba(255, 255, 255, 0.92)",
+            _dark: "rgba(10, 20, 32, 0.6)",
+          },
+        },
 
         // Accent Colors
         "accent-1": { value: { _light: "#FFC000", _dark: "#FFC000" } },
@@ -142,6 +148,12 @@ const config: SystemConfig = defineConfig({
           value: {
             _light: "rgba(0, 0, 0, 0.2)",
             _dark: "rgba(0, 0, 0, 0.2)",
+          },
+        },
+        "white-8": {
+          value: {
+            _light: "rgba(0, 102, 153, 0.12)",
+            _dark: "rgba(255, 255, 255, 0.08)",
           },
         },
 

@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body data-new-gr-c-s-check-loaded="8.932.0" data-gr-ext-installed="">
+      <body data-new-gr-c-s-check-loaded="8.932.0" data-gr-ext-installed="" suppressHydrationWarning>
         <Provider>
           <Stack
             gap={0}
