@@ -192,16 +192,16 @@ export default function TrackCard({
           />
           <DialogContent 
             bgColor="primary-dialog-bg" 
-            borderColor="primary-1"
-            border="1px solid"
             color="fg"
+            w="1100px"
+            maxWidth="95vw"
             maxHeight="90vh"
             mx="auto"
             overflow="hidden"
             borderRadius="lg"
             backdropFilter="blur(20px)"
           >
-            <DialogHeader>
+            <DialogHeader pb={6} borderBottom="1px solid" borderColor="neutral-4">
               <HStack gap={4} align="center">
                 <Flex 
                   w="48px" 
@@ -217,7 +217,7 @@ export default function TrackCard({
                 >
                   <Icon icon={getTrackIcon(track.hashtag)} width="24px" height="24px" color="var(--chakra-colors-primary-1)" />
                 </Flex>
-                <Heading size="lg" fontWeight="bold" color="white">
+                <Heading size="lg" fontWeight="bold" color="fg">
                   {track.name}
                 </Heading>
               </HStack>
@@ -225,7 +225,7 @@ export default function TrackCard({
             <DialogBody pb={6}>
               <TrackDialogBody track={track} />
             </DialogBody>
-            <DialogCloseTrigger color="neutral-3" _hover={{ bg: "whiteAlpha.200", color: "white" }} right="4" top="4" />
+            <DialogCloseTrigger color="neutral-3" _hover={{ bg: "neutral-4", color: "fg" }} right="4" top="4" />
           </DialogContent>
         </DialogRoot>
       )}

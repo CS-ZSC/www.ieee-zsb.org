@@ -69,7 +69,7 @@ export default function TrackDialogBody({
             </Text>
             <Box w="32px" h="2px" bgColor="primary-1" mt={2} rounded="full" />
           </Box>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          <Grid templateColumns="repeat(2, 1fr)" gap={4} justifyContent="center">
             {track.activities.map((activity, index) => (
               <GridItem key={index}>
                 <Flex 
@@ -122,7 +122,7 @@ export default function TrackDialogBody({
 
           </Box>
           
-          <Flex gap={4} wrap="wrap">
+          <Flex gap={4} wrap="wrap" justify="center">
             {track.board.map((leader, index) => (
               <Flex 
                 key={index}
@@ -132,7 +132,7 @@ export default function TrackDialogBody({
                 borderColor="neutral-4"
                 bgColor="white-8"
                 minW="220px"
-                flex="1"
+                maxW="320px"
                 gap={4}
                 align="center"
               >
@@ -155,7 +155,7 @@ export default function TrackDialogBody({
                   />
                 </Box>
                 <Flex direction="column" gap={1}>
-                  <Text color="white" fontWeight="bold" fontSize="sm">
+                  <Text color="fg" fontWeight="bold" fontSize="sm">
                     {leader.name}
                   </Text>
                   <Text color="primary-8" fontSize="xs">
