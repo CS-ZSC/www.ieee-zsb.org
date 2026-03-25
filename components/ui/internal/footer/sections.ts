@@ -49,21 +49,18 @@ export const sections: Section[] = [
         href: "/chapters/cs/#mobile-development",
       },
       {
-        name: "Basic AI",
-        href: "/chapters/cs/#basic-ai",
+        name: "Data Science",
+        href: "/chapters/cs/#data-science",
       },
       {
-        name: "Advanced AI",
-        href: "/chapters/cs/#advanced-ai",
+        name: "Artificial Intelligence",
+        href: "/chapters/cs/#ai",
       },
       {
         name: "Cyber Security",
         href: "/chapters/cs/#cyber-security",
       },
-      {
-        name: "Game Development",
-        href: "/chapters/cs/#game-development",
-      },
+      // game develpoment track had been removed 
     ],
   },
   {
@@ -99,12 +96,8 @@ export const sections: Section[] = [
         href: "/chapters/pes/#advanced-automation",
       },
       {
-        name: "Basic Distribution",
-        href: "/chapters/pes/#basic-distribution",
-      },
-      {
-        name: "Advanced Distribution",
-        href: "/chapters/pes/#advanced-distribution",
+        name: "Distribution",
+        href: "/chapters/pes/#distribution",
       },
       {
         name: "Smart Home",
@@ -113,10 +106,6 @@ export const sections: Section[] = [
       {
         name: "E-Mobility",
         href: "/chapters/pes/#e-mobility",
-      },
-      {
-        name: "Mechanical",
-        href: "/chapters/pes/#mechanical",
       },
     ],
   },
