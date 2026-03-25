@@ -129,8 +129,8 @@ export default function TrackCard({
                   {track.board.slice(0, 3).map((member, i) => (
                     <Box 
                       key={i} 
-                      w="24px" 
-                      h="24px" 
+                      w="36px" 
+                      h="36px" 
                       rounded="full" 
                       overflow="hidden"
                       border="1px solid"
@@ -157,7 +157,7 @@ export default function TrackCard({
              <Text 
                 color="neutral-2"
                 fontWeight="bold"
-                fontSize="0.8rem"
+                fontSize="0.9rem"
                 opacity={0.6}
               >
                 {formattedIndex}
