@@ -47,25 +47,25 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Aya Mahmoud",
+        name: "Ahmed Elsherbiny",
         position: "Chairperson",
         avatarSrc: "/Images/board/chapters/cs/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/aya-mahmoud-850a0a223",
-        email: "aya_mahmoud@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
+        email: "ahmed-elsherbiny@ieee-zsb.org",
       },
       {
-        name: "Mohamed Emad",
+        name: "Asmaa Mohamed",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/hulxv",
-        email: "mohamed.elsawy@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
+        email: "asmaa.saleh@ieee-zsb.org",
       },
       {
-        name: "Essam Shenhab",
+        name: "Omar Salama",
         position: "Vice Chairperson",
         avatarSrc: "/Images/board/chapters/cs/vice-chairperson-2.webp",
-        linkedin: "https://www.linkedin.com/in/essam-shenhab/",
-        email: "essam.shenhab@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
+        email: "omar.salama@ieee-zsb.org",
       },
     ],
     tracks: [
@@ -101,12 +101,11 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Elsherbiny",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74/",
-            email: "ahmedelsherbiny7474@gmail.com",
+            name: "Manar Ahmed",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
+            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
+            email: "eng.manar.ahmed20@gmail.com",
           },
         ],
       },
@@ -136,20 +135,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Khaled Mahmoud",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/khaled-mahmoud-",
-            email: "khaild22k12m71f@gmail.com",
+            name: "Mohamed Abbas",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
+            email: "mohamedadel96e@gmail.com",
           },
           {
-            name: "Asmaa Saleh",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-            email: "asmaasaleh185@gmail.com",
+            name: "Abdallah Awadallah",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
+            email: "abdallahhamada2103@gmail.com",
           },
         ],
       },
@@ -179,19 +176,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ibrahim Eid",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/ibrahimeideng",
-            email: "ebrahimeid1134@gmail.com",
+            name: "Mohamed Wael",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
+            email: "waelm7860@gmail.com",
           },
         ],
       },
       {
         id: ++trackId,
-        name: "Basic AI",
-        hashtag: "basic-ai",
+        name: "Data Science",
+        hashtag: "data-science",
         description:
           "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
         image: "/Tracks/CS/basic-ai.webp",
@@ -213,21 +209,20 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ali Dosoky",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ali-dosoqi/",
-            email: "amjdos0190edu@gmail.com",
+            name: "Sohaila Samy",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
+            email: "sohailasamy59@gmail.com",
           },
         ],
       },
       {
         id: ++trackId,
-        name: "Advanced AI",
-        hashtag: "advanced-ai",
+        name: "Artificial Intelligence",
+        hashtag: "ai",
         description:
-          "The Advanced AI Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+          "The Artificial Intelligence Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
         image: "/Tracks/CS/advanced-ai.webp",
         goals: [
           "Equip learners with essential AI skills",
@@ -254,20 +249,18 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Almohamdy",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedalmohamdy/",
-            email: "ahmedalmohamdy.work@gmail.com",
+            name: "Ayman Yasser",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
+            email: "ayman.yasser227@gmail.com",
           },
           {
-            name: "Ahmed Sharaf",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedsharaf9/",
-            email: "ahmed.sharaf.connect@gmail.com",
+            name: "Mostafa Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
+            email: "mostafa.mahmoud.elshahat1@gmail.com",
           },
         ],
       },
@@ -302,64 +295,22 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Sayed Ahmed",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/elsayed-ahmed-elsayed",
-            email: "sayedahmed.ieee.25@gmail.com",
+            name: "Marwan Hossam",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
+            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
+            email: "marwanhossam630@gmail.com",
           },
           {
-            name: "Ahmed Ali",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-ali-abd-elrahman",
-            email: "aali571110@gmail.com",
+            name: "Shahd Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
+            email: "eng.shahda@gmail.com",
           },
         ],
       },
-      {
-        id: ++trackId,
-        name: "Game Development",
-        hashtag: "game-development",
-        description:
-          "Dive into the exciting world of Game Development and bring your creative ideas to life. This track covers the fundamentals of game engines, interactive mechanics, 2D/3D graphics, and scripting. Participants will learn to build games using tools like Unity or Unreal Engine, exploring game physics, animation, UI, and publishing strategies.",
-        image: "/Tracks/CS/game-development.webp",
-        goals: [
-          "Understand the core components of game engines including scenes, physics, and scripting",
-          "Design and build interactive 2D and 3D games using Unity or Unreal Engine",
-          "Implement game mechanics such as player movement, scoring systems, and collision detection",
-          "Explore visual effects, animation, audio integration, and game deployment strategies",
-        ],
-        activities: [
-          {
-            title: "Game Engine Basics Bootcamp",
-            description:
-              "Learn the fundamentals of Unity or Unreal Engine, including scene creation, asset importing, and scripting with C# or Blueprints.",
-          },
-          {
-            title: "Mechanics & Physics Integration",
-            description:
-              "Hands-on practice building core gameplay elements like character control, camera systems, and object interactions with realistic physics.",
-          },
-          {
-            title: "Game Jam Challenge",
-            description:
-              "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
-          },
-        ],
-        board: [
-          {
-            name: "Salma Swailem",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/cs/tracks-heads/game-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/salma-swailem/",
-            email: "salma.4sa.u@gmail.com",
-          },
-        ],
-      },
+      //game development track had been removed 
     ],
     seasons: [
       {
@@ -405,18 +356,27 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Marwan Tamer",
+        name: "Abdrlrahman Elghandour",
         position: "Chairperson",
-        avatarSrc: "/Images/board/chapters/ras/chairperson.webp",
-        linkedin: "http://www.linkedin.com/in/marwan-tamer-abdelmoneim",
-        email: "marwan-tamer@ieee-zsb.org",
+        avatarSrc: "/Images/board/chapters/ras/Abdelrahman Elghandour.webp",
+        linkedin: "https://linkedin.com/in/username",
+        email: "abdelrahman.elghandour@ieee-zsb.org",
       },
       {
-        name: "Merna Atef",
+        name: "Hamdi Emad",
         position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/ras/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/merna-atef-4252aa287",
-        email: "merna.atef@ieee-zsb.org",
+        avatarSrc: "/Images/board/chapters/ras/Hamdi Emad.webp",
+        linkedin:
+          "https://www.linkedin.com/in/hamdi-algohary-9962b5335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        email: "hamdi.emad@ieee-zsb.org",
+      },
+      {
+        name: "Norhan Yasser",
+        position: "Vice Chairperson",
+        avatarSrc: "/Images/board/chapters/ras/Norhan Yasser.webp",
+        linkedin:
+          "https://www.linkedin.com/in/norhan-khidr-7463392a6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        email: "norhan.yasser@ieee-zsb.org",
       },
     ],
     tracks: [
@@ -451,21 +411,31 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Tasnem Sabry",
-            position: "Head",
+            name: "Alaa Abdelhay",
+            position: "Track Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/head.webp",
-            linkedin: "https://www.linkedin.com/in/tasnem-sabry-124142254/",
-            email: "tasnemmobasher9@gmail.com",
+              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Alaa Abdelhay.webp",
+            linkedin:
+              "https://www.linkedin.com/in/a-laa-abdelhay-16a909239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            email: "alaaabdelhay65@gmail.com",
           },
           {
-            name: "Ahmed Yasser",
-            position: "Vice Head",
+            name: "Jesy Ahmed",
+            position: "Track Vice-Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/vice-head-1.webp",
+              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.jpg",
             linkedin:
-              "https://www.linkedin.com/in/ahmed-yasser-elgayar-942466253/",
-            email: "ahmedyasserprince@gmail.com",
+              "https://www.linkedin.com/in/jasmine-ahmed-892226335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "jesyahmedabdelaal@gmail.com",
+          },
+          {
+            name: "Mariam Adel",
+            position: "Track Vice-Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Mariam Adel.webp",
+            linkedin:
+              "https://www.linkedin.com/in/mariam-adel-37a722320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "mariamadel4910@gmail.com",
           },
         ],
       },
@@ -500,19 +470,22 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Ahmed Medhat",
-            position: "Head",
-            avatarSrc: "/Images/board/chapters/ras/tracks-heads/ros/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-medhat-212847271/",
-            email: "ahmedmedhat749d1@gmail.com",
+            name: "Awwab Khalil",
+            position: "Track Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/ros/Awwab Khalil.webp",
+            linkedin: "http://www.linkedin.com/in/awwab-khalil",
+            email: "awwab.khalil1425@gmail.com",
           },
           {
-            name: "Sohaila bakr",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/chapters/ras/tracks-heads/ros/vice-head.webp",
-            linkedin: "https://www.linkedin.com/in/sohaila-bakr-awad-25309b254",
-            email: "sohailabakr797@gmail.com",
-          }
+            name: "Nadeen elhady",
+            position: "Track Vice-Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/ros/Nadeen Elhady.webp",
+            linkedin:
+              "https://www.linkedin.com/in/nadeen-elhady-714538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "nadeenelhady300@gmail.com",
+          },
         ],
       },
       {
@@ -550,20 +523,21 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Abdelrahman Ahmed",
-            position: "Head",
+            name: "Ahmed Ibrahim",
+            position: "Track Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/pcb-design/head.webp",
-            linkedin: "https://www.linkedin.com/in/el-ghandour/",
-            email: "elghaandourrr@gmail.com",
+              "/Images/board/chapters/ras/tracks-heads/pcb-design/Ahmed Ibrahem.webp",
+            linkedin:
+              "https://www.linkedin.com/in/ahmed-ibrahim-344383300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "ahmed.ibrahem@ieee-zsb.org",
           },
           {
-            name: "Mohamed Gamal",
-            position: "Vice Head",
+            name: "Nadine Haytham",
+            position: "Track Vice-Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/pcb-design/vice-head-1.webp",
-            linkedin: "http://www.linkedin.com/in/mohamed-gamal-xv",
-            email: "mg355059@gmail.com",
+              "/Images/board/chapters/ras/tracks-heads/pcb-design/Nadine Hytham.webp",
+            linkedin: "http://www.linkedin.com/in/nadine-haytham-85044b318",
+            email: "nadine.e399@gmail.com",
           },
         ],
       },
@@ -586,12 +560,60 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Abdallah Galal",
-            position: "Head",
+            name: "Abdelrahman Abdellateef",
+            position: "Track Lead",
             avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/mechanical/head.webp",
-            linkedin: "https://www.linkedin.com/in/abdallah-galal-a39115297?",
-            email: "abdallahgalal.eng@gmail.com",
+              "/Images/board/chapters/ras/tracks-heads/mechanical/Abdelrahman Abdellateef.webp",
+            linkedin: "https://www.linkedin.com/in/abdelrahmanabdellateef",
+            email: "rahmanmlateef@gmail.com",
+          },
+          {
+            name: "Mohamed Akram",
+            position: "Track Vice-Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/mechanical/Mohamed Akram.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-akram-",
+            email: "mohamedakram0900@gmail.com",
+          },
+          {
+            name: "Hassan Emad",
+            position: "Track Vice-Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/mechanical/Hassan Emad.webp",
+            linkedin: "https://www.linkedin.com/in/hassan-e-zein",
+            email: "hassanemad.eng@gmail.com",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Ic Design",
+        hashtag: "ic-design",
+        description: "",
+        image: "",
+        goals: ["", "", "", ""],
+        activities: [
+          { title: "Offline Session", description: "" },
+          { title: "Offline Session", description: "" },
+        ],
+        board: [
+          {
+            name: "Mohammed Taher",
+            position: "Track Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/ic-design/Mohammed Taher.jpeg",
+            linkedin:
+              "https://www.linkedin.com/in/mohammed-taher-halawaty2004/",
+            email: "motaher20004@gmail.com",
+          },
+          {
+            name: "Ahmed Abdelfattah",
+            position: "Track Vice-Lead",
+            avatarSrc:
+              "/Images/board/chapters/ras/tracks-heads/ic-design/Ahmed Abdelfattah.webp",
+            linkedin:
+              "https://www.linkedin.com/in/ahmedhishambu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            email: "ahmed.hisham123666@gmail.com",
           },
         ],
       },
@@ -648,14 +670,14 @@ export const chaptersData: ChapterData[] = [
     email: "eslam.mahmoud@ieee-zsb.org",
   },
   {
-    name: "Mohamed Shaban Abdelhalim",
+    name: "Mohamed Shaban",
     position: "Vice Chairperson",
     avatarSrc: "/Images/board/chapters/pes/vice-chairperson-1.webp",
     linkedin: "https://www.linkedin.com/in/mohamed-shaban-2660a4277",
     email: "mohamedshabaan2453@gmail.com",
   },
   {
-    name: "Ibrahim Mohamed Askar",
+    name: "Ibrahim Mohamed",
     position: "Vice Chairperson",
     avatarSrc: "/Images/board/chapters/pes/vice-chairperson-2.webp",
     linkedin: "https://www.linkedin.com/in/ibrahim-askar-66b436254",
@@ -696,7 +718,7 @@ export const chaptersData: ChapterData[] = [
         ],
         board: [
           {
-            name: "Kyrillos Nabil Ghaly",
+            name: "Kyrillos Nabil",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-automation/head.webp",
@@ -704,7 +726,7 @@ export const chaptersData: ChapterData[] = [
             email: "kyrillos.nabil.ghaly@gmail.com",
           },
           {
-            name: "Samira mohammed Abdelaaty",
+            name: "Samira mohammed",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-automation/vice-head-1.webp",
@@ -750,7 +772,7 @@ export const chaptersData: ChapterData[] = [
       },
       {
         id: ++trackId,
-        name: "Basic Distribution",
+        name: "Distribution",
         hashtag: "basic-distribution",
         description:
           "This track covers the core concepts of electrical power distribution, including lighting systems, power planning, and safety standards. It's ideal for students aiming to understand infrastructure projects.",
@@ -773,7 +795,7 @@ export const chaptersData: ChapterData[] = [
         board: [
           		
           {
-            name: "Ziad Mohamed Saeed Mohamed",
+            name: "Ziad Mohamed",
             position: "Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-distribution/head.webp",
@@ -781,7 +803,7 @@ export const chaptersData: ChapterData[] = [
             email: "ziadmohamedsaeed00@gmail.com",
           },
           {
-            name: "Eslam Mahmoud Abuelela",
+            name: "Eslam Mahmoud",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/basic-distribution/vice-head.webp",
@@ -790,39 +812,6 @@ export const chaptersData: ChapterData[] = [
           },
         ],
       },
-      // {
-      //   id: ++trackId,
-      //   name: "Advanced Distribution",
-      //   hashtag: "advanced-distribution",
-      //   description:
-      //     "Advanced Distribution track delves into low current systems, fire alarm systems, and Revit MEP design. It's tailored for students interested in building services and smart infrastructure.",
-      //   image: "/Tracks/PES/advanced-distribution.webp",
-      //   goals: [
-      //     "Design fire alarm systems",
-      //     "Implement low current solutions",
-      //     "using REVIT in Distribution Design",
-      //   ],
-      //   activities: [
-      //     {
-      //       title: "Session",
-      //       description: "Overview of low current and ELV systems",
-      //     },
-      //     {
-      //       title: "Session",
-      //       description: "Fire alarm design and Revit workshop",
-      //     },
-      //   ],
-      //   board: [
-      //     {
-      //       name: "Eslam Heikal",
-      //       position: "Head",
-      //       avatarSrc:
-      //         "/Images/board/chapters/pes/tracks-heads/advanced-distribution/head.webp",
-      //       linkedin: "https://www.linkedin.com/in/eslamheikal/",
-      //       email: "eslam.heikal@ieee-zsb.org",
-      //     },
-      //   ],
-      // },
       {
         id: ++trackId,
         name: "Smart Home",
@@ -883,7 +872,7 @@ export const chaptersData: ChapterData[] = [
             email: "minamahfouz22@gmail.com",
           },
          {
-            name: "Mohamed Akrm Abdelrahman",
+            name: "Mohamed Akrm",
             position: "Vice Head",
             avatarSrc:
               "/Images/board/chapters/pes/tracks-heads/e-mobility/vice-head.webp",
@@ -892,38 +881,6 @@ export const chaptersData: ChapterData[] = [
           },
         ],
       },
-      // {
-      //   id: ++trackId,
-      //   name: "Mechanical",
-      //   hashtag: "mechanical",
-      //   description:
-      //     "Mechanical Track explores the design of renewable energy systems and internal combustion engines, using powerful tools like SolidWorks and ANSYS for simulation and design verification.",
-      //   image: "/Tracks/PES/mechanical.webp",
-      //   goals: [
-      //     "Design mechanical renewable systems",
-      //     "Simulate components using SolidWorks and ANSYS",
-      //   ],
-      //   activities: [
-      //     {
-      //       title: "session",
-      //       description: "Introduction to SolidWorks and energy system design",
-      //     },
-      //     {
-      //       title: "session",
-      //       description: "ANSYS mechanical simulation for engine components",
-      //     },
-      //   ],
-      //   board: [
-      //     {
-      //       name: "Mahmoud Mostafa",
-      //       position: "Vice Head",
-      //       avatarSrc:
-      //         "/Images/board/chapters/pes/tracks-heads/mechanical/vice-head-1.webp",
-      //       linkedin: "http://www.linkedin.com/in/ma7moud-mostafa-el-kial",
-      //       email: "elkial1582@gmail.com",
-      //     },
-      //   ],
-      // },
     ],
     seasons: [
       {
@@ -969,18 +926,18 @@ export const chaptersData: ChapterData[] = [
     },
     board: [
       {
-        name: "Walaa Elshahat",
-        position: "Chairperson",
+        name: "Aida Abdelazez",
+        position: "Lead",
         avatarSrc: "/Images/board/chapters/wie/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/walaa-elshahat-0b0317259",
-        email: "walaa_elshahat@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/aida-abdelazez-b54106330",
+        email: "aida.abdelazez@ieee-zsb.org",
       },
       {
-        name: "Nouran Yasser",
-        position: "Vice Chairperson",
+        name: "Hager Salah",
+        position: "Vice Lead",
         avatarSrc: "/Images/board/chapters/wie/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/nouran-yasser-elsayed",
-        email: "nouran.yasser@ieee-zsb.org",
+        linkedin: "https://www.linkedin.com/in/hager-ismail-",
+        email: "salahhager852@gmail.com",
       },
     ],
     seasons: [
