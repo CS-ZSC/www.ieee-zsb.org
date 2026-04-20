@@ -8,7 +8,9 @@ import Container from "@/components/ui/internal/container";
 import AnimatedCard from "@/components/ui/internal/animatedCard";
 import CommitteesSelection from "@/components/ui/internal/committees/committees-selection";
 import committeesData from "@/data/committees";
-import Committee from "@/components/ui/internal/committees/committee";
+import {Tracks} from "@/components/ui/internal/chapters/tracks/tracks";
+import CommitteesHero from "@/components/ui/internal/committees/committees-hero";
+import ButtonLink from "@/components/ui/internal/button-link";
 
 export default function Page() {
   return (
@@ -28,18 +30,23 @@ export default function Page() {
             </Text>
           </AnimatedCard>
         </Flex>
-        <AnimatedCard>
-          <CommitteesSelection />
-        </AnimatedCard>
         <Container gap={10}>
-          {committeesData.map((committee, index) => (
-            <Committee
-              key={index}
-              committee={committee}
-              borderColor={"accent-1"}
-              positionBgColor={"primary-12"}
+          <CommitteesHero />
+          {/* {committeesData.map((committee, index) => ( */}
+            <Tracks
+              tracks={committeesData}
             />
-          ))}
+          {/* ))} */}
+          <AnimatedCard>
+            <Flex justify="center" pb={4}>
+              <ButtonLink
+                link="https://www.facebook.com/IEEEZSB"
+                text="Follow us for recruitment updates"
+                icon
+                target="_blank"
+              />
+            </Flex>
+          </AnimatedCard>
         </Container>
       </Flex>
     </PageWrapper>

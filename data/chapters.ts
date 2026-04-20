@@ -546,17 +546,36 @@ export const chaptersData: ChapterData[] = [
         name: "Mechanical",
         hashtag: "mechanical",
         description:
-          "The Mechanical track is responsible for the design and analysis of mechanical systems in robotics projects. Members learn essential tools and techniques used in the industry such as 3D modeling, simulation, and technical drawing",
+          "The Mechanical track covers the full engineering design pipeline for robotics and electromechanical systems. Members build proficiency in industry-standard CAD and simulation tools, learning to translate ideas into precise 3D models, validate them through structural and fluid analysis, and produce fabrication-ready technical drawings. The track bridges mechanical theory and real-world robotics, equipping members to design reliable mechanisms, optimize components under load, and collaborate with embedded and electrical teams on integrated projects.",
         image: "/Tracks/RAS/mechanical.webp",
         goals: [
-          "Learn SolidWorks from basic to advanced levels, including 3D modeling, assemblies, and sheet metal design",
-          "Understand mechanical analysis using ANSYS",
-          "Explore aerodynamic design concepts such as airfoils",
-          "Apply mechanical concepts to real robotic systems",
+          "Master SolidWorks from foundational sketching and part modeling through advanced assemblies, motion studies, and sheet metal design.",
+          "Apply structural and thermal analysis using ANSYS to validate designs and understand how components behave under real-world loading conditions.",
+          "Develop technical drawing skills with AutoCAD to produce accurate, standards-compliant 2D documentation for manufacturing.",
+          "Explore aerodynamic and fluid concepts such as airfoil geometry and CFD basics to support drone and ROV project work.",
+          "Integrate mechanical designs into full robotic systems through team-based projects that require close coordination with embedded and electrical tracks.",
         ],
         activities: [
-          { title: "Offline Session", description: "AutoCAD" },
-          { title: "Offline Session", description: "ANSYS + Airfoil Session" },
+          {
+            title: "AutoCAD Technical Drawing Sessions",
+            description:
+              "Hands-on sessions teaching 2D drafting fundamentals in AutoCAD, covering orthographic projections, dimensioning standards, and producing fabrication-ready technical drawings for mechanical components.",
+          },
+          {
+            title: "SolidWorks Modeling and Assembly Workshops",
+            description:
+              "Step-by-step workshops progressing from basic part modeling and sketching to full assemblies, mates, motion studies, and sheet metal design in SolidWorks.",
+          },
+          {
+            title: "ANSYS Simulation and Airfoil Analysis Session",
+            description:
+              "A combined session introducing finite element analysis in ANSYS for structural and thermal problems, alongside an applied exploration of airfoil geometry and aerodynamic performance relevant to drone and ROV design.",
+          },
+          {
+            title: "Robotics Integration Projects",
+            description:
+              "Team-based projects where members design and fabricate mechanical subsystems for real robotics platforms, applying CAD, simulation, and manufacturing knowledge in a collaborative setting.",
+          },
         ],
         board: [
           {
@@ -587,14 +606,33 @@ export const chaptersData: ChapterData[] = [
       },
       {
         id: ++trackId,
-        name: "Ic Design",
+        name: "IC Design",
         hashtag: "ic-design",
-        description: "",
-        image: "",
-        goals: ["", "", "", ""],
+        description:
+          "The IC Design track introduces members to the world of integrated circuit design, from concept to silicon. Starting with the fundamentals of digital logic and CMOS technology, members progress through RTL design, simulation, synthesis, and physical design flows. The track combines theoretical foundations with hands-on use of industry-standard EDA tools, preparing members for careers in chip design, VLSI engineering, and semiconductor research.",
+        image: "/Tracks/RAS/ic-design.webp",
+        goals: [
+          "Build a solid understanding of CMOS logic, digital design principles, and the full RTL-to-GDSII design flow.",
+          "Gain practical experience with EDA tools for HDL coding, functional simulation, synthesis, and timing analysis.",
+          "Design, verify, and implement real digital circuits through hands-on projects and team-based chip design exercises.",
+          "Prepare members for opportunities in VLSI, semiconductor, and hardware engineering industries.",
+        ],
         activities: [
-          { title: "Offline Session", description: "" },
-          { title: "Offline Session", description: "" },
+          {
+            title: "Offline Sessions",
+            description:
+              "Structured sessions covering digital logic fundamentals, Verilog/VHDL coding, CMOS transistor theory, and RTL design methodology with practical exercises.",
+          },
+          {
+            title: "EDA Tool Workshops",
+            description:
+              "Hands-on workshops using industry-standard tools for simulation, synthesis, and physical design, giving members real exposure to professional chip design environments.",
+          },
+          {
+            title: "Design Projects",
+            description:
+              "Team-based projects where members design and verify a complete digital module from specification through RTL, simulation, and synthesis, culminating in a final presentation.",
+          },
         ],
         board: [
           {
