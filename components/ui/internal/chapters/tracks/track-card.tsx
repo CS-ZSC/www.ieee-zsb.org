@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Flex, Heading, Text, Box, HStack, Button, Image, AvatarGroup, Grid, GridItem } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import type { TrackData } from "@/data/chapters";
@@ -32,6 +32,15 @@ export default function TrackCard({
 }: TrackCardProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isDesktop } = useWindowType();
+
+  useEffect(() => {
+    if (window.location.hash === `#${track.hashtag}`) {
+      setIsOpen(true);
+      setTimeout(() => {
+        document.getElementById(track.hashtag)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 120);
+    }
+  }, [track.hashtag]);
 
   // Format index to be like #01, #02
   const formattedIndex = `#${String(index + 1).padStart(2, "0")}`;
