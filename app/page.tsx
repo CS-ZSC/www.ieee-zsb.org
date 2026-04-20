@@ -20,10 +20,6 @@ export default function Home() {
         <News />
         <Events />
         <MembershipCTA />
-        <Container>
-          <PageTitle title="Executive Board" />
-          <Board />
-        </Container>
       </Flex>
     </PageWrapper>
   );
