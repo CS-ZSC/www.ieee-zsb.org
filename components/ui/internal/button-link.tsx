@@ -7,6 +7,7 @@ interface Props {
   text: string;
   icon?: boolean;
   bgColor?: string;
+  target?: string;
 }
 
 export default function ButtonLink({
@@ -14,6 +15,7 @@ export default function ButtonLink({
   text,
   icon = true,
   bgColor = "primary-1",
+  target,
 }: Props) {
   return (
     <LinkBox
@@ -29,6 +31,7 @@ export default function ButtonLink({
     >
       <LinkOverlay
         href={link}
+        target={target}
         color={"white"}
       >
         <Flex justifyContent={"center"} alignItems={"center"} gap={3}>

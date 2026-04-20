@@ -9,6 +9,7 @@ import PageTitle from "@/components/ui/internal/pageTitle";
 import Container from "@/components/ui/internal/container";
 import Board from "@/components/ui/internal/about/board/board";
 import HeroSection from "@/components/ui/internal/home/hero-section";
+import Membership from "@/components/ui/internal/home/membership";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Brief />
         <News />
         <Events />
+        <Membership />
         <Container>
           <PageTitle title="Executive Board" />
           <Board />
