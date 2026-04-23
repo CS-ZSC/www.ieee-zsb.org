@@ -157,6 +157,32 @@ const config: SystemConfig = defineConfig({
           },
         },
 
+        // Glass Card Colors
+        "card-glass-bg": {
+          value: {
+            _light: "rgba(242, 251, 255, 0.7)",
+            _dark: "rgba(10, 20, 32, 0.6)",
+          },
+        },
+        "dialog-glass-bg": {
+          value: {
+            _light: "rgba(7)",
+            _dark: "rgba(10, 20, 32, 0.6)",
+          },
+        },
+        "card-glass-border": {
+          value: {
+            _light: "rgba(0, 102, 153, 0.12)",
+            _dark: "rgba(255, 255, 255, 0.08)",
+          },
+        },
+        overlay: {
+          value: {
+            _light: "rgba(0, 0, 0, 0.5)",
+            _dark: "rgba(0, 0, 0, 0.55)",
+          },
+        },
+
         // Chapter Colors
         "cs-1": { value: { _light: "#354A5F", _dark: "#354A5F" } },
         "cs-2": { value: { _light: "#E3E2E2", _dark: "#E3E2E2" } },

@@ -347,8 +347,6 @@ function SmallCarousel({
               <Box>
                 <NewsCard
                   newsObject={item}
-                  bgColor={"primary-12"}
-                  tagColor={"primary-2"}
                 />
               </Box>
             </motion.div>
