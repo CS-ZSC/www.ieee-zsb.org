@@ -5,6 +5,15 @@ export interface Activities {
   description: string;
 }
 
+export interface Resource {
+  type: "book" | "course";
+  title: string;
+  author?: string;
+  platform?: string;
+  free?: boolean;
+  url?: string;
+}
+
 export interface CommitteesData {
   id: number;
   name: string;

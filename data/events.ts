@@ -46,7 +46,6 @@ const eventsData: EventsData[] = [
   },
   {
     id: idCounter++,
-    homeItem: true,
     title: "Career Hacks",
     description:
       "Career Hacks was an online event tailored to help students find their career paths and unleash their true potential. Event Objectives: Learned about the benefits of AI and how to use it in career placement. Helped participants decide their career paths. Provided guidance on building a strong CV. Taught participants how to establish a strong LinkedIn account. The event offered valuable insights and practical tips to assist students in navigating their professional journeys effectively.",
