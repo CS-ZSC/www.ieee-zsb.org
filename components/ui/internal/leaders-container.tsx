@@ -3,6 +3,7 @@
 import { Flex, Text, Box, Image } from "@chakra-ui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Position } from "@/data/position";
 import { getSlug } from "@/data/position";
 import { useWindowType } from "@/hooks/use-window-type";
@@ -268,6 +269,7 @@ function CardAvatarHero({ member }: { member: Position }) {
 
 export default function LeadersContainer({ positions }: Props) {
   const { isDesktop } = useWindowType();
+  const router = useRouter();
 
   return (
     <Flex flexWrap="wrap" gap="10px" width="100%" justifyContent="center">
@@ -276,14 +278,14 @@ export default function LeadersContainer({ positions }: Props) {
           key={i}
           flex={isDesktop ? "1 1 calc(33.333% - 7px)" : "0 1 calc(50% - 5px)"}
           maxWidth={isDesktop ? "calc(33.333% - 7px)" : "calc(50% - 5px)"}
+          cursor="pointer"
+          onClick={() => router.push(`/about/member/${getSlug(member.name)}`)}
         >
-          <Link href={`/about/member/${getSlug(member.name)}`} style={{ textDecoration: "none", color: "inherit" }}>
-            {isDesktop ? (
-              <CardHorizontal member={member} />
-            ) : (
-              <CardAvatarHero member={member} />
-            )}
-          </Link>
+          {isDesktop ? (
+            <CardHorizontal member={member} />
+          ) : (
+            <CardAvatarHero member={member} />
+          )}
         </Box>
       ))}
     </Flex>

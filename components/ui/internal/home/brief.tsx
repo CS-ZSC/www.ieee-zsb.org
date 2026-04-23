@@ -1,49 +1,114 @@
+"use client";
+
 import React from "react";
-import { Text, Flex, Stack, Heading, Box } from "@chakra-ui/react";
-import { useWindowType } from "@/hooks/use-window-type";
+import { Text, Flex, Grid, Heading, Box, Stack } from "@chakra-ui/react";
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 import Card from "@/components/ui/internal/card";
+import AnimatedCard from "@/components/ui/internal/animatedCard";
 import ButtonLink from "../button-link";
 
-export default function Brief() {
-  const { isDesktop } = useWindowType();
+const MotionBox = motion.create(Box);
 
-  const content = [
-    [
-      "brief",
-      `A legacy of over ${new Date().getFullYear() - 1999} years positions IEEE Zagazig University Student Branch (ZSB) as one of the first and most impactful in Egypt. We extend our reach beyond Zagazig University, serving students nationwide through workshops, events, and initiatives that explore technology's influence on all aspects of life, from its latest applications to its intersection with business in our signature "MUTEX" event, the Delta region's largest gathering focused on technology and entrepreneurship. Our commitment goes beyond technical expertise, fostering well-rounded graduates through six managerial committees and three technical chapters, alongside the Women In Engineering (WIE) Affinity Group. This comprehensive approach creates a professional environment where students can cultivate essential skills like leadership, teamwork, and management, ensuring they're prepared for the demands of the modern workforce.`,
-    ],
-    [
-      "vision",
-      "Our vision is to cultivate a generation of students who excel as critical thinkers, proficient leaders, innovators, and experts across diverse fields of science and technology. We aspire to become a nationally recognized hub of talent and innovation, empowering students to drive meaningful change, shape the future of their industries, and positively impact society through their skills and ideas.",
-    ],
-    [
-      "mission",
-      "Our mission begins with a deep understanding of the contemporary job market's demands and the skills required from graduates to meet those demands. We then strive to bridge the skills gap by establishing a sustainable program that addresses the ever-expanding divide between graduates' skillsets and the job market's requirements, particularly those skills that the university curriculum may overlook.",
-    ],
-  ];
+const stats = [
+  { icon: "lucide:calendar",    value: `${new Date().getFullYear() - 1999}+`, label: "Years of Impact" },
+  { icon: "lucide:cpu",         value: "4",    label: "Technical Chapters" },
+  { icon: "lucide:layout-grid", value: "6",    label: "Committees" },
+  { icon: "lucide:users",       value: "1000+", label: "Alumni" },
+];
+
+const pillars = [
+  {
+    icon: "lucide:telescope",
+    title: "Vision",
+    text: "A nationally recognized hub of talent and innovation, empowering students to drive meaningful change and shape the future of their industries through critical thinking, leadership, and technical excellence.",
+  },
+  {
+    icon: "lucide:target",
+    title: "Mission",
+    text: "Bridge the skills gap between university curricula and the modern job market — building a sustainable program that equips graduates with leadership, teamwork, and technical skills that matter.",
+  },
+];
+
+export default function Brief() {
   return (
-    <Card>
-      <Flex
-        flexDirection={"column"}
-        alignItems={isDesktop ? "" : "center"}
-        gap={"calc(1.5 * var(--global-spacing))"}
-      >
-        {content.map(([title, text]) => (
-          <Stack key={title}>
-            <Heading>{title.charAt(0).toUpperCase() + title.slice(1)}</Heading>
-            <Box
-              ml={4}
-              borderLeftColor="primary-1"
-              borderLeftWidth={4}
-              paddingLeft={4}
-              py={2}
+    <Flex direction="column" gap={6} w="full">
+      {/* Stats */}
+      <AnimatedCard>
+        <Grid
+          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
+          gap={4}
+          w="full"
+        >
+          {stats.map(({ icon, value, label }, i) => (
+            <MotionBox
+              key={label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 } as any}
             >
-              <Text fontSize={"lg"}>{text}</Text>
-            </Box>
-          </Stack>
+              <Card bgColor="primary-3" gap={1}>
+                <Stack align="center" textAlign="center" gap={1}>
+                  <Icon icon={icon} width="1.6rem" height="1.6rem" />
+                  <Text fontWeight="bold" fontSize="2xl" color="neutral-1">{value}</Text>
+                  <Text fontSize="sm" color="neutral-2">{label}</Text>
+                </Stack>
+              </Card>
+            </MotionBox>
+          ))}
+        </Grid>
+      </AnimatedCard>
+
+      {/* About blurb */}
+      <AnimatedCard>
+        <Card bgColor="primary-3">
+          <Flex direction="column" gap={3}>
+            <Heading fontSize={{ base: "xl", md: "2xl" }} color="neutral-1">
+              Who We Are
+            </Heading>
+            <Text fontSize="md" color="neutral-2" lineHeight="1.8">
+              IEEE Zagazig University Student Branch is one of the first and most impactful student
+              branches in Egypt, with over {new Date().getFullYear() - 1999} years of experience.
+              Through technical chapters, committees, and our flagship MUTEX event — the Delta
+              region's largest technology and entrepreneurship gathering — we prepare students for
+              the demands of the modern workforce.
+            </Text>
+          </Flex>
+        </Card>
+      </AnimatedCard>
+
+      {/* Vision & Mission */}
+      <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={4}>
+        {pillars.map(({ icon, title, text }) => (
+          <AnimatedCard key={title}>
+            <Card bgColor="primary-3">
+              <Flex align="flex-start" gap={4}>
+                <Box
+                  flexShrink={0}
+                  p={2}
+                  rounded="lg"
+                  bg="primary-7"
+                  mt={0.5}
+                >
+                  <Icon icon={icon} width="1.5rem" height="1.5rem" />
+                </Box>
+                <Stack gap={1}>
+                  <Heading fontSize="lg" color="neutral-1">{title}</Heading>
+                  <Text fontSize="sm" color="neutral-2" lineHeight="1.7">{text}</Text>
+                </Stack>
+              </Flex>
+            </Card>
+          </AnimatedCard>
         ))}
-        <ButtonLink link="/about" text="More about us" icon={false} />
-      </Flex>
-    </Card>
+      </Grid>
+
+      {/* CTA */}
+      <AnimatedCard>
+        <Flex justify="center">
+          <ButtonLink link="/about" text="More about us" icon />
+        </Flex>
+      </AnimatedCard>
+    </Flex>
   );
 }

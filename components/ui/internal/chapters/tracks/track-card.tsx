@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Flex, Heading, Text, Box, HStack, Button, Image, AvatarGroup, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Heading, Text, Box, HStack, Button, Image, Grid, GridItem } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import type { TrackData } from "@/data/chapters";
-import CommitteeDetails from "../../committees/committee-details";
 import Card from "@/components/ui/internal/card";
 import { useWindowType } from "@/hooks/use-window-type";
 import {
@@ -175,69 +174,46 @@ export default function TrackCard({
         </Grid>
       </Card>
 
-      {/* Mobile Inline Fallback (Exact preservation of existing logic) */}
-      {!isDesktop && (
-        <Box mt={4} w="full">
-          <CommitteeDetails
-            committee={track}
-            isOpen={isOpen}
-            borderColor={borderColor}
-            positionBgColor={positionBgColor}
-          />
-        </Box>
-      )}
-
-      {/* Desktop Blurred Overlay Dialog */}
-      {isDesktop && (
-        <DialogRoot 
-          open={isOpen} 
-          onOpenChange={(e) => setIsOpen(e.open)} 
-          placement="center" 
-          scrollBehavior="inside"
+      <DialogRoot
+        open={isOpen}
+        onOpenChange={(e) => setIsOpen(e.open)}
+        placement="center"
+        scrollBehavior="inside"
+      >
+        <DialogBackdrop bg="blackAlpha.700" backdropFilter="blur(8px)" />
+        <DialogContent
+          bgColor="primary-dialog-bg"
+          color="fg"
+          w={{ base: "95vw", md: "1100px" }}
+          maxWidth="95vw"
+          maxHeight="90vh"
+          mx="auto"
+          overflow="hidden"
+          borderRadius="lg"
+          backdropFilter="blur(20px)"
         >
-          <DialogBackdrop 
-            bg="blackAlpha.700" 
-            backdropFilter="blur(8px)" 
-          />
-          <DialogContent 
-            bgColor="primary-dialog-bg" 
-            color="fg"
-            w="1100px"
-            maxWidth="95vw"
-            maxHeight="90vh"
-            mx="auto"
-            overflow="hidden"
-            borderRadius="lg"
-            backdropFilter="blur(20px)"
-          >
-            <DialogHeader pb={6} borderBottom="1px solid" borderColor="neutral-4">
-              <HStack gap={4} align="center">
-                <Flex 
-                  w="48px" 
-                  h="48px" 
-                  rounded="lg" 
-                  overflow="hidden"
-                  border="1px solid"
-                  borderColor="primary-1"
-                  align="center"
-                  justify="center"
-                  bgColor="primary-7"
-                  flexShrink={0}
-                >
-                  <Icon icon={getTrackIcon(track.hashtag)} width="24px" height="24px" color="var(--chakra-colors-primary-1)" />
-                </Flex>
-                <Heading size="lg" fontWeight="bold" color="fg">
-                  {track.name}
-                </Heading>
-              </HStack>
-            </DialogHeader>
-            <DialogBody pb={6}>
-              <TrackDialogBody track={track} />
-            </DialogBody>
-            <DialogCloseTrigger color="neutral-3" _hover={{ bg: "neutral-4", color: "fg" }} right="4" top="4" />
-          </DialogContent>
-        </DialogRoot>
-      )}
+          <DialogHeader pb={6} borderBottom="1px solid" borderColor="neutral-4">
+            <HStack gap={4} align="center">
+              <Flex
+                w="48px" h="48px"
+                rounded="lg"
+                border="1px solid" borderColor="primary-1"
+                align="center" justify="center"
+                bgColor="primary-7" flexShrink={0}
+              >
+                <Icon icon={getTrackIcon(track.hashtag)} width="24px" height="24px" color="var(--chakra-colors-primary-1)" />
+              </Flex>
+              <Heading size={{ base: "md", md: "lg" }} fontWeight="bold" color="fg">
+                {track.name}
+              </Heading>
+            </HStack>
+          </DialogHeader>
+          <DialogBody pb={6}>
+            <TrackDialogBody track={track} />
+          </DialogBody>
+          <DialogCloseTrigger color="neutral-3" _hover={{ bg: "neutral-4", color: "fg" }} right="4" top="4" />
+        </DialogContent>
+      </DialogRoot>
     </Box>
   );
 }

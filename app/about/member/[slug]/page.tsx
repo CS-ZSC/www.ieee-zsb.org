@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { Flex, Text, Box, Image, Heading } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
@@ -52,6 +52,7 @@ function handleCopyEmail(email: string) {
 
 export default function MemberProfilePage() {
   const params = useParams();
+  const router = useRouter();
   const slug = params.slug as string;
   const allMembers = getAllMembers();
   const member = allMembers.find((m) => getSlug(m.name) === slug);
@@ -65,20 +66,18 @@ export default function MemberProfilePage() {
             <Text fontSize="18px" color="neutral-3">
               Member not found.
             </Text>
-            <Link href="/about">
-              <Flex
-                alignItems="center"
-                gap="6px"
-                color="primary-1"
-                _hover={{ gap: "8px" }}
-                transition="all 0.2s ease"
-              >
-                <Icon icon="ph:arrow-left-bold" width={16} height={16} />
-                <Text fontSize="14px" fontWeight={500}>
-                  Back to About
-                </Text>
-              </Flex>
-            </Link>
+            <Flex
+              alignItems="center"
+              gap="6px"
+              color="primary-1"
+              _hover={{ gap: "8px" }}
+              transition="all 0.2s ease"
+              cursor="pointer"
+              onClick={() => router.back()}
+            >
+              <Icon icon="ph:arrow-left-bold" width={16} height={16} />
+              <Text fontSize="14px" fontWeight={500}>Back</Text>
+            </Flex>
           </Flex>
         </Container>
       </PageWrapper>
@@ -95,21 +94,20 @@ export default function MemberProfilePage() {
       <Container maxWidth="720px">
         <Flex direction="column" gap="0" py="40px">
           {/* Back link */}
-          <Link href="/about">
-            <Flex
-              alignItems="center"
-              gap="6px"
-              color="neutral-3"
-              _hover={{ color: "primary-1", gap: "8px" }}
-              transition="all 0.2s ease"
-              mb="24px"
-            >
-              <Icon icon="ph:arrow-left-bold" width={16} height={16} />
-              <Text fontSize="14px" fontWeight={500}>
-                Back
-              </Text>
-            </Flex>
-          </Link>
+          <Flex
+            alignItems="center"
+            gap="6px"
+            color="neutral-3"
+            _hover={{ color: "primary-1", gap: "8px" }}
+            transition="all 0.2s ease"
+            mb="24px"
+            cursor="pointer"
+            w="fit-content"
+            onClick={() => router.back()}
+          >
+            <Icon icon="ph:arrow-left-bold" width={16} height={16} />
+            <Text fontSize="14px" fontWeight={500}>Back</Text>
+          </Flex>
 
           {/* Hero / Profile Header */}
           <Flex

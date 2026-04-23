@@ -55,17 +55,8 @@ const executiveBoard: Position[] = [
     avatarSrc: "/Images/board/executive-board/chairperson.webp",
     linkedin: "https://www.linkedin.com/in/ahmed-raiyah",
     email: "ahmed.raiyah@ieee-zsb.org",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    responsibilities: [
-      "Oversee all branch operations and strategic planning",
-      "Represent the branch at regional and national IEEE events",
-      "Coordinate between all committees and chapters",
-      "Lead executive board meetings and decision-making",
-    ],
     links: [
-      { label: "IEEE ZSB Official Website", url: "https://www.ieee-zsb.org" },
-      { label: "IEEE Region 8", url: "https://ieeer8.org" },
-    ],
+    ]
   },
   {
     name: "Ahmed Medhat",
