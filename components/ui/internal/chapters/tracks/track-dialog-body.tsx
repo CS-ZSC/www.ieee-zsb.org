@@ -7,7 +7,7 @@ import type { TrackData } from "@/data/chapters";
 import trackResources from "@/data/track-resources";
 import type { Resource } from "@/data/committees";
 import { useWindowType } from "@/hooks/use-window-type";
-import { MemberCard } from "@/components/ui/internal/member-card";
+import LeadersContainer from "@/components/ui/internal/leaders-container";
 
 interface TrackDialogBodyProps {
   track: TrackData;
@@ -28,11 +28,7 @@ export default function TrackDialogBody({
             <Text color="fg" fontWeight="bold" fontSize="lg">Leaders</Text>
             <Box w="32px" h="2px" bgColor="primary-1" mt={2} rounded="full" />
           </Box>
-          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={3}>
-            {track.board.map((leader, index) => (
-              <MemberCard key={index} member={leader} />
-            ))}
-          </Grid>
+          <LeadersContainer positions={track.board} />
         </Flex>
       )}
       {/* Description Section */}
