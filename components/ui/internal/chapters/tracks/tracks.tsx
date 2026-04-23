@@ -20,7 +20,7 @@ export function Tracks({
       mx="auto"
     >
       {tracks.map((track, index) => (
-        <GridItem key={index} w="full">
+        <GridItem key={index} w="full" h="full">
           <TrackCard
             track={track}
             index={index}

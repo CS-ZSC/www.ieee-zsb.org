@@ -82,6 +82,7 @@ export default function TrackCard({ track, index }: TrackCardProps) {
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ ...springIn, delay: index * 0.08 }}
+      style={{ height: "100%" }}
     >
       <Box
         id={track.hashtag}
@@ -90,9 +91,12 @@ export default function TrackCard({ track, index }: TrackCardProps) {
         backgroundColor="primary-5"
         border="1px solid"
         borderColor="neutral-4"
+        h="full"
+        display="flex"
+        flexDirection="column"
       >
         {/* Collapsed header — always visible */}
-        <Flex padding={{ base: "20px", md: "28px" }} gap="20px" alignItems="flex-start">
+        <Flex padding={{ base: "20px", md: "28px" }} gap="20px" alignItems="flex-start" flex={1}>
           {/* Icon badge */}
           <Flex
             alignItems="center"
@@ -110,7 +114,7 @@ export default function TrackCard({ track, index }: TrackCardProps) {
           </Flex>
 
           {/* Right block */}
-          <Flex direction="column" flex={1} gap="12px" minWidth={0}>
+          <Flex direction="column" flex={1} gap="12px" minWidth={0} justifyContent="space-between">
             {/* Title + index badge */}
             <Flex alignItems="center" justifyContent="space-between" gap="12px">
               <Heading
