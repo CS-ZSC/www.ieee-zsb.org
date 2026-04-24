@@ -3,7 +3,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { useWindowType } from "@/hooks/use-window-type";
-import type { NewsItem } from "@/data/news";
+import type { NewsItem } from "@/lib/news";
 import Tag from "@/components/ui/internal/tag";
 import { useRouter } from "next/navigation";
 import Description from "./description";
@@ -25,7 +25,7 @@ export default function NewsCard({
 
   return (
     <Flex
-      onClick={() => router.push(`/news/${newsObject.id}`)}
+      onClick={() => router.push(`/news/${newsObject.slug}`)}
       cursor={"pointer"}
       _hover={{ transform: "scale(0.98)" }}
       transition="all 0.2s ease-in-out"
@@ -52,7 +52,7 @@ export default function NewsCard({
       >
         <Flex alignItems={"center"} gap={isDesktop ? 5 : 3}>
           <Text color={"neutral-3"}>
-            {newsObject.dateCreated} - {newsObject.author}
+            {newsObject.date} - {newsObject.author}
           </Text>
           <Flex flexWrap={"wrap"} gap={2}>
             <Tag text={newsObject.tags[0]} color={tagColor} />
@@ -73,7 +73,7 @@ export default function NewsCard({
           color={"text-2"}
           lineClamp={isDesktop ? "4" : "8"}
           maxWidth="auto"
-          description={newsObject.description}
+          description={newsObject.excerpt}
         ></Description>
       </Flex>
     </Flex>

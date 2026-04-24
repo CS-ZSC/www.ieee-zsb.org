@@ -1,31 +1,75 @@
 import { notFound } from "next/navigation";
-import { newsData } from "@/data/news";
+import { getAllNews, getNewsBySlug } from "@/lib/news";
 import PageWrapper from "@/components/ui/internal/page-wrapper";
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Heading from "@/components/ui/internal/heading";
-import Description from "@/components/ui/internal/news/description";
 import ImageBox from "@/components/ui/internal/news/image-box";
 import Tag from "@/components/ui/internal/tag";
-import { use } from "react";
 import VerticalDivider from "@/components/ui/internal/news/vertical-divider";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Description from "@/components/ui/internal/news/description";
+import { use } from "react";
+import type { Components } from "react-markdown";
+
+export async function generateStaticParams() {
+  return getAllNews().map((item) => ({ slug: item.slug }));
+}
 
 export default function NewsPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = use(params);
-  const newsId = Number(id);
-  if (isNaN(newsId)) {
-    return notFound();
-  }
+  const { slug } = use(params);
+  const newsItem = getNewsBySlug(slug);
 
-  const newsItem = newsData.find((item) => item.id === newsId);
-  let photoCounter = 1;
+  if (!newsItem) return notFound();
 
-  if (!newsItem) {
-    return notFound();
-  }
+  let figureCount = 0;
+
+  const components: Components = {
+    h2({ children }) {
+      return (
+        <Text fontWeight={"bold"} fontSize={"1.4rem"} marginTop={8} marginBottom={2}>
+          {children}
+        </Text>
+      );
+    },
+    p({ children }) {
+      return (
+        <Box
+          fontSize={"lg"}
+          fontWeight={"light"}
+          color={"neutral-2"}
+          lineHeight={"1.8"}
+          maxWidth={"1050px"}
+          marginBottom={4}
+        >
+          {children}
+        </Box>
+      );
+    },
+    img({ src, alt }) {
+      figureCount++;
+      const srcStr = typeof src === "string" ? src : "";
+      return (
+        <Flex flexDirection={"column"} gap={2} marginY={4}>
+          <ImageBox path={srcStr} alt={alt ?? ""} maxWidth="full" />
+          {alt && (
+            <Text
+              textAlign={"center"}
+              color={"natural-2"}
+              opacity={"0.8"}
+              marginBottom={4}
+            >
+              Figure {figureCount}: {alt}
+            </Text>
+          )}
+        </Flex>
+      );
+    },
+  };
 
   return (
     <PageWrapper>
@@ -66,56 +110,27 @@ export default function NewsPage({
               maxWidth={`calc(100% - 2 * var(--global-spacing))`}
             >
               <Text color={"neutral-2"}>
-                {newsItem.dateCreated} - {newsItem.author}
+                {newsItem.date} - {newsItem.author}
               </Text>
               <VerticalDivider backgroundColor="neutral-2" />
               <Flex flexWrap={"wrap"} gap={2}>
                 <Tag text={newsItem.tags[0]} color="neutral-2" />
-                {/* <Tag text={newsItem.tags[1]} /> */}
               </Flex>
             </Flex>
           </Flex>
 
           <Description
-            description={newsItem.description}
+            description={newsItem.excerpt}
             color={"natural-2"}
             maxWidth="1050px"
           />
         </Flex>
-        {newsItem.sections.map((section) => (
-          <div key={section.id}>
-            {section.photo && (
-              <Flex flexDirection={"column"} gap={2}>
-                <ImageBox
-                  path={section.photo}
-                  alt={section.photoDescription}
-                  maxWidth="full"
-                />
-                <Text
-                  textAlign={"center"}
-                  color={"natural-2"}
-                  opacity={"0.8"}
-                  marginBottom={4}
-                >
-                  Figure {photoCounter++}: {section.photoDescription}
-                </Text>
-              </Flex>
-            )}
-            <Text fontWeight={"bold"} fontSize={"1.4rem"} marginBottom={2}>
-              {section.heading}
-            </Text>
-            <Flex flexDirection={"column"} fontSize={"2rem"} gap={4}>
-              {section.descriptions.map((description, index) => (
-                <Description
-                  key={index}
-                  description={description}
-                  color={"natural-2"}
-                  maxWidth="1050px"
-                />
-              ))}
-            </Flex>
-          </div>
-        ))}
+
+        <Flex flexDirection={"column"}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+            {newsItem.content}
+          </ReactMarkdown>
+        </Flex>
       </Flex>
     </PageWrapper>
   );

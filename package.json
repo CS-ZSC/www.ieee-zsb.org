@@ -12,8 +12,11 @@
     "@chakra-ui/react": "^3.13.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@gsap/react": "^2.1.2",
     "@iconify/react": "^5.2.0",
     "framer-motion": "^12.20.1",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.15.0",
     "ieee-zsb": "file:",
     "jotai": "^2.12.1",
     "next": "16.1.6",
@@ -22,7 +25,9 @@
     "react-dom": "19.1.1",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
-    "react-spinners": "^0.17.0"
+    "react-markdown": "^10.1.0",
+    "react-spinners": "^0.17.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^3.14.2",

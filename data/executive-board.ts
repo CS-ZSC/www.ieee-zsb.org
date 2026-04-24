@@ -55,6 +55,8 @@ const executiveBoard: Position[] = [
     avatarSrc: "/Images/board/executive-board/chairperson.webp",
     linkedin: "https://www.linkedin.com/in/ahmed-raiyah",
     email: "ahmed.raiyah@ieee-zsb.org",
+    links: [
+    ]
   },
   {
     name: "Ahmed Medhat",

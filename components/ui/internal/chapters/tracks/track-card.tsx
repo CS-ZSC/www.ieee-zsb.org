@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Flex, Heading, Text, Box, HStack, Button, Image, AvatarGroup, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import type { TrackData } from "@/data/chapters";
-import CommitteeDetails from "../../committees/committee-details";
-import Card from "@/components/ui/internal/card";
-import { useWindowType } from "@/hooks/use-window-type";
+import { Avatar } from "@/components/ui/avatar";
+import { Tooltip } from "@/components/ui/tooltip";
 import {
   DialogBody,
   DialogCloseTrigger,
@@ -14,8 +15,36 @@ import {
   DialogHeader,
   DialogRoot,
   DialogBackdrop,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import TrackDialogBody from "./track-dialog-body";
+
+const springIn = { type: "spring", stiffness: 260, damping: 28 } as const;
+
+const getTrackIcon = (hashtag: string): string => {
+  const iconMap: Record<string, string> = {
+    "frontend":            "mdi:code-tags",
+    "backend":             "mdi:database",
+    "mobile-development":  "mdi:cellphone",
+    "data-science":        "mdi:chart-scatter-plot",
+    "ai":                  "mdi:brain",
+    "basic-ai":            "mdi:brain",
+    "advanced-ai":         "mdi:brain",
+    "cyber-security":      "mdi:shield-check",
+    "game-development":    "mdi:gamepad-variant",
+    "embedded-systems":    "mdi:memory",
+    "ros":                 "mdi:robot-outline",
+    "pcb-design":          "mdi:developer-board",
+    "mechanical":          "mdi:cogs",
+    "ic-design":           "mdi:chip",
+    "basic-automation":    "mdi:factory",
+    "advanced-automation": "mdi:factory",
+    "basic-distribution":  "mdi:transmission-tower",
+    "smart-home":          "mdi:home-automation",
+    "e-mobility":          "mdi:ev-station",
+  };
+  return iconMap[hashtag] ?? "mdi:book-outline";
+};
 
 interface TrackCardProps {
   track: TrackData;
@@ -24,14 +53,19 @@ interface TrackCardProps {
   positionBgColor: string;
 }
 
-export default function TrackCard({
-  track,
-  index,
-  borderColor,
-  positionBgColor,
-}: TrackCardProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { isDesktop } = useWindowType();
+export default function TrackCard({ track, index }: TrackCardProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 });
+  const indexLabel = `#${String(index + 1).padStart(2, "0")}`;
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     if (window.location.hash === `#${track.hashtag}`) {
@@ -42,202 +76,211 @@ export default function TrackCard({
     }
   }, [track.hashtag]);
 
-  // Format index to be like #01, #02
-  const formattedIndex = `#${String(index + 1).padStart(2, "0")}`;
-
-  // Track Icon Mapping
-  const getTrackIcon = (hashtag: string) => {
-    const iconMap: Record<string, string> = {
-      "frontend": "mdi:code-tags",
-      "backend": "mdi:database",
-      "mobile-development": "mdi:cellphone",
-      "basic-ai": "mdi:brain",
-      "advanced-ai": "mdi:brain",
-      "cyber-security": "mdi:shield-check",
-      "game-development": "mdi:gamepad-variant",
-      "embedded-systems": "mdi:memory",
-      "ros": "mdi:robot-outline",
-      "pcb-design": "mdi:developer-board",
-      "mechanical": "mdi:cogs",
-      "basic-automation": "mdi:factory",
-      "advanced-automation": "mdi:factory",
-      "basic-distribution": "mdi:transmission-tower",
-      "advanced-distribution": "mdi:transmission-tower",
-    };
-    return iconMap[hashtag] || "mdi:book-outline";
-  };
-
   return (
-    <Box w="full" id={track.hashtag}>
-      <Card 
-        padding={isDesktop ? "24px" : "16px"} 
-        bgColor="primary-12"
-        borderColor="primary-12"
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ ...springIn, delay: index * 0.08 }}
+      style={{ height: "100%" }}
+    >
+      <Box
+        id={track.hashtag}
+        borderRadius="20px"
+        overflow="hidden"
+        backgroundColor="primary-5"
+        border="1px solid"
+        borderColor="neutral-4"
+        h="full"
+        display="flex"
+        flexDirection="column"
       >
-        <Grid 
-          templateColumns={["1fr", "auto 1fr auto"]} 
-          gap={4} 
-          alignItems="start"
-        >
-          {/* Tracking Icon (Left Desktop, Top Mobile) */}
-          <GridItem>
-            <Flex 
-              w={isDesktop ? "56px" : "48px"} 
-              h={isDesktop ? "56px" : "48px"} 
-              rounded="md" 
-              overflow="hidden"
-              border="1px solid"
-              borderColor="neutral-4"
-              align="center"
-              justify="center"
-              bgColor="primary-12"
-            >
-               <Icon icon={getTrackIcon(track.hashtag)} width="28px" height="28px" color="var(--chakra-colors-primary-1)" />
+        {/* Collapsed header — always visible */}
+        <Flex padding={{ base: "20px", md: "28px" }} gap="20px" alignItems="flex-start" flex={1}>
+          {/* Icon badge */}
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            width="56px"
+            height="56px"
+            borderRadius="14px"
+            backgroundColor="primary-12"
+            border="1px solid"
+            borderColor="neutral-4"
+            flexShrink={0}
+            color="primary-8"
+          >
+            <Icon icon={getTrackIcon(track.hashtag)} width={24} height={24} />
+          </Flex>
+
+          {/* Right block */}
+          <Flex direction="column" flex={1} gap="12px" minWidth={0} justifyContent="space-between">
+            {/* Title + index badge */}
+            <Flex alignItems="center" justifyContent="space-between" gap="12px">
+              <Heading
+                fontSize={{ base: "18px", md: "22px" }}
+                fontWeight={500}
+                lineHeight="1.4"
+                color="fg"
+              >
+                {track.name}
+              </Heading>
+              <Box
+                backgroundColor="primary-12"
+                borderRadius="full"
+                px="12px"
+                py="4px"
+                flexShrink={0}
+              >
+                <Text fontSize="13px" color="primary-8" whiteSpace="nowrap">
+                  {indexLabel}
+                </Text>
+              </Box>
             </Flex>
-          </GridItem>
 
-          {/* Central Content (Title, Description, Actions) */}
-          <GridItem display="flex" flexDirection="column" gap={3}>
-            <Heading
-              fontSize={isDesktop ? "lg" : "md"}
-              fontWeight="medium"
-              color="fg"
-            >
-              {track.name}
-            </Heading>
-
-            <Text 
-              color="neutral-2" 
-              fontSize="0.9rem"
-              lineHeight="1.5"
-              lineClamp={2} 
+            {/* Truncated description */}
+            <Text
+              fontSize={{ base: "14px", md: "16px" }}
+              lineHeight="1.6"
+              color="neutral-2"
+              overflow="hidden"
+              textOverflow="ellipsis"
+              display="-webkit-box"
+              style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
             >
               {track.description}
             </Text>
 
-            <Flex justify="space-between" align="center" mt={2}>
+            {/* Button + avatars */}
+            <Flex alignItems="center" justifyContent="space-between" gap="16px" mt="4px">
               <Button
-                onClick={() => setIsOpen((prev) => !prev)}
-                size="sm"
-                rounded="md"
+                onClick={() => setIsOpen((p) => !p)}
+                backgroundColor="primary-1"
                 color="white"
-                bgColor={isOpen ? "primary-11" : "primary-1"}
-                transition="all 0.2s"
-                _hover={{ opacity: "0.9" }}
-                fontWeight="normal"
-                px={4}
+                borderRadius="10px"
+                height="44px"
+                px="20px"
+                fontSize="16px"
+                fontWeight={500}
+                _hover={{ opacity: 0.85 }}
+                transition="opacity 0.2s ease"
+                display="flex"
+                alignItems="center"
+                gap="8px"
               >
-                <HStack gap={2}>
-                  <Text>Explore track</Text>
-                  <Icon icon={isOpen ? "mdi:chevron-up" : "mdi:chevron-down"} width="1.2em" height="1.2em" />
-                </HStack>
+                {!isDesktop && isOpen ? "Collapse" : "Explore track"}
+                {!isDesktop ? (
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    style={{ display: "flex" }}
+                  >
+                    <Icon icon="ph:caret-down-bold" width={16} height={16} color="white" />
+                  </motion.div>
+                ) : (
+                  <Icon icon="ph:arrow-right-bold" width={16} height={16} color="white" />
+                )}
               </Button>
 
               {track.board && track.board.length > 0 && (
-                <Flex>
-                  {track.board.slice(0, 3).map((member, i) => (
-                    <Box 
-                      key={i} 
-                      w="36px" 
-                      h="36px" 
-                      rounded="full" 
-                      overflow="hidden"
-                      border="1px solid"
-                      borderColor="primary-1"
-                      ml={i > 0 ? "-6px" : "0"}
-                      zIndex={3 - i}
+                <Flex alignItems="center" flexShrink={0}>
+                  {track.board.slice(0, 4).map((member, i) => (
+                    <Tooltip
+                      key={i}
+                      content={`${member.name} — ${member.position}`}
+                      showArrow
+                      openDelay={0}
                     >
-                       <Image 
-                        src={member.avatarSrc} 
-                        alt={member.name} 
-                        objectFit="cover" 
-                        w="100%" 
-                        h="100%" 
-                      />
-                    </Box>
+                      <Box
+                        ml={i > 0 ? "-8px" : "0"}
+                        position="relative"
+                        zIndex={track.board.length - i}
+                        borderRadius="full"
+                        border="2px solid"
+                        borderColor="primary-5"
+                        cursor="pointer"
+                        transition="transform 0.2s ease"
+                        _hover={{ transform: "scale(1.15)", zIndex: 20 }}
+                      >
+                        <Avatar name={member.name} src={member.avatarSrc} size="sm" />
+                      </Box>
+                    </Tooltip>
                   ))}
                 </Flex>
               )}
             </Flex>
-          </GridItem>
+          </Flex>
+        </Flex>
 
-          {/* Sequence Badge (Right Desktop, Top Right Mobile via CSS order or flex placement) */}
-          <GridItem justifySelf="end">
-             <Text 
-                color="neutral-2"
-                fontWeight="bold"
-                fontSize="0.9rem"
-                opacity={0.6}
+        {/* Mobile: inline expand */}
+        {!isDesktop && (
+          <AnimatePresence initial={false}>
+            {isOpen && (
+              <motion.div
+                key="details"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                style={{ overflow: "hidden" }}
               >
-                {formattedIndex}
-              </Text>
-          </GridItem>
-        </Grid>
-      </Card>
+                <Box px="20px" pb="24px">
+                  <TrackDialogBody track={track} />
+                </Box>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
+      </Box>
 
-      {/* Mobile Inline Fallback (Exact preservation of existing logic) */}
-      {!isDesktop && (
-        <Box mt={4} w="full">
-          <CommitteeDetails
-            committee={track}
-            isOpen={isOpen}
-            borderColor={borderColor}
-            positionBgColor={positionBgColor}
-          />
-        </Box>
-      )}
-
-      {/* Desktop Blurred Overlay Dialog */}
+      {/* Desktop: dialog */}
       {isDesktop && (
-        <DialogRoot 
-          open={isOpen} 
-          onOpenChange={(e) => setIsOpen(e.open)} 
-          placement="center" 
+        <DialogRoot
+          open={isOpen}
+          onOpenChange={(e) => setIsOpen(e.open)}
+          placement="center"
           scrollBehavior="inside"
         >
-          <DialogBackdrop 
-            bg="blackAlpha.700" 
-            backdropFilter="blur(8px)" 
-          />
-          <DialogContent 
-            bgColor="primary-dialog-bg" 
-            color="fg"
+          <DialogBackdrop bg="blackAlpha.700" backdropFilter="blur(8px)" />
+          <DialogContent
+            bgColor="primary-dialog-bg"
+            backdropFilter="blur(20px)"
+            borderRadius="20px"
+            border="1px solid"
+            borderColor="card-glass-border"
             w="1100px"
             maxWidth="95vw"
             maxHeight="90vh"
-            mx="auto"
             overflow="hidden"
-            borderRadius="lg"
-            backdropFilter="blur(20px)"
           >
-            <DialogHeader pb={6} borderBottom="1px solid" borderColor="neutral-4">
-              <HStack gap={4} align="center">
-                <Flex 
-                  w="48px" 
-                  h="48px" 
-                  rounded="lg" 
-                  overflow="hidden"
+            <DialogHeader pb={6} borderBottom="1px solid" borderColor="neutral-4" px="33px" pt="28px">
+              <Flex alignItems="center" gap="16px">
+                <Flex
+                  alignItems="center"
+                  justifyContent="center"
+                  width="48px"
+                  height="48px"
+                  borderRadius="12px"
+                  backgroundColor="primary-12"
                   border="1px solid"
-                  borderColor="primary-1"
-                  align="center"
-                  justify="center"
-                  bgColor="primary-7"
+                  borderColor="card-glass-border"
                   flexShrink={0}
+                  color="primary-8"
                 >
-                  <Icon icon={getTrackIcon(track.hashtag)} width="24px" height="24px" color="var(--chakra-colors-primary-1)" />
+                  <Icon icon={getTrackIcon(track.hashtag)} width={22} height={22} />
                 </Flex>
-                <Heading size="lg" fontWeight="bold" color="fg">
+                <DialogTitle fontSize="24px" fontWeight={500} color="fg" lineHeight="33px">
                   {track.name}
-                </Heading>
-              </HStack>
+                </DialogTitle>
+              </Flex>
             </DialogHeader>
-            <DialogBody pb={6}>
+            <DialogBody px="33px" pb="33px">
               <TrackDialogBody track={track} />
             </DialogBody>
             <DialogCloseTrigger color="neutral-3" _hover={{ bg: "neutral-4", color: "fg" }} right="4" top="4" />
           </DialogContent>
         </DialogRoot>
       )}
-    </Box>
+    </motion.div>
   );
 }

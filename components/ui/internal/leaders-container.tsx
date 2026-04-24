@@ -1,70 +1,34 @@
 "use client";
 
-import { Grid, GridItem } from "@chakra-ui/react";
-import PositionCard from "./positionCard";
+import { Grid, Box } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import type { Position } from "@/data/position";
-import { useWindowType } from "@/hooks/use-window-type";
+import { getSlug } from "@/data/position";
+import { MemberCard } from "@/components/ui/internal/member-card";
 
 interface Props {
   positions: Position[];
-  positionBgColor?: string;
 }
 
-export default function LeadersContainer({
-  positions,
-  positionBgColor,
-}: Props) {
-  const { isDesktop } = useWindowType();
+export default function LeadersContainer({ positions }: Props) {
+  const router = useRouter();
 
   return (
     <Grid
-      templateColumns={{
-        base: "1fr",
-        md: positions.length >= 2 ? "repeat(2, 1fr)" : "",
-      }}
-      gap={"var(--global-spacing)"}
+      templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
+      gap="10px"
+      w="full"
     >
-      {positions.length > 2 ? (
-        <>
-          <GridItem
-            colSpan={{ base: 1, md: 2 }}
-            justifySelf="center"
-            maxW={
-              isDesktop ? "calc(100% / 2 - var(--global-spacing) / 2)" : "500px"
-            }
-            w={"full"}
-          >
-            <PositionCard position={positions[0]} bgColor="primary-12" />
-          </GridItem>
-          {positions.slice(1).map((position, index) => (
-            <GridItem
-              key={index + 1}
-              justifySelf="center"
-              maxW={isDesktop ? "full" : "500px"}
-              w={"full"}
-            >
-              <PositionCard position={position} bgColor="primary-12" />
-            </GridItem>
-          ))}
-        </>
-      ) : (
-        positions.map((position, index) => (
-          <GridItem
-            key={index + 1}
-            justifySelf="center"
-            maxW={
-              isDesktop
-                ? positions.length === 1
-                  ? "calc(100% / 2 - var(--global-spacing) / 2)"
-                  : "full"
-                : "500px"
-            }
-            w={"full"}
-          >
-            <PositionCard position={position} bgColor={positionBgColor} />
-          </GridItem>
-        ))
-      )}
+      {positions.map((member, i) => (
+        <Box
+          key={i}
+          cursor="pointer"
+          h="full"
+          onClick={() => router.push(`/about/member/${getSlug(member.name)}`)}
+        >
+          <MemberCard member={member} showProfileBadge />
+        </Box>
+      ))}
     </Grid>
   );
 }

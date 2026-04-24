@@ -15,8 +15,8 @@ export const sections: Section[] = [
     links: [
       { name: "Events",     href: "/events" },
       { name: "News",       href: "/news" },
-      { name: "About",      href: "/about" },
       { name: "Membership", href: "/membership" },
+      { name: "About",      href: "/about" },
     ],
   },
   {

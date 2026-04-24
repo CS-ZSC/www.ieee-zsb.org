@@ -3,7 +3,7 @@
 import React from "react";
 import Card from "@/components/ui/internal/card";
 import Tag from "@/components/ui/internal/tag";
-import type { NewsItem } from "@/data/news";
+import type { NewsItem } from "@/lib/news";
 import { Flex, Text } from "@chakra-ui/react";
 import { useWindowType } from "@/hooks/use-window-type";
 import { useRouter } from "next/navigation";
@@ -21,7 +21,7 @@ export default function FullNewsCard({ newsObject }: Props) {
     <Flex
       width={"full"}
       cursor={"pointer"}
-      onClick={() => router.push(`/news/${newsObject.id}`)}
+      onClick={() => router.push(`/news/${newsObject.slug}`)}
       _hover={{ transform: "scale(0.98)" }}
       transition="all 0.2s ease-in-out"
     >
@@ -41,7 +41,7 @@ export default function FullNewsCard({ newsObject }: Props) {
           >
             <Flex alignItems={"center"} gap={isDesktop ? 5 : 3}>
               <Text color={"neutral-2"}>
-                {newsObject.dateCreated} - {newsObject.author}
+                {newsObject.date} - {newsObject.author}
               </Text>
               <Tag text={newsObject.tags[0]} />
             </Flex>
@@ -55,7 +55,7 @@ export default function FullNewsCard({ newsObject }: Props) {
                 {newsObject.title}
               </Text>
             </Flex>
-            <Description description={newsObject.description} lineClamp="8" />
+            <Description description={newsObject.excerpt} lineClamp="8" />
           </Flex>
           <ImageBox
             path={newsObject.mainPhoto}

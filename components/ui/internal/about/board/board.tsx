@@ -2,33 +2,29 @@
 
 import React from "react";
 import executiveBoard from "@/data/executive-board";
-import PositionCard from "../../positionCard";
-import { Grid, GridItem } from "@chakra-ui/react";
-import { useWindowType } from "@/hooks/use-window-type";
-import AnimatedCard from "../../animatedCard";
+import { Grid, Box } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import { getSlug } from "@/data/position";
+import { MemberCard } from "@/components/ui/internal/member-card";
 
 export default function Board() {
-  const { isDesktop } = useWindowType();
+  const router = useRouter();
 
   return (
     <Grid
-      templateColumns={["1fr", "1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"]}
-      gap={4}
+      templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
+      gap="10px"
       w="full"
-      mx="auto"
-      justifyItems="center"
     >
-      {executiveBoard.map((position, index) => (
-        <GridItem
-          key={index}
-          w="full"
-          maxW={isDesktop ? "100%" : "500px"}
-          justifySelf="center"
+      {executiveBoard.map((member, i) => (
+        <Box
+          key={i}
+          cursor="pointer"
+          h="full"
+          onClick={() => router.push(`/about/member/${getSlug(member.name)}`)}
         >
-          <AnimatedCard>
-            <PositionCard position={position} />
-          </AnimatedCard>
-        </GridItem>
+          <MemberCard member={member} showProfileBadge />
+        </Box>
       ))}
     </Grid>
   );
