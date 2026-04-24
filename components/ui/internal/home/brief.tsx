@@ -1,20 +1,21 @@
 "use client";
 
 import React from "react";
-import { Text, Flex, Grid, Heading, Box, Stack } from "@chakra-ui/react";
+import { Text, Flex, Grid, Heading, Box, Stack, HStack } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Card from "@/components/ui/internal/card";
 import AnimatedCard from "@/components/ui/internal/animatedCard";
 import ButtonLink from "../button-link";
+import { FaQuestion, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const MotionBox = motion.create(Box);
 
 const stats = [
-  { icon: "lucide:calendar",    value: `${new Date().getFullYear() - 1999}+`, label: "Years of Impact" },
-  { icon: "lucide:cpu",         value: "4",    label: "Technical Chapters" },
-  { icon: "lucide:layout-grid", value: "6",    label: "Committees" },
-  { icon: "lucide:users",       value: "1000+", label: "Alumni" },
+  { icon: "lucide:calendar", value: `${new Date().getFullYear() - 1999}+`, label: "Years of Impact" },
+  { icon: "lucide:cpu", value: "4", label: "Technical Chapters" },
+  { icon: "lucide:layout-grid", value: "6", label: "Committees" },
+  { icon: "lucide:users", value: "1000+", label: "Alumni" },
 ];
 
 const pillars = [
@@ -34,7 +35,7 @@ export default function Brief() {
   return (
     <Flex direction="column" gap={6} w="full">
       {/* Stats */}
-      <AnimatedCard>
+      {/* <AnimatedCard>
         <Grid
           templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
           gap={4}
@@ -58,22 +59,28 @@ export default function Brief() {
             </MotionBox>
           ))}
         </Grid>
-      </AnimatedCard>
+      </AnimatedCard> */}
 
       {/* About blurb */}
       <AnimatedCard>
         <Card bgColor="primary-3">
           <Flex direction="column" gap={3}>
-            <Heading fontSize={{ base: "xl", md: "2xl" }} color="neutral-1">
-              Who We Are
-            </Heading>
-            <Text fontSize="md" color="neutral-2" lineHeight="1.8">
+            {/* <HStack align={"center"} justify={"center"}>
+              <Heading fontSize={{ base: "xl", md: "2xl" }} color="neutral-1">
+                Who We Are
+              </Heading>
+            </HStack> */}
+            <FaQuoteLeft size="20px" />
+            <Text mx={4} fontSize="md" color="neutral-2" lineHeight="1.8">
               IEEE Zagazig University Student Branch is one of the first and most impactful student
               branches in Egypt, with over {new Date().getFullYear() - 1999} years of experience.
-              Through technical chapters, committees, and our flagship MUTEX event — the Delta
-              region's largest technology and entrepreneurship gathering — we prepare students for
+              Through technical chapters, committees, and our flagship MUTEX event, the Delta
+              region's largest technology and entrepreneurship gathering, we prepare students for
               the demands of the modern workforce.
             </Text>
+            <Flex justify={"flex-end"}>
+              <FaQuoteRight size="20px" />
+            </Flex>
           </Flex>
         </Card>
       </AnimatedCard>

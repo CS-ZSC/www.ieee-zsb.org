@@ -27,6 +27,7 @@ export default function ChapterClient({ chapterData, filteredNews }: Props) {
         <HeroCard
           logo={chapterData.logo}
           colorScheme={chapterData.color_scheme_1}
+          shortName={chapterData.short_name}
         />
         <Box w="full">
           <Description

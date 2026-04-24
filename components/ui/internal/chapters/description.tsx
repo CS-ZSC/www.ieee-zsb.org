@@ -3,7 +3,7 @@
 import React from "react";
 import { Text, Grid, Heading, Box, Flex, Stack } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
-import { FaQuoteLeft } from "react-icons/fa"
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa"
 import Card from "@/components/ui/internal/card";
 import AnimatedCard from "@/components/ui/internal/animatedCard";
 
@@ -27,12 +27,16 @@ export function Description({ vision, mission, about, color }: {
                 <Card bgColor="primary-3">
                     <Flex direction="column" gap={3}>
                         <Flex align="center" gap={2}>
-                            <Box w="3px" h="1.2em" borderRadius="full" flexShrink={0} />
+                            {/* <Box w="3px" h="1.2em" borderRadius="full" flexShrink={0} /> */}
                             <FaQuoteLeft size={"20px"} />
                         </Flex>
-                        <Text fontSize="md" color="neutral-2" lineHeight="1.8">
+                        <Text mx={4} fontSize="md" color="neutral-2" lineHeight="1.8">
                             {about}
                         </Text>
+
+                        <Flex justify="flex-end">
+                            <FaQuoteRight size={"20px"}/>
+                        </Flex>
                     </Flex>
                 </Card>
             </AnimatedCard>
