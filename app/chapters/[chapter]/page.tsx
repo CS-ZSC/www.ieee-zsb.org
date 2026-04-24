@@ -1,104 +1,32 @@
-"use client";
-
-import { Description } from "@/components/ui/internal/chapters/description";
-import { HeroCard } from "@/components/ui/internal/chapters/hero-card";
-// import { Timeline } from "@/components/ui/internal/chapters/timeline/timeline";
-import { Tracks } from "@/components/ui/internal/chapters/tracks/tracks";
-import Container from "@/components/ui/internal/container";
-import LeadersContainer from "@/components/ui/internal/leaders-container";
-import NewsCard from "@/components/ui/internal/news/news-card";
-import PageWrapper from "@/components/ui/internal/page-wrapper";
-import PageTitle from "@/components/ui/internal/pageTitle";
-import { chaptersData } from "@/data/chapters";
-import { newsData } from "@/data/news";
-import { useWindowType } from "@/hooks/use-window-type";
-import { Box, Flex } from "@chakra-ui/react";
+import { getAllNews } from "@/lib/news";
 import { notFound } from "next/navigation";
-import { use } from "react";
+import { chaptersData } from "@/data/chapters";
+import ChapterClient from "@/components/ui/internal/chapters/chapter-client";
 
-export default function Chapter({
+export async function generateStaticParams() {
+  return ["cs", "pes", "ras", "wie"].map((chapter) => ({ chapter }));
+}
+
+export default async function Chapter({
   params,
 }: {
   params: Promise<{ chapter: string }>;
 }) {
-  const { isDesktop } = useWindowType();
-  const { chapter } = use(params);
+  const { chapter } = await params;
 
   const chapterList = ["cs", "pes", "ras", "wie"];
-
   if (!chapter || !chapterList.includes(chapter.toLowerCase())) {
     notFound();
   }
 
-  const filteredNews = newsData.filter((item) => {
-    return item.tags
-      .map((tag) => tag.toUpperCase())
-      .includes(chapter.toUpperCase());
-  });
-
   const chapterData = chaptersData.find(
     (item) => item.short_name.toLowerCase() === chapter.toLowerCase()
   );
+  if (!chapterData) notFound();
 
-  if (!chapterData) {
-    notFound();
-  }
-
-  return (
-    <PageWrapper>
-      <Flex flexDirection={"column"} gap={12}>
-        <HeroCard
-          logo={chapterData.logo}
-          colorScheme={chapterData.color_scheme_1}
-        />
-        {/* <Container> */}
-        <Box w="full">
-          <Description
-            about={chapterData.description.about}
-            mission={chapterData.description.mission}
-            vision={chapterData.description.vision}
-            color={chapterData.color_scheme_1}
-          />
-        </Box>
-        {filteredNews.length > 0 && (
-          <Container>
-            <PageTitle title="Chapter News" />
-            <Flex
-              columns={isDesktop ? (filteredNews.length > 2 ? 2 : 1) : 1}
-              paddingX={"0px"}
-              width="full"
-              gap={"20px"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              flexWrap={"wrap"}
-            >
-              {filteredNews.map((newsItem) => (
-                <Box key={newsItem.id} alignSelf={"stretch"} maxW={"590px"}>
-                  <NewsCard newsObject={newsItem} />
-                </Box>
-              ))}
-            </Flex>
-          </Container>
-        )}
-
-        <Container>
-          <PageTitle title="Board" />
-          <LeadersContainer positions={chapterData.board} />
-        </Container>
-
-        {chapterData.tracks && chapterData.tracks.length > 0 && (
-          <Container>
-            <PageTitle title="Tracks" />
-            <Tracks
-              tracks={chapterData.tracks}
-              color_scheme={chapterData.color_scheme_1}
-            />
-          </Container>
-        )}
-
-        {/* <PageTitle title="Chapter Timeline" /> */}
-        {/* <Timeline seasons={chapterData.seasons} /> */}
-      </Flex>
-    </PageWrapper>
+  const filteredNews = getAllNews().filter((item) =>
+    item.tags.map((t) => t.toUpperCase()).includes(chapter.toUpperCase())
   );
+
+  return <ChapterClient chapterData={chapterData} filteredNews={filteredNews} />;
 }

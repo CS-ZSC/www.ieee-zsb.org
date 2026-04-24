@@ -1,10 +1,12 @@
+"use client";
+
 import { Box, Flex, Text, VStack, HStack } from "@chakra-ui/react";
 import React, { Dispatch, useEffect, useState } from "react";
 import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { useWindowType } from "@/hooks/use-window-type";
 import Heading from "@/components/ui/internal/heading";
-import type { NewsItem } from "@/data/news";
+import type { NewsItem } from "@/lib/news";
 import NewsCard from "@/components/ui/internal/news/news-card";
 import Description from "@/components/ui/internal/news/description";
 import Tag from "./tag";
@@ -193,7 +195,7 @@ function FullCarousel({
               <VStack align="start">
                 <Flex alignItems={"center"} gap={isDesktop ? 5 : 3}>
                   <Text color={"neutral-3"}>
-                    {newsItems[currentIndex].dateCreated} -{" "}
+                    {newsItems[currentIndex].date} -{" "}
                     {newsItems[currentIndex].author}
                   </Text>
                   <Flex flexWrap={"wrap"} gap={2}>
@@ -210,7 +212,7 @@ function FullCarousel({
                   {newsItems[currentIndex].title}
                 </Text>
                 <Description
-                  description={newsItems[currentIndex].description}
+                  description={newsItems[currentIndex].excerpt}
                   lineClamp="8"
                 />
               </VStack>

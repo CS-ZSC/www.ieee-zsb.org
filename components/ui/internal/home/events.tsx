@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import Card from "@/components/ui/internal/card";

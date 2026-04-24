@@ -1,5 +1,3 @@
-"use client";
-
 import PageWrapper from "@/components/ui/internal/page-wrapper";
 import { Flex } from "@chakra-ui/react";
 import Events from "@/components/ui/internal/home/events";

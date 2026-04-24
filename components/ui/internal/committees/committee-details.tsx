@@ -93,7 +93,6 @@ export default function CommitteeDetails({
                 <SectionTitle text="Leaders" />
                 <LeadersContainer
                   positions={committee.board}
-                  positionBgColor={positionBgColor}
                 />
               </Flex>
             </Flex>
