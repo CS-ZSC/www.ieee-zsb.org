@@ -3,7 +3,7 @@
 import React from "react";
 import { Grid, Box } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import { getSlug } from "@/data/position";
+import { getMemberSlug } from "@/data/position";
 import { MemberCard } from "@/components/ui/internal/member-card";
 import { useSeason } from "@/components/ui/internal/season/season-context";
 
@@ -22,7 +22,7 @@ export default function Board() {
           key={i}
           cursor="pointer"
           h="full"
-          onClick={() => router.push(`/about/member/${getSlug(member.name)}`)}
+          onClick={() => router.push(`/about/member/${getMemberSlug(member)}`)}
         >
           <MemberCard member={member} showProfileBadge />
         </Box>

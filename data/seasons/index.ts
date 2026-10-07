@@ -6,6 +6,10 @@ import {
 } from "../chapters";
 import { getSlug, type Position } from "../position";
 import type { Season } from "./types";
+import season2020 from "./2020";
+import season2021 from "./2021";
+import season2022 from "./2022";
+import season2023 from "./2023";
 import season2024 from "./2024";
 import season2025 from "./2025";
 import season2026 from "./2026";
@@ -16,7 +20,15 @@ export type { Season } from "./types";
  * All seasons, newest first. To start a new season, copy the latest season
  * file, put its photos under `public/Images/board/<year>/`, and add it here.
  */
-export const seasons: Season[] = [season2026, season2025, season2024];
+export const seasons: Season[] = [
+  season2026,
+  season2025,
+  season2024,
+  season2023,
+  season2022,
+  season2021,
+  season2020,
+];
 
 export const currentSeason: Season = seasons[0];
 
@@ -134,7 +146,7 @@ export function getSeasonRoles(season: Season): SeasonRole[] {
 }
 
 function identityKeys(member: Position): string[] {
-  const keys = [`name:${getSlug(member.name)}`];
+  const keys = [member.id ? `id:${member.id}` : `name:${getSlug(member.name)}`];
   const email = member.email?.trim().toLowerCase();
   if (email) keys.push(`email:${email}`);
   const handle = member.linkedin?.match(/linkedin\.com\/in\/([^/?#]+)/i)?.[1];
@@ -143,13 +155,14 @@ function identityKeys(member: Position): string[] {
 }
 
 /**
- * Every position held by the member whose name slug is `slug`, newest season
- * first. Entries are linked by name, email, or LinkedIn, so a member who
- * changed how their name is written is still one person.
+ * Every position held by the member whose profile slug is `slug` (see
+ * `getMemberSlug`), newest season first. Entries are linked by name (or `id`),
+ * email, or LinkedIn, so a member who changed how their name is written is
+ * still one person.
  */
 export function getMemberHistory(slug: string): SeasonRole[] {
   const all = seasons.flatMap(getSeasonRoles);
-  const keys = new Set([`name:${slug}`]);
+  const keys = new Set([`name:${slug}`, `id:${slug}`]);
   const matched = new Set<SeasonRole>();
 
   let grew = true;

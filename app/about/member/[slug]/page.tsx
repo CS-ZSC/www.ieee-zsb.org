@@ -9,6 +9,7 @@ import PageWrapper from "@/components/ui/internal/page-wrapper";
 import Container from "@/components/ui/internal/container";
 import { getMemberHistory } from "@/data/seasons";
 import { toaster } from "@/components/ui/toaster";
+import { Avatar } from "@/components/ui/avatar";
 
 function handleCopyEmail(email: string) {
   navigator.clipboard.writeText(email);
@@ -105,17 +106,29 @@ export default function MemberProfilePage() {
               pb="28px"
               mt="-50px"
             >
-              <Image
-                src={member.avatarSrc}
-                alt={member.name}
-                borderRadius="full"
-                width="110px"
-                height="110px"
-                objectFit="cover"
-                border="4px solid"
-                borderColor="primary-1"
-                flexShrink={0}
-              />
+              {member.avatarSrc ? (
+                <Image
+                  src={member.avatarSrc}
+                  alt={member.name}
+                  borderRadius="full"
+                  width="110px"
+                  height="110px"
+                  objectFit="cover"
+                  border="4px solid"
+                  borderColor="primary-1"
+                  flexShrink={0}
+                />
+              ) : (
+                <Avatar
+                  name={member.name}
+                  width="110px"
+                  height="110px"
+                  fontSize="3xl"
+                  border="4px solid"
+                  borderColor="primary-1"
+                  flexShrink={0}
+                />
+              )}
 
               <Flex
                 direction="column"

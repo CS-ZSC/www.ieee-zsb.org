@@ -32,50 +32,54 @@ export default function TrackDialogBody({
         </Flex>
       )}
       {/* Description Section */}
-      <Box
-        pb={6}
-        borderBottom="1px solid"
-        borderColor="neutral-4"
-      >
-        <Flex gap={3} align="flex-start">
-          <Icon
-            icon="mdi:format-quote-open"
-            width="24px"
-            height="24px"
-            color="var(--chakra-colors-primary-1)"
-            style={{ marginTop: "4px", opacity: 0.6, flexShrink: 0 }}
-          />
-          <Text color="neutral-2" lineHeight="1.7" fontSize="lg">
-            {track.description}
-          </Text>
-        </Flex>
-      </Box>
+      {track.description && (
+        <Box
+          pb={6}
+          borderBottom="1px solid"
+          borderColor="neutral-4"
+        >
+          <Flex gap={3} align="flex-start">
+            <Icon
+              icon="mdi:format-quote-open"
+              width="24px"
+              height="24px"
+              color="var(--chakra-colors-primary-1)"
+              style={{ marginTop: "4px", opacity: 0.6, flexShrink: 0 }}
+            />
+            <Text color="neutral-2" lineHeight="1.7" fontSize="lg">
+              {track.description}
+            </Text>
+          </Flex>
+        </Box>
+      )}
 
       {/* Goals Section */}
-      <Flex flexDirection="column" gap={4}>
-        <Box>
-          <Text color="fg" fontWeight="bold" fontSize="lg">
-            Goals
-          </Text>
-          <Box w="32px" h="2px" bgColor="primary-1" mt={2} rounded="full" />
-        </Box>
-        <Flex flexDirection="column" gap={3}>
-          {track.goals.map((goal, index) => (
-            <Flex key={index} align="center" gap={3}>
-              <Icon
-                icon="mdi:check-circle"
-                width="22px"
-                height="22px"
-                color="var(--chakra-colors-primary-1)"
-                style={{ flexShrink: 0 }}
-              />
-              <Text color="neutral-3" fontSize="md">
-                {goal}
-              </Text>
-            </Flex>
-          ))}
+      {track.goals.length > 0 && (
+        <Flex flexDirection="column" gap={4}>
+          <Box>
+            <Text color="fg" fontWeight="bold" fontSize="lg">
+              Goals
+            </Text>
+            <Box w="32px" h="2px" bgColor="primary-1" mt={2} rounded="full" />
+          </Box>
+          <Flex flexDirection="column" gap={3}>
+            {track.goals.map((goal, index) => (
+              <Flex key={index} align="center" gap={3}>
+                <Icon
+                  icon="mdi:check-circle"
+                  width="22px"
+                  height="22px"
+                  color="var(--chakra-colors-primary-1)"
+                  style={{ flexShrink: 0 }}
+                />
+                <Text color="neutral-3" fontSize="md">
+                  {goal}
+                </Text>
+              </Flex>
+            ))}
+          </Flex>
         </Flex>
-      </Flex>
+      )}
 
       {/* Activities Section */}
       {track.activities && track.activities.length > 0 && (

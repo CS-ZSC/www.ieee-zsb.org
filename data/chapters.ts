@@ -745,6 +745,33 @@ export const chaptersContent: ChapterContent[] = [
       mission:
         "To inspire and empower women in engineering through mentorship, skill development, and leadership opportunities. We are committed to building a strong support network, providing professional development resources, and creating platforms for women to showcase their technical achievements.",
     },
+    // Ran in 2024 only (kept for the archive); no description is on record.
+    tracks: [
+      {
+        id: ++trackId,
+        name: "Mechanical",
+        hashtag: "mechanical",
+        description: "",
+        image: "",
+        goals: [],
+      },
+      {
+        id: ++trackId,
+        name: "Web Development",
+        hashtag: "web-development",
+        description: "",
+        image: "",
+        goals: [],
+      },
+      {
+        id: ++trackId,
+        name: "Robotics",
+        hashtag: "robotics",
+        description: "",
+        image: "",
+        goals: [],
+      },
+    ],
     seasons: [
       {
         year: 2024,
