@@ -42,6 +42,8 @@ const getTrackIcon = (hashtag: string): string => {
     "basic-distribution":  "mdi:transmission-tower",
     "smart-home":          "mdi:home-automation",
     "e-mobility":          "mdi:ev-station",
+    "web-development":     "mdi:web",
+    "robotics":            "mdi:robot-industrial",
   };
   return iconMap[hashtag] ?? "mdi:book-outline";
 };
@@ -139,17 +141,19 @@ export default function TrackCard({ track, index }: TrackCardProps) {
             </Flex>
 
             {/* Truncated description */}
-            <Text
-              fontSize={{ base: "14px", md: "16px" }}
-              lineHeight="1.6"
-              color="neutral-2"
-              overflow="hidden"
-              textOverflow="ellipsis"
-              display="-webkit-box"
-              style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
-            >
-              {track.description}
-            </Text>
+            {track.description && (
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                lineHeight="1.6"
+                color="neutral-2"
+                overflow="hidden"
+                textOverflow="ellipsis"
+                display="-webkit-box"
+                style={{ WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}
+              >
+                {track.description}
+              </Text>
+            )}
 
             {/* Button + avatars */}
             <Flex alignItems="center" justifyContent="space-between" gap="16px" mt="4px">

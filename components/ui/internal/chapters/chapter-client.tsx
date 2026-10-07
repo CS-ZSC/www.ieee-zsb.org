@@ -8,13 +8,19 @@ import LeadersContainer from "@/components/ui/internal/leaders-container";
 import NewsCard from "@/components/ui/internal/news/news-card";
 import PageWrapper from "@/components/ui/internal/page-wrapper";
 import PageTitle from "@/components/ui/internal/pageTitle";
-import type { ChapterData } from "@/data/chapters";
+import type { ChapterContent } from "@/data/chapters";
+import { getChapter, getChapterSeasons } from "@/data/seasons";
 import type { NewsItem } from "@/lib/news";
 import { useWindowType } from "@/hooks/use-window-type";
 import { Box, Flex } from "@chakra-ui/react";
+import {
+  SeasonProvider,
+  useSeason,
+} from "@/components/ui/internal/season/season-context";
+import SeasonSwitcher from "@/components/ui/internal/season/season-switcher";
 
 interface Props {
-  chapterData: ChapterData;
+  chapterData: ChapterContent;
   filteredNews: NewsItem[];
 }
 
@@ -58,21 +64,35 @@ export default function ChapterClient({ chapterData, filteredNews }: Props) {
           </Container>
         )}
 
-        <Container>
-          <PageTitle title="Board" />
-          <LeadersContainer positions={chapterData.board} />
-        </Container>
-
-        {chapterData.tracks && chapterData.tracks.length > 0 && (
+        <SeasonProvider seasons={getChapterSeasons(chapterData.short_name)}>
           <Container>
-            <PageTitle title="Tracks" />
-            <Tracks
-              tracks={chapterData.tracks}
-              color_scheme={chapterData.color_scheme_1}
-            />
+            <SeasonSwitcher />
           </Container>
-        )}
+          <SeasonRoster chapter={chapterData} />
+        </SeasonProvider>
       </Flex>
     </PageWrapper>
+  );
+}
+
+function SeasonRoster({ chapter }: { chapter: ChapterContent }) {
+  const { board, tracks, color_scheme_1 } = getChapter(useSeason(), chapter);
+
+  return (
+    <>
+      {board.length > 0 && (
+        <Container>
+          <PageTitle title="Board" />
+          <LeadersContainer positions={board} />
+        </Container>
+      )}
+
+      {tracks && tracks.length > 0 && (
+        <Container>
+          <PageTitle title="Tracks" />
+          <Tracks tracks={tracks} color_scheme={color_scheme_1} />
+        </Container>
+      )}
+    </>
   );
 }

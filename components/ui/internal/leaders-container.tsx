@@ -3,7 +3,7 @@
 import { Grid, Box } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import type { Position } from "@/data/position";
-import { getSlug } from "@/data/position";
+import { getMemberSlug } from "@/data/position";
 import { MemberCard } from "@/components/ui/internal/member-card";
 
 interface Props {
@@ -24,7 +24,7 @@ export default function LeadersContainer({ positions }: Props) {
           key={i}
           cursor="pointer"
           h="full"
-          onClick={() => router.push(`/about/member/${getSlug(member.name)}`)}
+          onClick={() => router.push(`/about/member/${getMemberSlug(member)}`)}
         >
           <MemberCard member={member} showProfileBadge />
         </Box>

@@ -1,8 +1,8 @@
-import Home from "@/app/page";
-import { CommitteesData } from "./committees";
-import { Position } from "./position";
+import type { CommitteeContent, CommitteesData } from "./committees";
+import type { Position } from "./position";
 
 export type TrackData = CommitteesData;
+export type TrackContent = CommitteeContent;
 
 export interface SeasonData {
   year: number;
@@ -26,10 +26,18 @@ export interface ChapterData {
   seasons: SeasonData[];
 }
 
+/**
+ * Chapter content that stays the same across seasons. Boards come from
+ * `data/seasons`; use `getChapter()` to combine the two.
+ */
+export type ChapterContent = Omit<ChapterData, "board" | "tracks"> & {
+  tracks?: TrackContent[];
+};
+
 let id = 0;
 let trackId = 0;
 
-export const chaptersData: ChapterData[] = [
+export const chaptersContent: ChapterContent[] = [
   {
     id: ++id,
     short_name: "CS",
@@ -45,29 +53,6 @@ export const chaptersData: ChapterData[] = [
       mission:
         "We aim to create an active and friendly space where students can learn modern tech skills, work on real projects, and connect with others who share the same passion. We organize practical workshops and team activities to help students grow, be creative, and get ready for future jobs in the tech world.",
     },
-    board: [
-      {
-        name: "Ahmed Elsherbiny",
-        position: "Chairperson",
-        avatarSrc: "/Images/board/chapters/cs/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
-        email: "ahmed-elsherbiny@ieee-zsb.org",
-      },
-      {
-        name: "Asmaa Mohamed",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/cs/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-        email: "asmaa.saleh@ieee-zsb.org",
-      },
-      {
-        name: "Omar Salama",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/cs/vice-chairperson-2.webp",
-        linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
-        email: "omar.salama@ieee-zsb.org",
-      },
-    ],
     tracks: [
       {
         id: ++trackId,
@@ -99,15 +84,6 @@ export const chaptersData: ChapterData[] = [
               "Participate in both offline and online sessions to discuss project progress, solve challenges, and collaborate effectively.",
           },
         ],
-        board: [
-          {
-            name: "Manar Ahmed",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
-            email: "eng.manar.ahmed20@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -131,22 +107,6 @@ export const chaptersData: ChapterData[] = [
             title: "Offline Session",
             description:
               "Discuss the completed projects in a professional and structured manner",
-          },
-        ],
-        board: [
-          {
-            name: "Mohamed Abbas",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
-            email: "mohamedadel96e@gmail.com",
-          },
-          {
-            name: "Abdallah Awadallah",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
-            email: "abdallahhamada2103@gmail.com",
           },
         ],
       },
@@ -174,15 +134,6 @@ export const chaptersData: ChapterData[] = [
               "Discuss the completed projects in a professional and structured manner",
           },
         ],
-        board: [
-          {
-            name: "Mohamed Wael",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
-            email: "waelm7860@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -205,15 +156,6 @@ export const chaptersData: ChapterData[] = [
             title: "Offline Session",
             description:
               "Discuss the completed projects in a structured manner and how to improve it",
-          },
-        ],
-        board: [
-          {
-            name: "Sohaila Samy",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
-            email: "sohailasamy59@gmail.com",
           },
         ],
       },
@@ -247,22 +189,6 @@ export const chaptersData: ChapterData[] = [
               "Team-oriented assignments enhancing problem-solving and teamwork",
           },
         ],
-        board: [
-          {
-            name: "Ayman Yasser",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
-            email: "ayman.yasser227@gmail.com",
-          },
-          {
-            name: "Mostafa Mahmoud",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
-            email: "mostafa.mahmoud.elshahat1@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -293,24 +219,84 @@ export const chaptersData: ChapterData[] = [
               "Interactive workshops teaching students how to analyze and improve security in systems and applications.",
           },
         ],
-        board: [
+      },
+      //game development track had been removed 
+      // Retired: kept so archived seasons can still show them.
+      {
+        id: ++trackId,
+        name: "Basic AI",
+        hashtag: "basic-ai",
+        description: "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
+        image: "/Tracks/CS/basic-ai.webp",
+        goals: [
+          "Get your hands on different types of tools: one focused on spreadsheets, the other on code-based analysis.",
+          "Become a Data Analyst with strong foundations — not just good at the work, but truly passionate about turning data into insights.",
+        ],
+        activities: [
           {
-            name: "Marwan Hossam",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
-            email: "marwanhossam630@gmail.com",
+            title: "Dive into sheets",
+            description: "try and use new datasets to get them clean and enhance the software skills",
           },
           {
-            name: "Shahd Mahmoud",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
-            email: "eng.shahda@gmail.com",
+            title: "Offline Session",
+            description: "Discuss the completed projects in a structured manner and how to improve it",
           },
         ],
       },
-      //game development track had been removed 
+      {
+        id: ++trackId,
+        name: "Advanced AI",
+        hashtag: "advanced-ai",
+        description: "The Advanced AI Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+        image: "/Tracks/CS/advanced-ai.webp",
+        goals: [
+          "Equip learners with essential AI skills",
+          "Bridge theory and practical applications",
+          "Prepare industry-ready professionals",
+          "Foster analytical and problem-solving skills",
+        ],
+        activities: [
+          {
+            title: "Hands-on Workshops",
+            description: "Interactive coding labs focused on real-world AI projects",
+          },
+          {
+            title: "Project-Based Learning",
+            description: "Applying theory through structured end-to-end projects",
+          },
+          {
+            title: "Collaborative Tasks",
+            description: "Team-oriented assignments enhancing problem-solving and teamwork",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Game Development",
+        hashtag: "game-development",
+        description: "Dive into the exciting world of Game Development and bring your creative ideas to life. This track covers the fundamentals of game engines, interactive mechanics, 2D/3D graphics, and scripting. Participants will learn to build games using tools like Unity or Unreal Engine, exploring game physics, animation, UI, and publishing strategies.",
+        image: "/Tracks/CS/game-development.webp",
+        goals: [
+          "Understand the core components of game engines including scenes, physics, and scripting",
+          "Design and build interactive 2D and 3D games using Unity or Unreal Engine",
+          "Implement game mechanics such as player movement, scoring systems, and collision detection",
+          "Explore visual effects, animation, audio integration, and game deployment strategies",
+        ],
+        activities: [
+          {
+            title: "Game Engine Basics Bootcamp",
+            description: "Learn the fundamentals of Unity or Unreal Engine, including scene creation, asset importing, and scripting with C# or Blueprints.",
+          },
+          {
+            title: "Mechanics & Physics Integration",
+            description: "Hands-on practice building core gameplay elements like character control, camera systems, and object interactions with realistic physics.",
+          },
+          {
+            title: "Game Jam Challenge",
+            description: "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
+          },
+        ],
+      },
     ],
     seasons: [
       {
@@ -354,31 +340,6 @@ export const chaptersData: ChapterData[] = [
       mission:
         "Our Mission is to empower and guide our members along the path of robotics and automation by providing hands-on experience, fostering a deep understanding of core concepts, and preparing them to excel in competitions. We are dedicated to building their knowledge in related fields such as PCB design, embedded systems,ROS, and mechanical design. Through continuous learning, practical projects, and supportive mentorship, we aim to cultivate skilled, innovative, and confident robotics enthusiasts.",
     },
-    board: [
-      {
-        name: "Abdrlrahman Elghandour",
-        position: "Chairperson",
-        avatarSrc: "/Images/board/chapters/ras/Abdelrahman Elghandour.webp",
-        linkedin: "https://linkedin.com/in/username",
-        email: "abdelrahman.elghandour@ieee-zsb.org",
-      },
-      {
-        name: "Hamdi Emad",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/ras/Hamdi Emad.webp",
-        linkedin:
-          "https://www.linkedin.com/in/hamdi-algohary-9962b5335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "hamdi.emad@ieee-zsb.org",
-      },
-      {
-        name: "Norhan Yasser",
-        position: "Vice Chairperson",
-        avatarSrc: "/Images/board/chapters/ras/Norhan Yasser.webp",
-        linkedin:
-          "https://www.linkedin.com/in/norhan-khidr-7463392a6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        email: "norhan.yasser@ieee-zsb.org",
-      },
-    ],
     tracks: [
       {
         id: ++trackId,
@@ -409,35 +370,6 @@ export const chaptersData: ChapterData[] = [
               "Splitting the members into teams at the end of any stage to build a ( software or hardware or both) project and having presentations for discussion.",
           },
         ],
-        board: [
-          {
-            name: "Alaa Abdelhay",
-            position: "Track Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Alaa Abdelhay.webp",
-            linkedin:
-              "https://www.linkedin.com/in/a-laa-abdelhay-16a909239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            email: "alaaabdelhay65@gmail.com",
-          },
-          {
-            name: "Jesy Ahmed",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.jpg",
-            linkedin:
-              "https://www.linkedin.com/in/jasmine-ahmed-892226335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "jesyahmedabdelaal@gmail.com",
-          },
-          {
-            name: "Mariam Adel",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/embedded-systems/Mariam Adel.webp",
-            linkedin:
-              "https://www.linkedin.com/in/mariam-adel-37a722320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "mariamadel4910@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -466,25 +398,6 @@ export const chaptersData: ChapterData[] = [
             title: "Offline Session",
             description:
               "Hands-on session on Linux fundamentals and command-line tools essential for working with ROS.",
-          },
-        ],
-        board: [
-          {
-            name: "Awwab Khalil",
-            position: "Track Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/ros/Awwab Khalil.webp",
-            linkedin: "http://www.linkedin.com/in/awwab-khalil",
-            email: "awwab.khalil1425@gmail.com",
-          },
-          {
-            name: "Nadeen elhady",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/ros/Nadeen Elhady.webp",
-            linkedin:
-              "https://www.linkedin.com/in/nadeen-elhady-714538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "nadeenelhady300@gmail.com",
           },
         ],
       },
@@ -519,25 +432,6 @@ export const chaptersData: ChapterData[] = [
             title: "Microcontroller",
             description:
               "The next session was a deep dive into microcontrollers, where we discussed the different types of microcontrollers and the differences between the various types of pins, such as input/output, analog, PWM, and communication pins.",
-          },
-        ],
-        board: [
-          {
-            name: "Ahmed Ibrahim",
-            position: "Track Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/pcb-design/Ahmed Ibrahem.webp",
-            linkedin:
-              "https://www.linkedin.com/in/ahmed-ibrahim-344383300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "ahmed.ibrahem@ieee-zsb.org",
-          },
-          {
-            name: "Nadine Haytham",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/pcb-design/Nadine Hytham.webp",
-            linkedin: "http://www.linkedin.com/in/nadine-haytham-85044b318",
-            email: "nadine.e399@gmail.com",
           },
         ],
       },
@@ -577,32 +471,6 @@ export const chaptersData: ChapterData[] = [
               "Team-based projects where members design and fabricate mechanical subsystems for real robotics platforms, applying CAD, simulation, and manufacturing knowledge in a collaborative setting.",
           },
         ],
-        board: [
-          {
-            name: "Abdelrahman Abdellateef",
-            position: "Track Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/mechanical/Abdelrahman Abdellateef.webp",
-            linkedin: "https://www.linkedin.com/in/abdelrahmanabdellateef",
-            email: "rahmanmlateef@gmail.com",
-          },
-          {
-            name: "Mohamed Akram",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/mechanical/Mohamed Akram.webp",
-            linkedin: "https://www.linkedin.com/in/mohamed-akram-",
-            email: "mohamedakram0900@gmail.com",
-          },
-          {
-            name: "Hassan Emad",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/mechanical/Hassan Emad.webp",
-            linkedin: "https://www.linkedin.com/in/hassan-e-zein",
-            email: "hassanemad.eng@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -632,26 +500,6 @@ export const chaptersData: ChapterData[] = [
             title: "Design Projects",
             description:
               "Team-based projects where members design and verify a complete digital module from specification through RTL, simulation, and synthesis, culminating in a final presentation.",
-          },
-        ],
-        board: [
-          {
-            name: "Mohammed Taher",
-            position: "Track Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/ic-design/Mohammed Taher.jpeg",
-            linkedin:
-              "https://www.linkedin.com/in/mohammed-taher-halawaty2004/",
-            email: "motaher20004@gmail.com",
-          },
-          {
-            name: "Ahmed Abdelfattah",
-            position: "Track Vice-Lead",
-            avatarSrc:
-              "/Images/board/chapters/ras/tracks-heads/ic-design/Ahmed Abdelfattah.webp",
-            linkedin:
-              "https://www.linkedin.com/in/ahmedhishambu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            email: "ahmed.hisham123666@gmail.com",
           },
         ],
       },
@@ -699,37 +547,6 @@ export const chaptersData: ChapterData[] = [
       mission:
         "To empower students with practical skills, technical expertise, and industry connections in power and energy engineering. We are dedicated to providing impactful learning experiences through workshops, research projects, and professional networking opportunities that prepare our members to excel in the evolving energy landscape.",
     },
-    board: [
-  {
-    name: "Eslam Mahmoud",
-    position: "Chairperson",
-    avatarSrc: "/Images/board/chapters/pes/chairperson.webp",
-    linkedin: "https://www.linkedin.com/in/eslam-mahmoud-magdy",
-    email: "eslam.mahmoud@ieee-zsb.org",
-  },
-  {
-    name: "Mohamed Shaban",
-    position: "Vice Chairperson",
-    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-1.webp",
-    linkedin: "https://www.linkedin.com/in/mohamed-shaban-2660a4277",
-    email: "mohamedshabaan2453@gmail.com",
-  },
-  {
-    name: "Ibrahim Mohamed",
-    position: "Vice Chairperson",
-    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-2.webp",
-    linkedin: "https://www.linkedin.com/in/ibrahim-askar-66b436254",
-    email: "ibrahim.askar@ieee-zsb.org",
-  },
-  {
-    name: "Abdelrahman Khedr",
-    position: "Vice Chairperson",
-    avatarSrc: "/Images/board/chapters/pes/vice-chairperson-3.webp",
-    linkedin: "https://www.linkedin.com/in/abdelrahman-yasser-883077279",
-    email: "abdelrahman.yasser@ieee-zsb.org",
-  },
-],
-
     tracks: [
       {
         id: ++trackId,
@@ -752,24 +569,6 @@ export const chaptersData: ChapterData[] = [
             title: "Offline Session",
             description:
               "Hands-on workshop for PLC wiring and basic programming",
-          },
-        ],
-        board: [
-          {
-            name: "Kyrillos Nabil",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/basic-automation/head.webp",
-            linkedin: "https://www.linkedin.com/in/kyrillos-nabil-288421312",
-            email: "kyrillos.nabil.ghaly@gmail.com",
-          },
-          {
-            name: "Samira mohammed",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/basic-automation/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/samira-mohammed-0912852a2",
-            email: "samiramohammed6123@gmail.com",
           },
         ],
       },
@@ -795,18 +594,6 @@ export const chaptersData: ChapterData[] = [
             description: "SCADA project implementation and visualization",
           },
         ],
-        board: [
-          
-          {
-            name: "Mostafa Ahmed",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/advanced-automation/head.webp",
-            linkedin: "https://www.linkedin.com/in/mostafa-ahmed-m",
-            email: "mostafaahmed5332442@gmail.com",
-          },
-          
-        ],
       },
       {
         id: ++trackId,
@@ -830,25 +617,6 @@ export const chaptersData: ChapterData[] = [
             description: "distribution system planning and Project Lifecycle",
           },
         ],
-        board: [
-          		
-          {
-            name: "Ziad Mohamed",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/basic-distribution/head.webp",
-            linkedin: "https://www.linkedin.com/in/ziad-saeed-011b92335/",
-            email: "ziadmohamedsaeed00@gmail.com",
-          },
-          {
-            name: "Eslam Mahmoud",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/basic-distribution/vice-head.webp",
-            linkedin: "https://www.linkedin.com/in/eslam-abuelela",
-            email: "eslamabuelela111@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -870,17 +638,6 @@ export const chaptersData: ChapterData[] = [
             description: "IoT Concepts in Smart Home Applications",
           },
         ],
-        board: [
-          
-          {
-            name: "Mohammad Abowarda",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/smart-home/head.webp",
-            linkedin: "https://www.linkedin.com/in/mohammad-abowarda",
-            email: "mohammadabowarda.eng@gmail.com",
-          },
-        ],
       },
       {
         id: ++trackId,
@@ -900,22 +657,48 @@ export const chaptersData: ChapterData[] = [
             description: "Model-based simulations using MATLAB Simulink",
           },
         ],
-        board: [
+      },
+      // Retired: kept so archived seasons can still show them.
+      {
+        id: ++trackId,
+        name: "Advanced Distribution",
+        hashtag: "advanced-distribution",
+        description: "Advanced Distribution track delves into low current systems, fire alarm systems, and Revit MEP design. It's tailored for students interested in building services and smart infrastructure.",
+        image: "/Tracks/PES/advanced-distribution.webp",
+        goals: [
+          "Design fire alarm systems",
+          "Implement low current solutions",
+          "using REVIT in Distribution Design",
+        ],
+        activities: [
           {
-            name: "Mina Mahfouz",
-            position: "Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/e-mobility/head.webp",
-            linkedin: "https://www.linkedin.com/in/mina-mahfouz-9b9875286/",
-            email: "minamahfouz22@gmail.com",
+            title: "Session",
+            description: "Overview of low current and ELV systems",
           },
-         {
-            name: "Mohamed Akrm",
-            position: "Vice Head",
-            avatarSrc:
-              "/Images/board/chapters/pes/tracks-heads/e-mobility/vice-head.webp",
-            linkedin: "https://www.linkedin.com/in/mohamed-akrm-695145335/",
-            email: "akrm73011@gmail.com",
+          {
+            title: "Session",
+            description: "Fire alarm design and Revit workshop",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Mechanical",
+        hashtag: "mechanical",
+        description: "Mechanical Track explores the design of renewable energy systems and internal combustion engines, using powerful tools like SolidWorks and ANSYS for simulation and design verification.",
+        image: "/Tracks/PES/mechanical.webp",
+        goals: [
+          "Design mechanical renewable systems",
+          "Simulate components using SolidWorks and ANSYS",
+        ],
+        activities: [
+          {
+            title: "session",
+            description: "Introduction to SolidWorks and energy system design",
+          },
+          {
+            title: "session",
+            description: "ANSYS mechanical simulation for engine components",
           },
         ],
       },
@@ -962,20 +745,31 @@ export const chaptersData: ChapterData[] = [
       mission:
         "To inspire and empower women in engineering through mentorship, skill development, and leadership opportunities. We are committed to building a strong support network, providing professional development resources, and creating platforms for women to showcase their technical achievements.",
     },
-    board: [
+    // Ran in 2024 only (kept for the archive); no description is on record.
+    tracks: [
       {
-        name: "Aida Abdelazez",
-        position: "Lead",
-        avatarSrc: "/Images/board/chapters/wie/chairperson.webp",
-        linkedin: "https://www.linkedin.com/in/aida-abdelazez-b54106330",
-        email: "aida.abdelazez@ieee-zsb.org",
+        id: ++trackId,
+        name: "Mechanical",
+        hashtag: "mechanical",
+        description: "",
+        image: "",
+        goals: [],
       },
       {
-        name: "Hager Salah",
-        position: "Vice Lead",
-        avatarSrc: "/Images/board/chapters/wie/vice-chairperson-1.webp",
-        linkedin: "https://www.linkedin.com/in/hager-ismail-",
-        email: "salahhager852@gmail.com",
+        id: ++trackId,
+        name: "Web Development",
+        hashtag: "web-development",
+        description: "",
+        image: "",
+        goals: [],
+      },
+      {
+        id: ++trackId,
+        name: "Robotics",
+        hashtag: "robotics",
+        description: "",
+        image: "",
+        goals: [],
       },
     ],
     seasons: [

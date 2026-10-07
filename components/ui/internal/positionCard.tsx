@@ -19,6 +19,7 @@ export default function PositionCard({
 
   const handleCopy = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    if (!position.email) return;
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(position.email);
@@ -88,8 +89,28 @@ export default function PositionCard({
         </Text>
 
         <HStack gap={3}>
-          <Link href={position.linkedin} target="_blank">
+          {position.linkedin && (
+            <Link href={position.linkedin} target="_blank">
+              <HStack
+                justify="center"
+                align="center"
+                w="32px"
+                h="32px"
+                rounded="md"
+                border="1px solid"
+                borderColor="primary-3"
+                color="neutral-3"
+                _hover={{ color: "fg", borderColor: "neutral-3" }}
+                transition="all 0.2s"
+              >
+                <Icon icon="mage:linkedin" width="1.2rem" height="1.2rem" />
+              </HStack>
+            </Link>
+          )}
+          {position.email && (
             <HStack
+              as="button"
+              onClick={handleCopy}
               justify="center"
               align="center"
               w="32px"
@@ -100,31 +121,15 @@ export default function PositionCard({
               color="neutral-3"
               _hover={{ color: "fg", borderColor: "neutral-3" }}
               transition="all 0.2s"
+              cursor="pointer"
             >
-              <Icon icon="mage:linkedin" width="1.2rem" height="1.2rem" />
+              <Icon
+                icon="ic:outline-alternate-email"
+                width="1.2rem"
+                height="1.2rem"
+              />
             </HStack>
-          </Link>
-          <HStack
-            as="button"
-            onClick={handleCopy}
-            justify="center"
-            align="center"
-            w="32px"
-            h="32px"
-            rounded="md"
-            border="1px solid"
-            borderColor="primary-3"
-            color="neutral-3"
-            _hover={{ color: "fg", borderColor: "neutral-3" }}
-            transition="all 0.2s"
-            cursor="pointer"
-          >
-            <Icon
-              icon="ic:outline-alternate-email"
-              width="1.2rem"
-              height="1.2rem"
-            />
-          </HStack>
+          )}
         </HStack>
       </Flex>
     </HStack>

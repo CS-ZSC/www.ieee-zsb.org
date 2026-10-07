@@ -25,9 +25,15 @@ export interface CommitteesData {
   board: Position[];
 }
 
+/**
+ * Committee content that stays the same across seasons. Boards come from
+ * `data/seasons`; use `getCommittees()` to combine the two.
+ */
+export type CommitteeContent = Omit<CommitteesData, "board">;
+
 let idCounter: number = 1;
 
-const committeesData: CommitteesData[] = [
+export const committeesContent: CommitteeContent[] = [
   {
     id: idCounter++,
     name: "Brand Ambassadors",
@@ -61,22 +67,6 @@ const committeesData: CommitteesData[] = [
           "Team members connect with students through creative posts, booth activities, and direct interactions to introduce what IEEE is, how it works globally and locally, and how students can benefit from joining.",
       },
     ],
-    board: [
-      {
-        name: "Hanem Reda",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/ambassadors/leader.webp",
-        linkedin: "https://www.linkedin.com/in/hanem-elghamry",
-        email: "hanem.reda@ieee-zsb.org",
-      },
-      {
-        name: "Beshoy Seleman",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/ambassadors/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/beshoy-seleman",
-        email: "beshoy.seleman@ieee-zsb.org",
-      },
-    ],
   },
   {
     id: idCounter++,
@@ -104,22 +94,6 @@ const committeesData: CommitteesData[] = [
         title: "Relationship Management",
         description:
           "Handling and maintaining external relations to ensure positive engagement and continuous support from outside entities.",
-      },
-    ],
-    board: [
-      {
-        name: "Mohamed Ahmed",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/business-development/leader.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed--othman",
-        email: "mohamed.othman@ieee-zsb.org",
-      },
-      {
-        name: "Mai Mahmoud",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/business-development/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/mai-mahmoud-362b602ba",
-        email: "maim61366@gmail.com",
       },
     ],
   },
@@ -152,30 +126,6 @@ const committeesData: CommitteesData[] = [
           "Collecting feedback, preparing reports, and recommending improvements for future events.",
       },
     ],
-    board: [
-  {
-    name: "Ziad Awad",
-    position: "Leader",
-    avatarSrc: "/Images/board/committees/operations/leader.webp",
-    linkedin: "https://www.linkedin.com/in/ziadawad",
-    email: "ziad.awad@ieee-zsb.org",
-  },
-  {
-    name: "Youssef Ebrahim",
-    position: "Vice Leader",
-    avatarSrc: "/Images/board/committees/operations/vice-leader-2.webp",
-    linkedin: "https://www.linkedin.com/in/youssef-ebrahim01",
-    email: "youssefebrahim299@gmail.com",
-  },
-  {
-    name: "Maximus Helmy",
-    position: "Vice Leader",
-    avatarSrc: "/Images/board/committees/operations/vice-leader-1.webp",
-    linkedin: "https://www.linkedin.com/in/maximus-helmy-664148335",
-    email: "maxsimoushelmy@gmail.com",
-  },
-],
-
   },
   {
     id: idCounter++,
@@ -207,22 +157,6 @@ const committeesData: CommitteesData[] = [
       {
         title: "Brainstorming Session",
         description: "Creative storytelling and brand identity development",
-      },
-    ],
-    board: [
-      {
-        name: "moaz mohamed",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/marketing/leader.webp",
-        linkedin: "https://www.linkedin.com/in/moaz-mohamed-fawzy",
-        email: "moaz.mohamed@ieee-zsb.org",
-      },
-      {
-        name: "Mohamed Elsharkawy",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/marketing/vice-leader-1.webp",
-        linkedin: "https://www.linkedin.com/in/mohamed-galhoum-97721b255/",
-        email: "mohamedgalhoum155@gmail.com",
       },
     ],
   },
@@ -258,30 +192,6 @@ const committeesData: CommitteesData[] = [
         description: "Full event coverage and content production for IEEE ZSB",
       },
     ],
-   board: [
-  {
-    name: "Shahd Moatz",
-    position: "Leader",
-    avatarSrc: "/Images/board/committees/multimedia/leader.webp",
-    linkedin: "https://www.linkedin.com/in/shahdmoatz",
-    email: "shahdmoatz@ieee-zsb.org",
-  },
-  {
-    name: "Ziad Ashraf",
-    position: "Vice Leader",
-    avatarSrc: "/Images/board/committees/multimedia/vice-leader-1.webp",
-    linkedin: "https://www.linkedin.com/in/ziad-ashraf-3a77412b8",
-    email: "ziad.abdelwahed@ieee-zsb.org",
-  },
-  {
-    name: "Mohamed Mohsen",
-    position: "Vice Leader",
-    avatarSrc: "/Images/board/committees/multimedia/vice-leader-2.webp",
-    linkedin: "https://www.linkedin.com/in/mohamed-mohsen-29a9392b1",
-    email: "mohsn9165@gmail.com",
-  },
-],
-
   },
   {
     id: idCounter++,
@@ -316,31 +226,32 @@ const committeesData: CommitteesData[] = [
           "Creating internal platforms like registration tools and performance trackers to support team operations.",
       },
     ],
-    board: [
+  },
+  // Retired: kept so archived seasons can still show it.
+  {
+    id: idCounter++,
+    name: "Event Management",
+    hashtag: "event-management",
+    description: "The Event Management Committee at IEEE ZSB is responsible for planning, organizing, and executing all events held under the branch. From technical workshops and competitions to social gatherings and mega conferences, the committee ensures that every detail is wellprepared and smoothly delivered. Members of the committee handle logistics, coordination, venue setup, time management, and follow-up tasks making sure that each event reflects the professionalism and values of IEEE.",
+    image: "/Committees/event-management.webp",
+    goals: [
+      "Ensure the smooth execution of all IEEE ZSB events through effective planning and coordination.",
+      "Enhance attendee experience by focusing on logistics, time management, and clear communication.",
+      " Support other committees by managing the operational side of their events.",
+    ],
+    activities: [
       {
-        name: "Mahmoud Said",
-        position: "Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/Mahmoud Said.webp",
-        linkedin: "https://www.linkedin.com/in/0xcode7/",
-        email: "mahmoud.said@ieee-zsb.org",
+        title: "Pre-Event Planning",
+        description: "Drafting timelines, assigning responsibilities, preparing materials, and reserving venues.",
       },
       {
-        name: "Nada Gamal Eldek",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/Nada Gamal.webp",
-        linkedin:
-          "https://www.linkedin.com/in/nada-gamal-569417284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        email: "nadagamal.sch@gmail.com",
+        title: "On-Ground Coordination",
+        description: "Managing time schedules, guiding attendees, supporting speakers, and solving any real-time issues.",
       },
       {
-        name: "Yousef Mokhles Mostafa",
-        position: "Vice Leader",
-        avatarSrc: "/Images/board/committees/talent&tech/Yousef Mokhles.webp",
-        linkedin: "https://www.linkedin.com/in/yousef-mokhles-3b2966224",
-        email: "yousef.mokhles@ieee-zsb.org",
+        title: "Post-Event Evaluation",
+        description: "Collecting feedback, preparing reports, and recommending improvements for future events.",
       },
     ],
   },
 ];
-
-export default committeesData;

@@ -7,10 +7,15 @@ import PageTitle from "@/components/ui/internal/pageTitle";
 import Container from "@/components/ui/internal/container";
 import AnimatedCard from "@/components/ui/internal/animatedCard";
 import CommitteesSelection from "@/components/ui/internal/committees/committees-selection";
-import committeesData from "@/data/committees";
+import { committeeSeasons, getCommittees } from "@/data/seasons";
 import {Tracks} from "@/components/ui/internal/chapters/tracks/tracks";
 import CommitteesHero from "@/components/ui/internal/committees/committees-hero";
 import ButtonLink from "@/components/ui/internal/button-link";
+import {
+  SeasonProvider,
+  useSeason,
+} from "@/components/ui/internal/season/season-context";
+import SeasonSwitcher from "@/components/ui/internal/season/season-switcher";
 
 export default function Page() {
   return (
@@ -32,11 +37,10 @@ export default function Page() {
         </Flex>
         <Container gap={10}>
           <CommitteesHero />
-          {/* {committeesData.map((committee, index) => ( */}
-            <Tracks
-              tracks={committeesData}
-            />
-          {/* ))} */}
+          <SeasonProvider seasons={committeeSeasons}>
+            <SeasonSwitcher />
+            <SeasonCommittees />
+          </SeasonProvider>
           <AnimatedCard>
             <Flex justify="center" pb={4}>
               <ButtonLink
@@ -51,4 +55,8 @@ export default function Page() {
       </Flex>
     </PageWrapper>
   );
+}
+
+function SeasonCommittees() {
+  return <Tracks tracks={getCommittees(useSeason())} />;
 }

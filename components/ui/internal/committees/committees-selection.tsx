@@ -1,12 +1,13 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import committeesData from "@/data/committees";
+import { getCommittees } from "@/data/seasons";
+import { useSeason } from "@/components/ui/internal/season/season-context";
 import Link from "next/link";
 
 export default function CommitteesSelection() {
   return (
     <Flex justifyContent={"center"} flexWrap={"wrap"} gap={4}>
-      {committeesData.map((committee) => (
+      {getCommittees(useSeason()).map((committee) => (
         <Committee
           key={committee.id}
           name={committee.name}

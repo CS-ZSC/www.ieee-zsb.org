@@ -7,38 +7,9 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import PageWrapper from "@/components/ui/internal/page-wrapper";
 import Container from "@/components/ui/internal/container";
-import { Position, getSlug } from "@/data/position";
-import executiveBoard from "@/data/executive-board";
-import { chaptersData } from "@/data/chapters";
-import committeesData from "@/data/committees";
+import { getMemberHistory } from "@/data/seasons";
 import { toaster } from "@/components/ui/toaster";
-
-function getAllMembers(): (Position & { context?: string })[] {
-  const members: (Position & { context?: string })[] = [];
-
-  executiveBoard.forEach((m) =>
-    members.push({ ...m, context: "Executive Board" })
-  );
-
-  chaptersData.forEach((chapter) => {
-    chapter.board.forEach((m) =>
-      members.push({ ...m, context: chapter.long_name })
-    );
-    chapter.tracks?.forEach((track) =>
-      track.board.forEach((m) =>
-        members.push({ ...m, context: `${chapter.long_name} — ${track.name}` })
-      )
-    );
-  });
-
-  committeesData.forEach((committee) =>
-    committee.board.forEach((m) =>
-      members.push({ ...m, context: committee.name })
-    )
-  );
-
-  return members;
-}
+import { Avatar } from "@/components/ui/avatar";
 
 function handleCopyEmail(email: string) {
   navigator.clipboard.writeText(email);
@@ -54,8 +25,9 @@ export default function MemberProfilePage() {
   const params = useParams();
   const router = useRouter();
   const slug = params.slug as string;
-  const allMembers = getAllMembers();
-  const member = allMembers.find((m) => getSlug(m.name) === slug);
+  const history = getMemberHistory(slug);
+  // The most recent position is the one the profile is about.
+  const member = history[0];
 
   if (!member) {
     return (
@@ -134,17 +106,29 @@ export default function MemberProfilePage() {
               pb="28px"
               mt="-50px"
             >
-              <Image
-                src={member.avatarSrc}
-                alt={member.name}
-                borderRadius="full"
-                width="110px"
-                height="110px"
-                objectFit="cover"
-                border="4px solid"
-                borderColor="primary-1"
-                flexShrink={0}
-              />
+              {member.avatarSrc ? (
+                <Image
+                  src={member.avatarSrc}
+                  alt={member.name}
+                  borderRadius="full"
+                  width="110px"
+                  height="110px"
+                  objectFit="cover"
+                  border="4px solid"
+                  borderColor="primary-1"
+                  flexShrink={0}
+                />
+              ) : (
+                <Avatar
+                  name={member.name}
+                  width="110px"
+                  height="110px"
+                  fontSize="3xl"
+                  border="4px solid"
+                  borderColor="primary-1"
+                  flexShrink={0}
+                />
+              )}
 
               <Flex
                 direction="column"
@@ -173,8 +157,36 @@ export default function MemberProfilePage() {
 
                 {/* Social actions */}
                 <Flex gap="8px" mt="8px">
-                  <Link href={member.linkedin} target="_blank">
-                    <Flex
+                  {member.linkedin && (
+                    <Link href={member.linkedin} target="_blank">
+                      <Flex
+                        alignItems="center"
+                        justifyContent="center"
+                        gap="6px"
+                        height="34px"
+                        px="14px"
+                        borderRadius="10px"
+                        border="1px solid"
+                        borderColor="neutral-4"
+                        color="neutral-3"
+                        _hover={{
+                          color: "primary-1",
+                          borderColor: "primary-1",
+                        }}
+                        transition="all 0.2s ease"
+                        fontSize="13px"
+                        fontWeight={500}
+                      >
+                        <Icon icon="mage:linkedin" width={16} height={16} />
+                        LinkedIn
+                      </Flex>
+                    </Link>
+                  )}
+                  {member.email && (
+                    <Box
+                      as="button"
+                      onClick={() => handleCopyEmail(member.email!)}
+                      display="flex"
                       alignItems="center"
                       justifyContent="center"
                       gap="6px"
@@ -191,40 +203,16 @@ export default function MemberProfilePage() {
                       transition="all 0.2s ease"
                       fontSize="13px"
                       fontWeight={500}
+                      cursor="pointer"
                     >
-                      <Icon icon="mage:linkedin" width={16} height={16} />
-                      LinkedIn
-                    </Flex>
-                  </Link>
-                  <Box
-                    as="button"
-                    onClick={() => handleCopyEmail(member.email)}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    gap="6px"
-                    height="34px"
-                    px="14px"
-                    borderRadius="10px"
-                    border="1px solid"
-                    borderColor="neutral-4"
-                    color="neutral-3"
-                    _hover={{
-                      color: "primary-1",
-                      borderColor: "primary-1",
-                    }}
-                    transition="all 0.2s ease"
-                    fontSize="13px"
-                    fontWeight={500}
-                    cursor="pointer"
-                  >
-                    <Icon
-                      icon="ic:outline-alternate-email"
-                      width={16}
-                      height={16}
-                    />
-                    Copy Email
-                  </Box>
+                      <Icon
+                        icon="ic:outline-alternate-email"
+                        width={16}
+                        height={16}
+                      />
+                      Copy Email
+                    </Box>
+                  )}
                 </Flex>
               </Flex>
             </Flex>
@@ -232,6 +220,70 @@ export default function MemberProfilePage() {
 
           {/* Content sections */}
           <Flex direction="column" gap="16px" mt="16px">
+            {/* Seasons */}
+            <Flex
+              direction="column"
+              gap="12px"
+              padding="24px"
+              borderRadius="16px"
+              border="1px solid"
+              borderColor="card-glass-border"
+              backgroundColor="card-glass-bg"
+              backdropFilter="blur(12px)"
+            >
+              <Text
+                fontSize="13px"
+                fontWeight={600}
+                color="neutral-3"
+                textTransform="uppercase"
+                letterSpacing="1px"
+              >
+                Seasons
+              </Text>
+              <Flex direction="column" gap="8px">
+                {history.map((role, idx) => (
+                  <Link key={idx} href={role.href}>
+                    <Flex
+                      gap="14px"
+                      alignItems="center"
+                      padding="10px 14px"
+                      borderRadius="10px"
+                      border="1px solid"
+                      borderColor="card-glass-border"
+                      _hover={{ borderColor: "primary-1" }}
+                      transition="all 0.2s ease"
+                    >
+                      <Box
+                        backgroundColor="primary-12"
+                        borderRadius="full"
+                        px="10px"
+                        py="2px"
+                        flexShrink={0}
+                      >
+                        <Text fontSize="13px" fontWeight={600} color="primary-8">
+                          {role.year}
+                        </Text>
+                      </Box>
+                      <Flex direction="column" flex="1" minWidth={0}>
+                        <Text fontSize="14px" fontWeight={500} color="fg">
+                          {role.position}
+                        </Text>
+                        <Text fontSize="13px" color="neutral-3">
+                          {role.context}
+                        </Text>
+                      </Flex>
+                      <Icon
+                        icon="ph:arrow-right-bold"
+                        width={14}
+                        height={14}
+                        style={{ opacity: 0.5, flexShrink: 0 }}
+                      />
+                    </Flex>
+                  </Link>
+                ))}
+              </Flex>
+            </Flex>
+
             {/* About */}
             {member.description && (
               <Flex

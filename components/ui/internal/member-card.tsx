@@ -4,8 +4,9 @@ import { Flex, Text, Box, Image } from "@chakra-ui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 import type { Position } from "@/data/position";
-import { getSlug } from "@/data/position";
+import { getMemberSlug } from "@/data/position";
 import { toaster } from "@/components/ui/toaster";
+import { Avatar } from "@/components/ui/avatar";
 
 export function handleCopyEmail(email: string) {
   navigator.clipboard.writeText(email);
@@ -23,15 +24,39 @@ export function SocialButtons({
   size = 32,
   iconSize = 16,
 }: {
-  linkedin: string;
-  email: string;
+  linkedin?: string;
+  email?: string;
   size?: number;
   iconSize?: number;
 }) {
+  if (!linkedin && !email) return null;
+
   return (
     <Flex gap="8px" alignItems="center" onClick={(e) => e.stopPropagation()}>
-      <Link href={linkedin} target="_blank" onClick={(e) => e.stopPropagation()}>
-        <Flex
+      {linkedin && (
+        <Link href={linkedin} target="_blank" onClick={(e) => e.stopPropagation()}>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            width={`${size}px`}
+            height={`${size}px`}
+            borderRadius="10px"
+            border="1px solid"
+            borderColor="neutral-4"
+            color="neutral-3"
+            _hover={{ color: "primary-1", borderColor: "primary-1" }}
+            transition="all 0.2s ease"
+          >
+            <Icon icon="mage:linkedin" width={iconSize} height={iconSize} />
+          </Flex>
+        </Link>
+      )}
+      {email && (
+        <Box
+          as="button"
+          onClick={() => handleCopyEmail(email)}
+          onClickCapture={(e) => e.stopPropagation()}
+          display="flex"
           alignItems="center"
           justifyContent="center"
           width={`${size}px`}
@@ -42,36 +67,18 @@ export function SocialButtons({
           color="neutral-3"
           _hover={{ color: "primary-1", borderColor: "primary-1" }}
           transition="all 0.2s ease"
+          cursor="pointer"
         >
-          <Icon icon="mage:linkedin" width={iconSize} height={iconSize} />
-        </Flex>
-      </Link>
-      <Box
-        as="button"
-        onClick={() => handleCopyEmail(email)}
-        onClickCapture={(e) => e.stopPropagation()}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width={`${size}px`}
-        height={`${size}px`}
-        borderRadius="10px"
-        border="1px solid"
-        borderColor="neutral-4"
-        color="neutral-3"
-        _hover={{ color: "primary-1", borderColor: "primary-1" }}
-        transition="all 0.2s ease"
-        cursor="pointer"
-      >
-        <Icon icon="ic:outline-alternate-email" width={iconSize} height={iconSize} />
-      </Box>
+          <Icon icon="ic:outline-alternate-email" width={iconSize} height={iconSize} />
+        </Box>
+      )}
     </Flex>
   );
 }
 
-export function ProfileBadge({ name }: { name: string }) {
+export function ProfileBadge({ member }: { member: Position }) {
   return (
-    <Link href={`/about/member/${getSlug(name)}`}>
+    <Link href={`/about/member/${getMemberSlug(member)}`}>
       <Box
         position="absolute"
         top="8px"
@@ -134,18 +141,30 @@ export function MemberCard({
       _hover={{ transform: "translateY(-2px)", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}
       transition="all 0.2s ease"
     >
-      {showProfileBadge && <ProfileBadge name={member.name} />}
-      <Image
-        src={member.avatarSrc}
-        alt={member.name}
-        borderRadius="full"
-        width={{ base: "72px", md: "80px" }}
-        height={{ base: "72px", md: "80px" }}
-        objectFit="cover"
-        border="3px solid"
-        borderColor="primary-1"
-        flexShrink={0}
-      />
+      {showProfileBadge && <ProfileBadge member={member} />}
+      {member.avatarSrc ? (
+        <Image
+          src={member.avatarSrc}
+          alt={member.name}
+          borderRadius="full"
+          width={{ base: "72px", md: "80px" }}
+          height={{ base: "72px", md: "80px" }}
+          objectFit="cover"
+          border="3px solid"
+          borderColor="primary-1"
+          flexShrink={0}
+        />
+      ) : (
+        <Avatar
+          name={member.name}
+          width={{ base: "72px", md: "80px" }}
+          height={{ base: "72px", md: "80px" }}
+          fontSize="xl"
+          border="3px solid"
+          borderColor="primary-1"
+          flexShrink={0}
+        />
+      )}
       <Flex
         direction="column"
         gap="6px"
