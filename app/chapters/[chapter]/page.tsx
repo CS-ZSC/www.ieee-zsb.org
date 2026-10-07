@@ -1,6 +1,6 @@
 import { getAllNews } from "@/lib/news";
 import { notFound } from "next/navigation";
-import { chaptersData } from "@/data/chapters";
+import { chaptersContent } from "@/data/chapters";
 import ChapterClient from "@/components/ui/internal/chapters/chapter-client";
 
 export async function generateStaticParams() {
@@ -19,7 +19,7 @@ export default async function Chapter({
     notFound();
   }
 
-  const chapterData = chaptersData.find(
+  const chapterData = chaptersContent.find(
     (item) => item.short_name.toLowerCase() === chapter.toLowerCase()
   );
   if (!chapterData) notFound();

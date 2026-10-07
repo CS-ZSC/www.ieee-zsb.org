@@ -23,15 +23,39 @@ export function SocialButtons({
   size = 32,
   iconSize = 16,
 }: {
-  linkedin: string;
-  email: string;
+  linkedin?: string;
+  email?: string;
   size?: number;
   iconSize?: number;
 }) {
+  if (!linkedin && !email) return null;
+
   return (
     <Flex gap="8px" alignItems="center" onClick={(e) => e.stopPropagation()}>
-      <Link href={linkedin} target="_blank" onClick={(e) => e.stopPropagation()}>
-        <Flex
+      {linkedin && (
+        <Link href={linkedin} target="_blank" onClick={(e) => e.stopPropagation()}>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            width={`${size}px`}
+            height={`${size}px`}
+            borderRadius="10px"
+            border="1px solid"
+            borderColor="neutral-4"
+            color="neutral-3"
+            _hover={{ color: "primary-1", borderColor: "primary-1" }}
+            transition="all 0.2s ease"
+          >
+            <Icon icon="mage:linkedin" width={iconSize} height={iconSize} />
+          </Flex>
+        </Link>
+      )}
+      {email && (
+        <Box
+          as="button"
+          onClick={() => handleCopyEmail(email)}
+          onClickCapture={(e) => e.stopPropagation()}
+          display="flex"
           alignItems="center"
           justifyContent="center"
           width={`${size}px`}
@@ -42,29 +66,11 @@ export function SocialButtons({
           color="neutral-3"
           _hover={{ color: "primary-1", borderColor: "primary-1" }}
           transition="all 0.2s ease"
+          cursor="pointer"
         >
-          <Icon icon="mage:linkedin" width={iconSize} height={iconSize} />
-        </Flex>
-      </Link>
-      <Box
-        as="button"
-        onClick={() => handleCopyEmail(email)}
-        onClickCapture={(e) => e.stopPropagation()}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width={`${size}px`}
-        height={`${size}px`}
-        borderRadius="10px"
-        border="1px solid"
-        borderColor="neutral-4"
-        color="neutral-3"
-        _hover={{ color: "primary-1", borderColor: "primary-1" }}
-        transition="all 0.2s ease"
-        cursor="pointer"
-      >
-        <Icon icon="ic:outline-alternate-email" width={iconSize} height={iconSize} />
-      </Box>
+          <Icon icon="ic:outline-alternate-email" width={iconSize} height={iconSize} />
+        </Box>
+      )}
     </Flex>
   );
 }

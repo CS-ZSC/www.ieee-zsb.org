@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
-import executiveBoard from "@/data/executive-board";
 import { Grid, Box } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { getSlug } from "@/data/position";
 import { MemberCard } from "@/components/ui/internal/member-card";
+import { useSeason } from "@/components/ui/internal/season/season-context";
 
 export default function Board() {
   const router = useRouter();
+  const { executiveBoard } = useSeason();
 
   return (
     <Grid

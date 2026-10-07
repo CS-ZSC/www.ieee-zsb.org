@@ -10,6 +10,8 @@ import AboutHero from "@/components/ui/internal/about/about-hero";
 import Faq from "@/components/ui/internal/about/faq/faq";
 import SocialMedia from "@/components/ui/internal/about/social media/socialMedia";
 import Board from "@/components/ui/internal/about/board/board";
+import { SeasonProvider } from "@/components/ui/internal/season/season-context";
+import SeasonSwitcher from "@/components/ui/internal/season/season-switcher";
 
 export default function page() {
   return (
@@ -29,7 +31,10 @@ export default function page() {
 
         <Container>
           <PageTitle title="Executive Board" />
-          <Board />
+          <SeasonProvider>
+            <SeasonSwitcher />
+            <Board />
+          </SeasonProvider>
         </Container>
 
         <Container>
