@@ -46,3 +46,8 @@ yarn.lock
 
 # figma
 export.js
+# cloudflare / opennext
+/.open-next/
+/.wrangler/
+.dev.vars*
+cloudflare-env.d.ts
