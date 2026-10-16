@@ -1761,7 +1761,7 @@ l0 -65 85 0 85 0 0 450 c0 425 -7 550 -30 550 -4 0 -10 10 -14 23 -9 39 -73
 -7 23 -9 9 -13 134 -15 456 l-4 445 -89 0 -89 0 0 -367z"/>
 </g>
 </g>
-<clipPath id="keep"><path clip-rule="evenodd" d="M0 0H4252V3200H0Z M2534.6 1960 L4252 1960 L4252 3140 L2817.3 3140 Z M200 1480H737V1770H200Z"/></clipPath>
+<clipPath id="keep"><path clip-rule="evenodd" d="M0 0H4252V3200H0Z M2534.6 1960 L4252 1960 L4252 3140 L2817.3 3140 Z"/></clipPath>
 <clipPath id="c-top"><rect x="2700" y="1487" width="1400" height="476"/></clipPath>
 <clipPath id="c-clear"><path d="M2532.2 1800 L4252 1800 L4252 3200 L2867.7 3200 Z"/></clipPath>
 </defs>

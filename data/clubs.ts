@@ -309,7 +309,7 @@ export const clubsContent: ChapterContent[] = [
     short_name: "Robotics Club",
     long_name: "Robotics Club",
     tagline: "Embedded Systems, ROS, PCB & Mechanical",
-    // The former IEEE RAS mark, relettered "RAC" without "IEEE": the club is internal.
+    // The former IEEE RAS mark, relettered "IEEE RAC" for the club.
     logo: "/Images/Clubs/robotics-club-white.svg",
     logo_black: "/Images/Clubs/robotics-club-black.svg",
     color_scheme_1: "ras-1",
