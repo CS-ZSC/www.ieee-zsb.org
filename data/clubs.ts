@@ -17,7 +17,7 @@ export const clubsContent: ChapterContent[] = [
     short_name: "Computer Club",
     long_name: "Computer Club",
     tagline: "Software, AI & Cyber Security",
-    // Placeholder until the club has its own logo.
+    // The former IEEE CS mark, relettered for the club.
     logo: "/Images/Clubs/computer-club-white.svg",
     logo_black: "/Images/Clubs/computer-club-black.svg",
     color_scheme_1: "cs-1",
@@ -309,7 +309,7 @@ export const clubsContent: ChapterContent[] = [
     short_name: "Robotics Club",
     long_name: "Robotics Club",
     tagline: "Embedded Systems, ROS, PCB & Mechanical",
-    // Placeholder until the club has its own logo.
+    // The former IEEE RAS mark, relettered "RAC" for the club.
     logo: "/Images/Clubs/robotics-club-white.svg",
     logo_black: "/Images/Clubs/robotics-club-black.svg",
     color_scheme_1: "ras-1",
