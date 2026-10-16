@@ -32,7 +32,7 @@ export function SocialButtons({
   if (!linkedin && !email) return null;
 
   return (
-    <Flex gap="8px" alignItems="center" onClick={(e) => e.stopPropagation()}>
+    <Flex gap="8px" alignItems="center" position="relative" zIndex={1} onClick={(e) => e.stopPropagation()}>
       {linkedin && (
         <Link href={linkedin} target="_blank" onClick={(e) => e.stopPropagation()}>
           <Flex
@@ -76,55 +76,34 @@ export function SocialButtons({
   );
 }
 
-export function ProfileBadge({ member }: { member: Position }) {
+/** Corner hint that the card opens the member's profile. */
+function ProfileArrow() {
   return (
-    <Link href={`/about/member/${getMemberSlug(member)}`}>
-      <Box
-        position="absolute"
-        top="8px"
-        right="8px"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        height="24px"
-        minWidth="24px"
-        maxWidth="24px"
-        borderRadius="full"
-        backgroundColor="primary-1"
-        color="white"
-        cursor="pointer"
-        overflow="hidden"
-        zIndex={2}
-        whiteSpace="nowrap"
-        _hover={{ maxWidth: "120px", paddingX: "10px", borderRadius: "12px", gap: "4px" }}
-        transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-        gap="0px"
-        paddingX="0"
-      >
-        <Icon icon="ph:question-fill" width={14} height={14} style={{ flexShrink: 0 }} />
-        <Box
-          as="span"
-          fontSize="11px"
-          fontWeight={600}
-          overflow="hidden"
-          maxWidth="0px"
-          opacity={0}
-          transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-          css={{ "a:hover &": { maxWidth: "80px", opacity: 1 } }}
-        >
-          Role
-        </Box>
-      </Box>
-    </Link>
+    <Flex
+      aria-hidden
+      position="absolute"
+      top="8px"
+      right="8px"
+      alignItems="center"
+      justifyContent="center"
+      boxSize="24px"
+      borderRadius="full"
+      backgroundColor="primary-1"
+      color="white"
+      pointerEvents="none"
+    >
+      <Icon icon="ph:arrow-up-right-bold" width={14} height={14} />
+    </Flex>
   );
 }
 
 export function MemberCard({
   member,
-  showProfileBadge = false,
+  linkToProfile = false,
 }: {
   member: Position;
-  showProfileBadge?: boolean;
+  /** Make the whole card a link to the member's profile. */
+  linkToProfile?: boolean;
 }) {
   return (
     <Flex
@@ -138,10 +117,15 @@ export function MemberCard({
       backdropFilter="blur(12px)"
       position="relative"
       h="full"
+      css={{
+        "& .member-card-link": { outline: "none", color: "inherit" },
+        "& .member-card-link::after": { content: '""', position: "absolute", inset: 0, borderRadius: "16px" },
+        "& .member-card-link:focus-visible::after": { outline: "2px solid", outlineColor: "var(--chakra-colors-primary-1)" },
+      }}
       _hover={{ transform: "translateY(-2px)", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}
       transition="all 0.2s ease"
     >
-      {showProfileBadge && <ProfileBadge member={member} />}
+      {linkToProfile && <ProfileArrow />}
       {member.avatarSrc ? (
         <Image
           src={member.avatarSrc}
@@ -181,7 +165,18 @@ export function MemberCard({
           truncate
           w="full"
         >
-          {member.name}
+          {linkToProfile ? (
+            // Stretched link: its ::after covers the card, so the whole card
+            // is one real link (prefetch, open in new tab, keyboard focus).
+            <Link
+              href={`/about/member/${getMemberSlug(member)}`}
+              className="member-card-link"
+            >
+              {member.name}
+            </Link>
+          ) : (
+            member.name
+          )}
         </Text>
         <Text
           fontSize={{ base: "11px", md: "13px" }}
