@@ -8,8 +8,15 @@ import { getMemberSlug } from "@/data/position";
 import { toaster } from "@/components/ui/toaster";
 import { Avatar } from "@/components/ui/avatar";
 
-export function handleCopyEmail(email: string) {
-  navigator.clipboard.writeText(email);
+export async function handleCopyEmail(email: string) {
+  try {
+    await navigator.clipboard.writeText(email);
+  } catch {
+    // No clipboard access (older browser, blocked permission): open the
+    // mail app instead so the click still does something.
+    window.location.href = `mailto:${email}`;
+    return;
+  }
   toaster.create({
     title: "Email copied!",
     description: `${email} has been copied to your clipboard.`,
@@ -55,7 +62,7 @@ export function SocialButtons({
         <Box
           as="button"
           onClick={() => handleCopyEmail(email)}
-          onClickCapture={(e) => e.stopPropagation()}
+          aria-label={`Copy ${email}`}
           display="flex"
           alignItems="center"
           justifyContent="center"
