@@ -144,41 +144,6 @@ const season2023: Season = {
     ],
   },
   chapters: {
-    cs: {
-      board: [
-        {
-          name: "Khaled Fahmy",
-          position: "Chairman",
-          avatarSrc: "/Images/board/2023/chapters/cs/chairperson.webp",
-        },
-        {
-          name: "Mohamed Nasr",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2023/chapters/cs/vice-chairperson-1.webp",
-        },
-      ],
-      tracks: {},
-    },
-    ras: {
-      board: [
-        {
-          name: "Omar Omran",
-          position: "Chairman",
-          avatarSrc: "/Images/board/2023/chapters/ras/chairperson.webp",
-        },
-        {
-          name: "Abdulrahman Omar",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2023/chapters/ras/vice-chairperson-1.webp",
-        },
-        {
-          name: "Mohamed Abd Elhalim",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2023/chapters/ras/vice-chairperson-2.webp",
-        },
-      ],
-      tracks: {},
-    },
     pes: {
       board: [
         {
@@ -205,6 +170,43 @@ const season2023: Season = {
           name: "Gehad Alaa",
           position: "Treasurer",
           avatarSrc: "/Images/board/2023/chapters/wie/treasurer.webp",
+        },
+      ],
+      tracks: {},
+    },
+  },
+  clubs: {
+    computer: {
+      board: [
+        {
+          name: "Khaled Fahmy",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2023/chapters/cs/chairperson.webp",
+        },
+        {
+          name: "Mohamed Nasr",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2023/chapters/cs/vice-chairperson-1.webp",
+        },
+      ],
+      tracks: {},
+    },
+    robotics: {
+      board: [
+        {
+          name: "Omar Omran",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2023/chapters/ras/chairperson.webp",
+        },
+        {
+          name: "Abdulrahman Omar",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2023/chapters/ras/vice-chairperson-1.webp",
+        },
+        {
+          name: "Mohamed Abd Elhalim",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2023/chapters/ras/vice-chairperson-2.webp",
         },
       ],
       tracks: {},

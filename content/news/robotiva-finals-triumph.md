@@ -3,7 +3,7 @@ title: "Robotiva Finals Triumph"
 excerpt: "Our IEEE RAS chapter sent five teams to the prestigious Robotiva competition, and all five teams made it to the finals! With SOUL winning 1st place and Intellibots securing 2nd, RAS once again proved that dedication, teamwork, and relentless learning lead to excellence. This victory isn't just a trophy—it's a statement of what we stand for."
 date: "27 Feb, 2025"
 author: "Marwan Tamer"
-tags: ["RAS", "Robotiva", "Competitions"]
+tags: ["Robotics Club", "Robotiva", "Competitions"]
 mainPhoto: "/News/robotiva/soul.webp"
 homeItem: true
 highlightedItem: false

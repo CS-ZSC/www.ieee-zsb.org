@@ -64,22 +64,23 @@ const season2020: Season = {
       },
     ],
   },
-  chapters: {
-    cs: {
+  chapters: {},
+  clubs: {
+    computer: {
       board: [
         {
           name: "Zyad Yasser",
-          position: "Chairman",
+          position: "Club Lead",
           avatarSrc: "/Images/board/2020/chapters/cs/chairperson.webp",
         },
       ],
       tracks: {},
     },
-    ras: {
+    robotics: {
       board: [
         {
           name: "Ahmed Hamdy",
-          position: "Chairman",
+          position: "Club Lead",
           avatarSrc: "/Images/board/2020/chapters/ras/chairperson.webp",
         },
       ],

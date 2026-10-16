@@ -139,7 +139,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <Text fontSize="sm" color="neutral-3" textAlign="center">
-              &copy; {new Date().getFullYear()} IEEE ZSB CS Chapter. All rights reserved.
+              &copy; {new Date().getFullYear()} IEEE ZSB. All rights reserved.
             </Text>
           </Stack>
         </Flex>

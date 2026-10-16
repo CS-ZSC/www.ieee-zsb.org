@@ -167,229 +167,6 @@ const season2026: Season = {
     ],
   },
   chapters: {
-    cs: {
-      board: [
-        {
-          name: "Ahmed Elsherbiny",
-          position: "Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/cs/chairperson.webp",
-          linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
-          email: "ahmed-elsherbiny@ieee-zsb.org",
-        },
-        {
-          name: "Asmaa Mohamed",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/cs/vice-chairperson-1.webp",
-          linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-          email: "asmaa.saleh@ieee-zsb.org",
-        },
-        {
-          name: "Omar Salama",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/cs/vice-chairperson-2.webp",
-          linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
-          email: "omar.salama@ieee-zsb.org",
-        },
-      ],
-      tracks: {
-        frontend: [
-          {
-            name: "Manar Ahmed",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
-            email: "eng.manar.ahmed20@gmail.com",
-          },
-        ],
-        backend: [
-          {
-            name: "Mohamed Abbas",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
-            email: "mohamedadel96e@gmail.com",
-          },
-          {
-            name: "Abdallah Awadallah",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
-            email: "abdallahhamada2103@gmail.com",
-          },
-        ],
-        "mobile-development": [
-          {
-            name: "Mohamed Wael",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
-            email: "waelm7860@gmail.com",
-          },
-        ],
-        "data-science": [
-          {
-            name: "Sohaila Samy",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
-            email: "sohailasamy59@gmail.com",
-          },
-        ],
-        ai: [
-          {
-            name: "Ayman Yasser",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
-            email: "ayman.yasser227@gmail.com",
-          },
-          {
-            name: "Mostafa Mahmoud",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
-            email: "mostafa.mahmoud.elshahat1@gmail.com",
-          },
-        ],
-        "cyber-security": [
-          {
-            name: "Marwan Hossam",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
-            email: "marwanhossam630@gmail.com",
-          },
-          {
-            name: "Shahd Mahmoud",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
-            email: "eng.shahda@gmail.com",
-          },
-        ],
-      },
-    },
-    ras: {
-      board: [
-        {
-          name: "Abdrlrahman Elghandour",
-          position: "Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/ras/Abdelrahman Elghandour.webp",
-          linkedin: "https://linkedin.com/in/username",
-          email: "abdelrahman.elghandour@ieee-zsb.org",
-        },
-        {
-          name: "Hamdi Emad",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/ras/Hamdi Emad.webp",
-          linkedin: "https://www.linkedin.com/in/hamdi-algohary-9962b5335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          email: "hamdi.emad@ieee-zsb.org",
-        },
-        {
-          name: "Norhan Yasser",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2026/chapters/ras/Norhan Yasser.webp",
-          linkedin: "https://www.linkedin.com/in/norhan-khidr-7463392a6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-          email: "norhan.yasser@ieee-zsb.org",
-        },
-      ],
-      tracks: {
-        "embedded-systems": [
-          {
-            name: "Alaa Abdelhay",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Alaa Abdelhay.webp",
-            linkedin: "https://www.linkedin.com/in/a-laa-abdelhay-16a909239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            email: "alaaabdelhay65@gmail.com",
-          },
-          {
-            name: "Jesy Ahmed",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.jpg",
-            linkedin: "https://www.linkedin.com/in/jasmine-ahmed-892226335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "jesyahmedabdelaal@gmail.com",
-          },
-          {
-            name: "Mariam Adel",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Mariam Adel.webp",
-            linkedin: "https://www.linkedin.com/in/mariam-adel-37a722320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "mariamadel4910@gmail.com",
-          },
-        ],
-        ros: [
-          {
-            name: "Awwab Khalil",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ros/Awwab Khalil.webp",
-            linkedin: "http://www.linkedin.com/in/awwab-khalil",
-            email: "awwab.khalil1425@gmail.com",
-          },
-          {
-            name: "Nadeen elhady",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ros/Nadeen Elhady.webp",
-            linkedin: "https://www.linkedin.com/in/nadeen-elhady-714538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "nadeenelhady300@gmail.com",
-          },
-        ],
-        "pcb-design": [
-          {
-            name: "Ahmed Ibrahim",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/pcb-design/Ahmed Ibrahem.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-ibrahim-344383300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            email: "ahmed.ibrahem@ieee-zsb.org",
-          },
-          {
-            name: "Nadine Haytham",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/pcb-design/Nadine Hytham.webp",
-            linkedin: "http://www.linkedin.com/in/nadine-haytham-85044b318",
-            email: "nadine.e399@gmail.com",
-          },
-        ],
-        mechanical: [
-          {
-            name: "Abdelrahman Abdellateef",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Abdelrahman Abdellateef.webp",
-            linkedin: "https://www.linkedin.com/in/abdelrahmanabdellateef",
-            email: "rahmanmlateef@gmail.com",
-          },
-          {
-            name: "Mohamed Akram",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Mohamed Akram.webp",
-            linkedin: "https://www.linkedin.com/in/mohamed-akram-",
-            email: "mohamedakram0900@gmail.com",
-          },
-          {
-            name: "Hassan Emad",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Hassan Emad.webp",
-            linkedin: "https://www.linkedin.com/in/hassan-e-zein",
-            email: "hassanemad.eng@gmail.com",
-          },
-        ],
-        "ic-design": [
-          {
-            name: "Mohammed Taher",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ic-design/Mohammed Taher.jpeg",
-            linkedin: "https://www.linkedin.com/in/mohammed-taher-halawaty2004/",
-            email: "motaher20004@gmail.com",
-          },
-          {
-            name: "Ahmed Abdelfattah",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ic-design/Ahmed Abdelfattah.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedhishambu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            email: "ahmed.hisham123666@gmail.com",
-          },
-        ],
-      },
-    },
     pes: {
       board: [
         {
@@ -508,6 +285,231 @@ const season2026: Season = {
         },
       ],
       tracks: {},
+    },
+  },
+  clubs: {
+    computer: {
+      board: [
+        {
+          name: "Ahmed Elsherbiny",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/cs/chairperson.webp",
+          linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74",
+          email: "ahmed-elsherbiny@ieee-zsb.org",
+        },
+        {
+          name: "Asmaa Mohamed",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/cs/vice-chairperson-1.webp",
+          linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
+          email: "asmaa.saleh@ieee-zsb.org",
+        },
+        {
+          name: "Omar Salama",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/cs/vice-chairperson-2.webp",
+          linkedin: "https://www.linkedin.com/in/omar-salama-0720b22a7",
+          email: "omar.salama@ieee-zsb.org",
+        },
+      ],
+      tracks: {
+        frontend: [
+          {
+            name: "Manar Ahmed",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/frontend/head.webp",
+            linkedin: "https://www.linkedin.com/in/manar-ahmed20",
+            email: "eng.manar.ahmed20@gmail.com",
+          },
+        ],
+        backend: [
+          {
+            name: "Mohamed Abbas",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/backend/head.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-adel96e",
+            email: "mohamedadel96e@gmail.com",
+          },
+          {
+            name: "Abdallah Awadallah",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/backend/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/abdallah-awadallah-4331a7298/",
+            email: "abdallahhamada2103@gmail.com",
+          },
+        ],
+        "mobile-development": [
+          {
+            name: "Mohamed Wael",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/mobile-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/mhmdwaelmhdi",
+            email: "waelm7860@gmail.com",
+          },
+        ],
+        "data-science": [
+          {
+            name: "Sohaila Samy",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/basic-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-samy-galal",
+            email: "sohailasamy59@gmail.com",
+          },
+        ],
+        ai: [
+          {
+            name: "Ayman Yasser",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/advanced-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ayman-yasser-45b6402a7/",
+            email: "ayman.yasser227@gmail.com",
+          },
+          {
+            name: "Mostafa Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/mostafaelshahat",
+            email: "mostafa.mahmoud.elshahat1@gmail.com",
+          },
+        ],
+        "cyber-security": [
+          {
+            name: "Marwan Hossam",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/cyber-security/head.webp",
+            linkedin: "https://www.linkedin.com/in/marwan-hossam-7240a9302",
+            email: "marwanhossam630@gmail.com",
+          },
+          {
+            name: "Shahd Mahmoud",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/shahd-mahmoud0/",
+            email: "eng.shahda@gmail.com",
+          },
+        ],
+      },
+    },
+    robotics: {
+      board: [
+        {
+          name: "Abdrlrahman Elghandour",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/ras/Abdelrahman Elghandour.webp",
+          linkedin: "https://linkedin.com/in/username",
+          email: "abdelrahman.elghandour@ieee-zsb.org",
+        },
+        {
+          name: "Hamdi Emad",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/ras/Hamdi Emad.webp",
+          linkedin: "https://www.linkedin.com/in/hamdi-algohary-9962b5335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          email: "hamdi.emad@ieee-zsb.org",
+        },
+        {
+          name: "Norhan Yasser",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2026/chapters/ras/Norhan Yasser.webp",
+          linkedin: "https://www.linkedin.com/in/norhan-khidr-7463392a6?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          email: "norhan.yasser@ieee-zsb.org",
+        },
+      ],
+      tracks: {
+        "embedded-systems": [
+          {
+            name: "Alaa Abdelhay",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Alaa Abdelhay.webp",
+            linkedin: "https://www.linkedin.com/in/a-laa-abdelhay-16a909239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            email: "alaaabdelhay65@gmail.com",
+          },
+          {
+            name: "Jesy Ahmed",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Jasmin Ahmed.jpg",
+            linkedin: "https://www.linkedin.com/in/jasmine-ahmed-892226335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "jesyahmedabdelaal@gmail.com",
+          },
+          {
+            name: "Mariam Adel",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/embedded-systems/Mariam Adel.webp",
+            linkedin: "https://www.linkedin.com/in/mariam-adel-37a722320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "mariamadel4910@gmail.com",
+          },
+        ],
+        ros: [
+          {
+            name: "Awwab Khalil",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ros/Awwab Khalil.webp",
+            linkedin: "http://www.linkedin.com/in/awwab-khalil",
+            email: "awwab.khalil1425@gmail.com",
+          },
+          {
+            name: "Nadeen elhady",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ros/Nadeen Elhady.webp",
+            linkedin: "https://www.linkedin.com/in/nadeen-elhady-714538298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "nadeenelhady300@gmail.com",
+          },
+        ],
+        "pcb-design": [
+          {
+            name: "Ahmed Ibrahim",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/pcb-design/Ahmed Ibrahem.webp",
+            linkedin: "https://www.linkedin.com/in/ahmed-ibrahim-344383300?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+            email: "ahmed.ibrahem@ieee-zsb.org",
+          },
+          {
+            name: "Nadine Haytham",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/pcb-design/Nadine Hytham.webp",
+            linkedin: "http://www.linkedin.com/in/nadine-haytham-85044b318",
+            email: "nadine.e399@gmail.com",
+          },
+        ],
+        mechanical: [
+          {
+            name: "Abdelrahman Abdellateef",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Abdelrahman Abdellateef.webp",
+            linkedin: "https://www.linkedin.com/in/abdelrahmanabdellateef",
+            email: "rahmanmlateef@gmail.com",
+          },
+          {
+            name: "Mohamed Akram",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Mohamed Akram.webp",
+            linkedin: "https://www.linkedin.com/in/mohamed-akram-",
+            email: "mohamedakram0900@gmail.com",
+          },
+          {
+            name: "Hassan Emad",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/mechanical/Hassan Emad.webp",
+            linkedin: "https://www.linkedin.com/in/hassan-e-zein",
+            email: "hassanemad.eng@gmail.com",
+          },
+        ],
+        "ic-design": [
+          {
+            name: "Mohammed Taher",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ic-design/Mohammed Taher.jpeg",
+            linkedin: "https://www.linkedin.com/in/mohammed-taher-halawaty2004/",
+            email: "motaher20004@gmail.com",
+          },
+          {
+            name: "Ahmed Abdelfattah",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2026/chapters/ras/tracks-heads/ic-design/Ahmed Abdelfattah.webp",
+            linkedin: "https://www.linkedin.com/in/ahmedhishambu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            email: "ahmed.hisham123666@gmail.com",
+          },
+        ],
+      },
     },
   },
 };

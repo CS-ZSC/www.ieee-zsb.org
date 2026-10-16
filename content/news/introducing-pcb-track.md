@@ -3,7 +3,7 @@ title: "Introducing Our First-Ever PCB Track"
 excerpt: "This season marks the launch of our brand-new PCB track—a major milestone for the IEEE RAS chapter. Recognizing the growing importance of PCB design in robotics and hardware development, we opened this track to empower our members with vital skills needed to build complete electronic systems."
 date: "4 Mar, 2025"
 author: "Marwan Tamer"
-tags: ["RAS", "PCB", "New Track"]
+tags: ["Robotics Club", "PCB", "New Track"]
 mainPhoto: "/Tracks/RAS/pcb-design.webp"
 homeItem: false
 highlightedItem: false

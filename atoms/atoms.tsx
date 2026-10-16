@@ -15,6 +15,10 @@ export const SmallHeaderChaptersAccordionAtom = atom(
   getStoredValue("SmallHeaderChaptersAccordionAtom", true)
 );
 
+export const SmallHeaderClubsAccordionAtom = atom(
+  getStoredValue("SmallHeaderClubsAccordionAtom", true)
+);
+
 export const FooterChaptersAccordionAtom = atom(
   getStoredValue("FooterChaptersAccordionAtom", true)
 );
@@ -33,15 +37,9 @@ const getStoredNewsFilterCheckedItems = (): boolean[] => {
   return [true, false, false, false, false, false, false, false];
 };
 
-const getStoredNewsFilterLabels = (): string[] => {
-  if (typeof window !== "undefined") {
-    const stored = localStorage.getItem("newsFilterLabels");
-    if (stored) {
-      return JSON.parse(stored);
-    }
-  }
-  return ["All", "General", "CS", "RAS", "PES", "WIE", "Committees", "Competitions"];
-};
+// Not read from storage: a stored copy would keep showing labels after they're
+// renamed here.
+const newsFilterLabels = ["All", "General", "Computer Club", "Robotics Club", "PES", "WIE", "Committees", "Competitions"];
 
 export const newsFilterCheckedItemsAtom = atom(
   getStoredNewsFilterCheckedItems(),
@@ -53,15 +51,7 @@ export const newsFilterCheckedItemsAtom = atom(
   }
 );
 
-export const newsFilterLabelsAtom = atom(
-  getStoredNewsFilterLabels(),
-  (get, set, newValue: string[]) => {
-    set(newsFilterLabelsAtom, newValue);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("newsFilterLabels", JSON.stringify(newValue));
-    }
-  }
-);
+export const newsFilterLabelsAtom = atom(newsFilterLabels);
 
 export const filteredNewsCountAtom = atom(
   (get) => {

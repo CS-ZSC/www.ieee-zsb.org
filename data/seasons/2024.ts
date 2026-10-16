@@ -63,101 +63,6 @@ const season2024: Season = {
     ],
   },
   chapters: {
-    cs: {
-      board: [
-        {
-          name: "Amr Yasser Saber",
-          position: "Chairman",
-          avatarSrc: "/Images/board/2024/chapters/cs/chairperson.webp",
-        },
-        {
-          name: "Khaled Fahmy",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2024/chapters/cs/vice-chairperson-1.webp",
-        },
-        {
-          name: "Hossam Elsherbiny",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2024/chapters/cs/vice-chairperson-2.webp",
-        },
-      ],
-      tracks: {
-        frontend: [
-          {
-            name: "Abdelrahman Ibrahim",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/frontend/head.webp",
-          },
-        ],
-        backend: [
-          {
-            name: "Nourhan Hesham",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/backend/head.webp",
-          },
-        ],
-        "mobile-development": [
-          {
-            name: "Nermeen Fares",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/mobile-development/head.webp",
-          },
-        ],
-        "basic-ai": [
-          {
-            name: "Aya Mahmoud",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/basic-ai/head.webp",
-          },
-        ],
-        "advanced-ai": [
-          {
-            name: "Abdullah Farid",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/advanced-ai/head.webp",
-          },
-        ],
-      },
-    },
-    ras: {
-      board: [
-        {
-          name: "Mahmoud Samy",
-          position: "Chairman",
-          avatarSrc: "/Images/board/2024/chapters/ras/chairperson.webp",
-        },
-        {
-          name: "Omar Ibrahim",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2024/chapters/ras/vice-chairperson-1.webp",
-        },
-        {
-          name: "Abdullah Elmasry",
-          position: "Vice Chairman",
-          avatarSrc: "/Images/board/2024/chapters/ras/vice-chairperson-2.webp",
-        },
-      ],
-      tracks: {
-        ros: [
-          {
-            name: "Mustafa Anwar",
-            position: "Track Lead",
-          },
-        ],
-        mechanical: [
-          {
-            name: "Eslam Salah",
-            position: "Track Lead",
-            avatarSrc: "/Images/board/2024/chapters/ras/tracks-heads/mechanical/head.webp",
-          },
-          {
-            name: "Ibrahim Eid",
-            position: "Track Vice-Lead",
-            avatarSrc: "/Images/board/2024/chapters/ras/tracks-heads/mechanical/vice-head-1.webp",
-          },
-        ],
-      },
-    },
     pes: {
       board: [
         {
@@ -244,6 +149,103 @@ const season2024: Season = {
             name: "Eman Abd Elhamed",
             position: "Track Lead",
             avatarSrc: "/Images/board/2024/chapters/wie/tracks-heads/robotics/head.webp",
+          },
+        ],
+      },
+    },
+  },
+  clubs: {
+    computer: {
+      board: [
+        {
+          name: "Amr Yasser Saber",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/cs/chairperson.webp",
+        },
+        {
+          name: "Khaled Fahmy",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/cs/vice-chairperson-1.webp",
+        },
+        {
+          name: "Hossam Elsherbiny",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/cs/vice-chairperson-2.webp",
+        },
+      ],
+      tracks: {
+        frontend: [
+          {
+            name: "Abdelrahman Ibrahim",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/frontend/head.webp",
+          },
+        ],
+        backend: [
+          {
+            name: "Nourhan Hesham",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/backend/head.webp",
+          },
+        ],
+        "mobile-development": [
+          {
+            name: "Nermeen Fares",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/mobile-development/head.webp",
+          },
+        ],
+        "basic-ai": [
+          {
+            name: "Aya Mahmoud",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/basic-ai/head.webp",
+          },
+        ],
+        "advanced-ai": [
+          {
+            name: "Abdullah Farid",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/cs/tracks-heads/advanced-ai/head.webp",
+          },
+        ],
+      },
+    },
+    robotics: {
+      board: [
+        {
+          name: "Mahmoud Samy",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/ras/chairperson.webp",
+        },
+        {
+          name: "Omar Ibrahim",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/ras/vice-chairperson-1.webp",
+        },
+        {
+          name: "Abdullah Elmasry",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2024/chapters/ras/vice-chairperson-2.webp",
+        },
+      ],
+      tracks: {
+        ros: [
+          {
+            name: "Mustafa Anwar",
+            position: "Track Lead",
+          },
+        ],
+        mechanical: [
+          {
+            name: "Eslam Salah",
+            position: "Track Lead",
+            avatarSrc: "/Images/board/2024/chapters/ras/tracks-heads/mechanical/head.webp",
+          },
+          {
+            name: "Ibrahim Eid",
+            position: "Track Vice-Lead",
+            avatarSrc: "/Images/board/2024/chapters/ras/tracks-heads/mechanical/vice-head-1.webp",
           },
         ],
       },

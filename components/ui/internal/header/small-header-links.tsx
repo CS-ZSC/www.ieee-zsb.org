@@ -6,19 +6,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import Chapters from "./chapters";
+import { Chapters, Clubs, type NavGroup } from "./nav-groups";
 import { Links } from "./links";
-import { useSetAtom, useAtom } from "jotai";
+import { useSetAtom, useAtom, type PrimitiveAtom } from "jotai";
 import {
   SmallHeaderAtom,
   SmallHeaderChaptersAccordionAtom,
+  SmallHeaderClubsAccordionAtom,
 } from "@/atoms/atoms";
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
 
 export default function SmallHeaderLinks() {
   const pathname = usePathname();
-  const [isOpen] = useAtom(SmallHeaderChaptersAccordionAtom);
   const setSmallHeaderAtom = useSetAtom(SmallHeaderAtom);
 
   function handleLinkClick() {
@@ -37,18 +37,16 @@ export default function SmallHeaderLinks() {
       fontWeight="bold"
       w="full"
     >
-      <ChaptersAccordion />
-
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-        transition={{ duration: 0.22, ease: "easeInOut" }}
-        style={{ overflow: "hidden" }}
-      >
-        <Flex flexDirection="column" gap={2} w="full">
-          <ChapterItems pathname={pathname} onNavigate={handleLinkClick} />
-        </Flex>
-      </motion.div>
+      {groupAccordions.map(({ group, openAtom, storageKey }) => (
+        <GroupAccordion
+          key={group.label}
+          group={group}
+          openAtom={openAtom}
+          storageKey={storageKey}
+          pathname={pathname}
+          onNavigate={handleLinkClick}
+        />
+      ))}
 
       {Links.map((link) => (
         <Box key={link.path}>
@@ -81,10 +79,51 @@ export default function SmallHeaderLinks() {
   );
 }
 
-function ChapterItems({
+// Each group remembers whether it's expanded, under its own storage key.
+const groupAccordions: { group: NavGroup; openAtom: PrimitiveAtom<boolean>; storageKey: string }[] = [
+  { group: Chapters, openAtom: SmallHeaderChaptersAccordionAtom, storageKey: "SmallHeaderChaptersAccordionAtom" },
+  { group: Clubs, openAtom: SmallHeaderClubsAccordionAtom, storageKey: "SmallHeaderClubsAccordionAtom" },
+];
+
+function GroupAccordion({
+  group,
+  openAtom,
+  storageKey,
   pathname,
   onNavigate,
 }: {
+  group: NavGroup;
+  openAtom: PrimitiveAtom<boolean>;
+  storageKey: string;
+  pathname: string;
+  onNavigate: () => void;
+}) {
+  const [isOpen] = useAtom(openAtom);
+
+  return (
+    <>
+      <AccordionToggle label={group.label} openAtom={openAtom} storageKey={storageKey} />
+
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.22, ease: "easeInOut" }}
+        style={{ overflow: "hidden" }}
+      >
+        <Flex flexDirection="column" gap={2} w="full">
+          <GroupItems group={group} pathname={pathname} onNavigate={onNavigate} />
+        </Flex>
+      </motion.div>
+    </>
+  );
+}
+
+function GroupItems({
+  group,
+  pathname,
+  onNavigate,
+}: {
+  group: NavGroup;
   pathname: string;
   onNavigate: () => void;
 }) {
@@ -94,7 +133,7 @@ function ChapterItems({
 
   return (
     <>
-      {Chapters.map((chapter) => {
+      {group.items.map((chapter) => {
         const isActive  = pathname.startsWith(chapter.href);
         const accentVar = `var(--chakra-colors-${chapter.identityColor})`;
 
@@ -172,13 +211,21 @@ function ChapterItems({
   );
 }
 
-function ChaptersAccordion() {
-  const [isOpen, setIsOpen] = useAtom(SmallHeaderChaptersAccordionAtom);
+function AccordionToggle({
+  label,
+  openAtom,
+  storageKey,
+}: {
+  label: string;
+  openAtom: PrimitiveAtom<boolean>;
+  storageKey: string;
+}) {
+  const [isOpen, setIsOpen] = useAtom(openAtom);
 
-  function toggleChaptersAccordion() {
+  function toggle() {
     setIsOpen((prev) => {
       const newValue = !prev;
-      localStorage.setItem("SmallHeaderChaptersAccordionAtom", newValue.toString());
+      localStorage.setItem(storageKey, newValue.toString());
       return newValue;
     });
   }
@@ -189,10 +236,10 @@ function ChaptersAccordion() {
       alignItems="center"
       gap={2}
       cursor="pointer"
-      onClick={toggleChaptersAccordion}
+      onClick={toggle}
       w="fit-content"
     >
-      <span>Chapters</span>
+      <span>{label}</span>
       <Box marginTop={1}>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}

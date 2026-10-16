@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Flex, HStack, Button } from "@chakra-ui/react";
 import { usePathname, useRouter } from "next/navigation";
-import ChaptersMenu from "./chapters-menu";
+import NavGroupMenu from "./nav-group-menu";
+import { NavGroups } from "./nav-groups";
 import { ColorModeButton } from "@/components/ui/color-mode";
 import Logo from "@/components/ui/internal/logo";
 import { Links } from "./links";
@@ -36,7 +37,9 @@ function FullHeader() {
         <HStack justifyContent="space-between" alignItems="center" width="full">
           <Logo width={85} height={50} />
           <HStack>
-            <ChaptersMenu />
+            {NavGroups.map((group) => (
+              <NavGroupMenu key={group.label} group={group} />
+            ))}
             <LinksNavigator />
           </HStack>
           <ColorModeButton />

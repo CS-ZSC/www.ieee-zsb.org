@@ -1,9 +1,11 @@
 import { committeesContent, type CommitteesData } from "../committees";
 import {
   chaptersContent,
+  getChapterHref,
   type ChapterContent,
   type ChapterData,
 } from "../chapters";
+import { clubsContent } from "../clubs";
 import { getSlug, type Position } from "../position";
 import type { Season } from "./types";
 import season2020 from "./2020";
@@ -41,10 +43,14 @@ export const committeeSeasons: Season[] = seasons.filter(
   (season) => Object.keys(season.committees).length > 0
 );
 
-/** Seasons with a board or tracks on record for the chapter. */
-export function getChapterSeasons(shortName: string): Season[] {
+function getRoster(season: Season, chapter: ChapterContent) {
+  return (chapter.kind === "club" ? season.clubs : season.chapters)[chapter.slug];
+}
+
+/** Seasons with a board or tracks on record for the chapter or club. */
+export function getChapterSeasons(chapter: ChapterContent): Season[] {
   return seasons.filter((season) => {
-    const roster = season.chapters[shortName.toLowerCase()];
+    const roster = getRoster(season, chapter);
     return !!roster && (roster.board.length > 0 || Object.keys(roster.tracks).length > 0);
   });
 }
@@ -61,11 +67,10 @@ function findCommittee(hashtag: string) {
   return committee;
 }
 
-function findChapter(shortName: string) {
-  const chapter = chaptersContent.find(
-    (c) => c.short_name.toLowerCase() === shortName.toLowerCase()
-  );
-  if (!chapter) throw new Error(`Unknown chapter "${shortName}"`);
+function findChapter(kind: ChapterContent["kind"], slug: string) {
+  const list = kind === "club" ? clubsContent : chaptersContent;
+  const chapter = list.find((c) => c.slug === slug);
+  if (!chapter) throw new Error(`Unknown ${kind} "${slug}"`);
   return chapter;
 }
 
@@ -83,9 +88,9 @@ export function getCommittees(season: Season): CommitteesData[] {
   }));
 }
 
-/** `chapter` with the board and tracks it had in `season`. */
+/** `chapter` (or club) with the board and tracks it had in `season`. */
 export function getChapter(season: Season, chapter: ChapterContent): ChapterData {
-  const roster = season.chapters[chapter.short_name.toLowerCase()];
+  const roster = getRoster(season, chapter);
   return {
     ...chapter,
     board: roster?.board ?? [],
@@ -96,18 +101,21 @@ export function getChapter(season: Season, chapter: ChapterContent): ChapterData
   };
 }
 
-// Fail the build if a season names a committee, chapter, or track that has
-// no content, instead of crashing when someone opens that season.
+// Fail the build if a season names a committee, chapter, club, or track that
+// has no content, instead of crashing when someone opens that season.
 for (const season of seasons) {
   getCommittees(season);
-  for (const shortName of Object.keys(season.chapters)) {
-    getChapter(season, findChapter(shortName));
+  for (const slug of Object.keys(season.chapters)) {
+    getChapter(season, findChapter("chapter", slug));
+  }
+  for (const slug of Object.keys(season.clubs)) {
+    getChapter(season, findChapter("club", slug));
   }
 }
 
 export interface SeasonRole extends Position {
   year: number;
-  /** Where the position was held, e.g. "Executive Board" or "Computer Society — ROS". */
+  /** Where the position was held, e.g. "Executive Board" or "Robotics Club — ROS". */
   context: string;
   /** The page that shows this position in its season. */
   href: string;
@@ -121,9 +129,9 @@ export function getSeasonRoles(season: Season): SeasonRole[] {
 
   add(season.executiveBoard, "Executive Board", seasonHref("/about", season));
 
-  chaptersContent.forEach((content) => {
+  [...chaptersContent, ...clubsContent].forEach((content) => {
     const chapter = getChapter(season, content);
-    const path = `/chapters/${chapter.short_name.toLowerCase()}`;
+    const path = getChapterHref(chapter);
     add(chapter.board, chapter.long_name, seasonHref(path, season));
     chapter.tracks?.forEach((track) =>
       add(

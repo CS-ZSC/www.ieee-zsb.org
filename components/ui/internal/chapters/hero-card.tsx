@@ -36,17 +36,17 @@ const MOUNT_HOLES = [
   { cx: 968, cy: 568 },
 ];
 
-// Chapter-specific silkscreen warning line (bottom-left)
+// Chapter-specific silkscreen warning line (bottom-left), keyed by slug
 const SILKSCREEN_WARNING: Record<string, string> = {
-  cs: "RUNTIME ERROR: COFFEE REQUIRED",
+  computer: "RUNTIME ERROR: COFFEE REQUIRED",
   pes: "CAUTION: HIGH VOLTAGE",
-  ras: "WARNING: AUTONOMOUS SYSTEM",
+  robotics: "WARNING: AUTONOMOUS SYSTEM",
   wie: "WOMEN SHAPING TOMORROW",
 };
 
 // ─── Chapter-specific signature motion ────────────────────────────────────────
-function applySignatureMotion(el: Element, chapter: string) {
-  switch (chapter.toLowerCase()) {
+function applySignatureMotion(el: Element, variant: string) {
+  switch (variant) {
 
     case "pes":
       gsap.to(el, {
@@ -56,7 +56,7 @@ function applySignatureMotion(el: Element, chapter: string) {
       });
       break;
 
-    case "ras": {
+    case "robotics": {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 2.8 });
       tl.to(el, { rotation: 2.5, duration: 0.08, ease: "back.out(4)" })
         .to(el, { rotation: -1.8, duration: 0.10, ease: "back.out(3)" })
@@ -65,7 +65,7 @@ function applySignatureMotion(el: Element, chapter: string) {
       break;
     }
 
-    case "cs":
+    case "computer":
       gsap.to(el, {
         y: -6, yoyo: true, repeat: -1,
         duration: 1.8, ease: "power1.inOut",
@@ -96,10 +96,13 @@ export function HeroCard({
   logo,
   colorScheme,
   shortName = "",
+  variant = "",
 }: {
   logo: string;
   colorScheme: string;
   shortName?: string;
+  /** The chapter or club slug; picks the signature motion and silkscreen line. */
+  variant?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -183,7 +186,7 @@ export function HeroCard({
                 duration: 1.4, ease: "sine.inOut",
                 stagger: { each: 0.25, from: "random" },
               });
-              if (logoRef.current) applySignatureMotion(logoRef.current, shortName);
+              if (logoRef.current) applySignatureMotion(logoRef.current, variant);
             });
 
           // Parallax scroll
@@ -232,10 +235,10 @@ export function HeroCard({
 
       return () => mm.revert();
     },
-    { scope: containerRef, dependencies: [shortName], revertOnUpdate: true }
+    { scope: containerRef, dependencies: [shortName, variant], revertOnUpdate: true }
   );
 
-  const warning = SILKSCREEN_WARNING[shortName.toLowerCase()] ?? "IEEE ZAGAZIG STUDENT BRANCH";
+  const warning = SILKSCREEN_WARNING[variant] ?? "IEEE ZAGAZIG STUDENT BRANCH";
 
   return (
     <Flex
@@ -358,7 +361,7 @@ export function HeroCard({
         <Box ref={logoRef}>
           <Image
             src={logo}
-            alt="Chapter Logo"
+            alt={`${shortName} logo`}
             height={{ base: "170px", md: "400px" }}
           />
         </Box>

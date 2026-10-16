@@ -77,16 +77,6 @@ const season2022: Season = {
     ],
   },
   chapters: {
-    cs: {
-      board: [
-        {
-          name: "Ahmed Anwar",
-          position: "Chairman",
-          avatarSrc: "/Images/board/2022/chapters/cs/chairperson.webp",
-        },
-      ],
-      tracks: {},
-    },
     pes: {
       board: [
         {
@@ -97,11 +87,23 @@ const season2022: Season = {
       ],
       tracks: {},
     },
-    ras: {
+  },
+  clubs: {
+    computer: {
+      board: [
+        {
+          name: "Ahmed Anwar",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2022/chapters/cs/chairperson.webp",
+        },
+      ],
+      tracks: {},
+    },
+    robotics: {
       board: [
         {
           name: "Mohammed Elbagoury",
-          position: "Chairman",
+          position: "Club Lead",
           avatarSrc: "/Images/board/2022/chapters/ras/chairperson.webp",
         },
       ],

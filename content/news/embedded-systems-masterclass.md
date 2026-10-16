@@ -3,7 +3,7 @@ title: "Embedded Systems Masterclass with Eng. Mamdouh"
 excerpt: "To push our embedded systems learning to the next level, we invited Eng. Mamdouh, a senior embedded software engineer at Arrow Electronics, to host a deep-dive session into practical embedded systems development. This was one of the most anticipated events in our technical calendar, bridging the gap between academic knowledge and real-world embedded applications."
 date: "19 April, 2025"
 author: "Marwan Tamer"
-tags: ["RAS", "Embedded Systems", "Guest Speaker"]
+tags: ["Robotics Club", "Embedded Systems", "Guest Speaker"]
 mainPhoto: "/News/embedded-session/1.webp"
 homeItem: false
 highlightedItem: false

@@ -1,0 +1,517 @@
+import type { ChapterContent } from "./chapters";
+
+/**
+ * Internal clubs: they run like chapters (board, tracks, seasons) but aren't
+ * activated IEEE societies in the branch. Boards come from each season's
+ * `clubs` (`data/seasons`).
+ */
+
+let id = 0;
+let trackId = 0;
+
+export const clubsContent: ChapterContent[] = [
+  {
+    id: ++id,
+    kind: "club",
+    slug: "computer",
+    short_name: "Computer Club",
+    long_name: "Computer Club",
+    tagline: "Software, AI & Cyber Security",
+    // The former IEEE CS mark, relettered without "IEEE": the club is internal.
+    logo: "/Images/Clubs/computer-club-white.svg",
+    logo_black: "/Images/Clubs/computer-club-black.svg",
+    color_scheme_1: "cs-1",
+    color_scheme_2: "cs-2",
+    description: {
+      about:
+        "The Computer Club is a student-led internal club of the IEEE Zagazig Student Branch, providing a hands-on platform for students passionate about technology. From web development and mobile apps to artificial intelligence, machine learning, and cybersecurity, our club empowers members to explore and apply emerging technologies. Through workshops, hackathons, open-source projects, and coding competitions, we bridge the gap between classroom learning and practical experience.",
+      vision:
+        "To be a leading student driven hub for technological exploration, creativity, and collaboration where innovation thrives and technical skills are transformed into real world impact.",
+      mission:
+        "We aim to create an active and friendly space where students can learn modern tech skills, work on real projects, and connect with others who share the same passion. We organize practical workshops and team activities to help students grow, be creative, and get ready for future jobs in the tech world.",
+    },
+    tracks: [
+      {
+        id: ++trackId,
+        name: "Front-End",
+        hashtag: "frontend",
+        description:
+          "Frontend development focuses on building the user-facing part of websites and applications, ensuring they are visually appealing, responsive, and intuitive. This track provides a solid foundation in web development and advances to building fully functional applications. It includes comprehensive training in the Tailwind CSS library for efficient and modern UI design and focuses on Next.js, built on React.js, to develop scalable single-page applications (SPAs) with an emphasis on performance, accessibility, and best practices.",
+        image: "/Tracks/CS/frontend.webp",
+        goals: [
+          "Master the use of JavaScript to build dynamic, interactive, and efficient web features",
+          "Learn and apply the Tailwind CSS library to design modern, responsive, and accessible user interfaces",
+          "Build high-quality single-page applications (SPAs) using Next.js and React.js, while understanding the differences between rendering strategies and when to use such as Client-Side Rendering (CSR), Server-Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Regeneration (ISR) in Next.js",
+          "Practice integrating third-party APIs to extend application functionality and improve user experiences",
+        ],
+        activities: [
+          {
+            title: "Mini Projects",
+            description:
+              "Create mini games and applications using JavaScript to strengthen problem solving skills and deepen understanding of the language.",
+          },
+          {
+            title: "Project-Based Learning",
+            description:
+              "Work on real world projects to gain hands-on experience and apply learned concepts.",
+          },
+          {
+            title: "Collaboration Sessions",
+            description:
+              "Participate in both offline and online sessions to discuss project progress, solve challenges, and collaborate effectively.",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Back-End",
+        hashtag: "backend",
+        description:
+          "Welcome to the Plumbers Alley — a place where you can learn something new or take your existing skills to the next level. Here, you'll work on exciting projects that bridge real-world needs in imaginative scenarios, helping you perform at your best. See you in the next adventure, passionate plumber! ",
+        image: "/Tracks/CS/backend.webp",
+        goals: [
+          "Become a Backend Engineer with strong foundations — not only skilled at the job but also has fallen in love with his work",
+          "Learn & Practice on Database language and how it works",
+          "Get your hands dirty with two different frameworks: one opinionated and one unopinionated",
+        ],
+        activities: [
+          {
+            title: "Doing Research",
+            description:
+              "Stay aware of the theoretical aspects of each technology at every milestone ",
+          },
+          {
+            title: "Offline Session",
+            description:
+              "Discuss the completed projects in a professional and structured manner",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Mobile Development",
+        hashtag: "mobile-development",
+        description:
+          "Welcome to the world of Mobile Development — where creativity meets performance. This journey is designed to equip you with the essential skills needed to build polished, user-friendly mobile applications that perform seamlessly across devices. Whether you're crafting smooth interfaces or integrating complex APIs, this track will take your development career to the next level.",
+        image: "/Tracks/CS/mobile-development.webp",
+        goals: [
+          "Build a strong foundation in both Android and iOS development using modern tools and languages",
+          "Gain hands-on experience with Flutter and understand how cross-platform frameworks operate",
+          "Learn to structure scalable mobile applications and follow clean architecture principles",
+        ],
+        activities: [
+          {
+            title: "Session",
+            description:
+              "Learn about mobile development concepts, tools, and ecosystems through interactive technical sessions",
+          },
+          {
+            title: "Offline Session",
+            description:
+              "Discuss the completed projects in a professional and structured manner",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Data Science",
+        hashtag: "data-science",
+        description:
+          "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
+        image: "/Tracks/CS/basic-ai.webp",
+        goals: [
+          "Get your hands on different types of tools: one focused on spreadsheets, the other on code-based analysis.",
+          "Become a Data Analyst with strong foundations — not just good at the work, but truly passionate about turning data into insights.",
+        ],
+        activities: [
+          {
+            title: "Dive into sheets",
+            description:
+              "try and use new datasets to get them clean and enhance the software skills",
+          },
+          {
+            title: "Offline Session",
+            description:
+              "Discuss the completed projects in a structured manner and how to improve it",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Artificial Intelligence",
+        hashtag: "ai",
+        description:
+          "The Artificial Intelligence Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+        image: "/Tracks/CS/advanced-ai.webp",
+        goals: [
+          "Equip learners with essential AI skills",
+          "Bridge theory and practical applications",
+          "Prepare industry-ready professionals",
+          "Foster analytical and problem-solving skills",
+        ],
+        activities: [
+          {
+            title: "Hands-on Workshops",
+            description:
+              "Interactive coding labs focused on real-world AI projects",
+          },
+          {
+            title: "Project-Based Learning",
+            description:
+              "Applying theory through structured end-to-end projects",
+          },
+          {
+            title: "Collaborative Tasks",
+            description:
+              "Team-oriented assignments enhancing problem-solving and teamwork",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Cyber Security",
+        hashtag: "cyber-security",
+        description:
+          "The Cyber Security Committee focuses on building awareness, skills, and hands-on knowledge in the field of cyber security. We aim to educate students through practical training and real-world applications that go beyond traditional classroom learning.",
+        image: "/Tracks/CS/cyber-security.webp",
+        goals: [
+          "Deliver hands-on Cyber Security training sessions throughout the semester to empower students with real skills.",
+          "Promote awareness about the importance of digital security across the university and local tech community.",
+          "Build a strong foundation in Cyber Security for students interested in ethical hacking, defense systems, and secure programming.",
+        ],
+        activities: [
+          {
+            title: "Intro to Cyber Security",
+            description:
+              "Educational sessions that cover the basics of cyber security with an emphasis on practical application.",
+          },
+          {
+            title: "Capture the Flag (CTF) Practice",
+            description:
+              "Hands-on challenges to help members apply their skills in real-world hacking simulations and problem-solving.",
+          },
+          {
+            title: "Security Audits Workshops",
+            description:
+              "Interactive workshops teaching students how to analyze and improve security in systems and applications.",
+          },
+        ],
+      },
+      //game development track had been removed 
+      // Retired: kept so archived seasons can still show them.
+      {
+        id: ++trackId,
+        name: "Basic AI",
+        hashtag: "basic-ai",
+        description: "This committee helps members explore the field of data analysis and understand how data can be turned into useful information. You'll learn how to collect, clean, and study data to find patterns and make smart decisions. Through hands-on projects, you'll use tools like Excel or Python to work with real data. The team also shares knowledge through research, discussions, and regular practice sessions. It's a great way to build strong data analysis skills and solve real-world problems using data.",
+        image: "/Tracks/CS/basic-ai.webp",
+        goals: [
+          "Get your hands on different types of tools: one focused on spreadsheets, the other on code-based analysis.",
+          "Become a Data Analyst with strong foundations — not just good at the work, but truly passionate about turning data into insights.",
+        ],
+        activities: [
+          {
+            title: "Dive into sheets",
+            description: "try and use new datasets to get them clean and enhance the software skills",
+          },
+          {
+            title: "Offline Session",
+            description: "Discuss the completed projects in a structured manner and how to improve it",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Advanced AI",
+        hashtag: "advanced-ai",
+        description: "The Advanced AI Track offers a comprehensive journey designed to equip participants with the essential knowledge and practical skills required to excel in Artificial Intelligence. Starting with foundational data preprocessing techniques and essential mathematical concepts, learners progressively delve into supervised and unsupervised machine learning methods, mastering algorithms and models widely utilized in the industry. Participants will then explore advanced topics in deep learning, including Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN). The track further provides specialized training in cutting-edge Computer Vision applications, from image classification to facial recognition, and Natural Language Processing (NLP), covering tasks such as text classification, sentiment analysis, and chatbot creation. Each stage includes dedicated hands-on projects, enabling learners to consolidate their knowledge and build practical, real-world expertise.",
+        image: "/Tracks/CS/advanced-ai.webp",
+        goals: [
+          "Equip learners with essential AI skills",
+          "Bridge theory and practical applications",
+          "Prepare industry-ready professionals",
+          "Foster analytical and problem-solving skills",
+        ],
+        activities: [
+          {
+            title: "Hands-on Workshops",
+            description: "Interactive coding labs focused on real-world AI projects",
+          },
+          {
+            title: "Project-Based Learning",
+            description: "Applying theory through structured end-to-end projects",
+          },
+          {
+            title: "Collaborative Tasks",
+            description: "Team-oriented assignments enhancing problem-solving and teamwork",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Game Development",
+        hashtag: "game-development",
+        description: "Dive into the exciting world of Game Development and bring your creative ideas to life. This track covers the fundamentals of game engines, interactive mechanics, 2D/3D graphics, and scripting. Participants will learn to build games using tools like Unity or Unreal Engine, exploring game physics, animation, UI, and publishing strategies.",
+        image: "/Tracks/CS/game-development.webp",
+        goals: [
+          "Understand the core components of game engines including scenes, physics, and scripting",
+          "Design and build interactive 2D and 3D games using Unity or Unreal Engine",
+          "Implement game mechanics such as player movement, scoring systems, and collision detection",
+          "Explore visual effects, animation, audio integration, and game deployment strategies",
+        ],
+        activities: [
+          {
+            title: "Game Engine Basics Bootcamp",
+            description: "Learn the fundamentals of Unity or Unreal Engine, including scene creation, asset importing, and scripting with C# or Blueprints.",
+          },
+          {
+            title: "Mechanics & Physics Integration",
+            description: "Hands-on practice building core gameplay elements like character control, camera systems, and object interactions with realistic physics.",
+          },
+          {
+            title: "Game Jam Challenge",
+            description: "Participate in a 48-hour game jam where teams create complete playable games based on a surprise theme. Includes judging, prizes, and feedback from game industry mentors.",
+          },
+        ],
+      },
+    ],
+    seasons: [
+      {
+        year: 2024,
+        summary: [
+          "The 2024 season for the Computer Club focused heavily on AI integration and practical application.",
+          "We successfully hosted a large-scale 'AI for Good' hackathon, attracting over 150 participants and generating innovative solutions for local community challenges.",
+          "Our workshops on advanced machine learning techniques and ethical AI saw record attendance, and we collaborated with two major tech companies for exclusive industry talks and recruitment events.",
+        ],
+      },
+      {
+        year: 2023,
+        summary: [
+          "Focused on web technologies and AI",
+          "Industry-leading workshops",
+          "Hands-on projects in full-stack and ML",
+        ],
+      },
+      {
+        year: 2022,
+        summary: [
+          "Launched cloud and mobile tracks",
+          "Record participation in workshops",
+          "Successful hackathons",
+        ],
+      },
+    ],
+  },
+  {
+    id: ++id,
+    kind: "club",
+    slug: "robotics",
+    short_name: "Robotics Club",
+    long_name: "Robotics Club",
+    tagline: "Embedded Systems, ROS, PCB & Mechanical",
+    // The former IEEE RAS mark, relettered "IEEE RAC" for the club.
+    logo: "/Images/Clubs/robotics-club-white.svg",
+    logo_black: "/Images/Clubs/robotics-club-black.svg",
+    color_scheme_1: "ras-1",
+    color_scheme_2: "ras-2",
+    description: {
+      about:
+        "The Robotics Club is an internal club of the IEEE Zagazig Student Branch, led by a dedicated board of track heads in Embedded Systems, ROS, Mechanical Design and PCB Design. We deliver hands-on workshops—from microcontroller programming and Gazebo simulations to advanced control algorithms—and organize season-long competitions like FFR and MATE ROV to sharpen skills and secure top regional rankings. Through collaborative projects, technical seminars and industry mentorship, we turn curiosity into capability, preparing members to innovate, compete and lead in the rapidly evolving field of robotics and automation.",
+      vision:
+        "Our vision is to become the premier hub for robotics and automation—where passionate members evolve into technically-adept professionals and fierce competitors. We inspire curiosity and drive innovation, cultivating a collaborative spirit that not only advances cutting-edge research but also secures top honors in local and regional competitions. By fostering technical excellence, strategic teamwork, and a winning mindset, we prepare our members to lead—and triumph—in the global robotics community.",
+      mission:
+        "Our Mission is to empower and guide our members along the path of robotics and automation by providing hands-on experience, fostering a deep understanding of core concepts, and preparing them to excel in competitions. We are dedicated to building their knowledge in related fields such as PCB design, embedded systems,ROS, and mechanical design. Through continuous learning, practical projects, and supportive mentorship, we aim to cultivate skilled, innovative, and confident robotics enthusiasts.",
+    },
+    tracks: [
+      {
+        id: ++trackId,
+        name: "Embedded Systems",
+        hashtag: "embedded-systems",
+        description:
+          "The embedded systems is a special system that interacts with the physical world. We are designing intelligent systems to do certain function to ensure reliability and efficiency in performing tasks. the main objective is to build a real-time system to ensure accuracy and speed. Our mission is to achieve a low cost system and optimize the software to fit the available resources. Participants engage in interactive sessions led by a professional instructor and attend workshops that offer hands-on experience with microcontrollers. To further enhance their practical skills, they are encouraged to take part in real-world projects and competitions. These activities not only strengthen technical proficiency but also cultivate teamwork and collaboration toward achieving shared goals.",
+        image: "/Tracks/RAS/embedded-systems.webp",
+        goals: [
+          "Make the members be aware of the market and the field that is open for opportunities and the popular projects in the industry.",
+          "Building strong base in programming using C language and data structures .",
+          "The ability to interface with the Microcontroller and communication protocols between MCUs and working with layered architecture, also writing low level drivers.",
+        ],
+        activities: [
+          {
+            title: "Offline Sessions",
+            description:
+              "Topics are discussed in detail during offline sessions, and tasks are assigned to enhance participants' problem-solving skills.",
+          },
+          {
+            title: "Workshop",
+            description:
+              "Making workshop for microcontrollers interfacing with all peripherals",
+          },
+          {
+            title: "Projects",
+            description:
+              "Splitting the members into teams at the end of any stage to build a ( software or hardware or both) project and having presentations for discussion.",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "ROS",
+        hashtag: "ros",
+        description:
+          "Robot Operating System is an open-source framework for developing robot software. It provides tools, libraries, and conventions to help developers build complex and intelligent robot systems. ROS supports sensor integration, motor control, computer vision, navigation, and motion planning.",
+        image: "/Tracks/RAS/ros.webp",
+        goals: [
+          "Build real or simulated robot systems means learning how to design, program, and test robots either in the real world (using hardware) or virtually (using simulation tools like Gazebo)",
+          "Communicate Between Robots means Learn multi-robot communication — making robots share data and work together (especially useful in swarm robotics or factories)",
+          "Use SLAM & Navigation means Understand how to make a robot build a map of its environment and navigate autonomously (using SLAM and path planning)",
+        ],
+        activities: [
+          {
+            title: "Offline Session",
+            description:
+              "Introduction to Object-Oriented Programming (OOP) in Python and how it's applied within the ROS ecosystem.",
+          },
+          {
+            title: "Project",
+            description:
+              "Building a University System Project to apply Object-Oriented Programming (OOP) concepts in Python and strengthen software development skills.",
+          },
+          {
+            title: "Offline Session",
+            description:
+              "Hands-on session on Linux fundamentals and command-line tools essential for working with ROS.",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "PCB Design",
+        hashtag: "pcb-design",
+        description: `The IEEE Student Branch's PCB Committee teaches you how to design, test, and build professional circuit boards (PCBs). We help members learn to create strong and dependable PCBs for things like embedded systems, robots, and other electronics. You'll get hands-on experience with every step of hardware development. This includes learning how to draw schematics, choose the right parts based on their electrical features and what's available, and carefully arrange the board parts for best performance and easy manufacturing. We also focus on "Design for Manufacturability" (DFM) to make sure designs are not only functional but also cheap and easy to produce. Members will become good at using industry tools like Altium Designer, which is important for professional PCB work, and learn key prototyping methods to check their designs. Our training prepares members for jobs in hardware engineering and electronics design by teaching them real-world industry practices.`,
+        image: "/Tracks/RAS/pcb-design.webp",
+        goals: [
+          "Develop a deep understanding of electronic hardware design",
+          "Enable Members to design, assemble, and test real-world PCBs",
+          "Prepare Members for careers in electronics and embedded hardware",
+        ],
+        activities: [
+          {
+            title: "signals and pcb routing",
+            description:
+              "We conducted a session on PCB routing and traces, where we discussed several important topics such as crosstalk, signal types, and common issues you might face during routing. The session also included some general concepts in electronics to help participants better understand how to design reliable and efficient PCBs.",
+          },
+          {
+            title: "soldering",
+            description:
+              "The next session was about soldering. At the beginning, participants gave presentations about their previous work, which was related to the last session on crosstalk and PCB routing. After the presentations, we spent the rest of the time practicing soldering.",
+          },
+          {
+            title: "First project",
+            description:
+              "The following session was about a voltage regulator project, where the output voltage could be adjusted using a variable resistor. In this session, participants applied everything they had learned so far — from soldering to practical circuit implementation.",
+          },
+          {
+            title: "Microcontroller",
+            description:
+              "The next session was a deep dive into microcontrollers, where we discussed the different types of microcontrollers and the differences between the various types of pins, such as input/output, analog, PWM, and communication pins.",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "Mechanical",
+        hashtag: "mechanical",
+        description:
+          "The Mechanical track covers the full engineering design pipeline for robotics and electromechanical systems. Members build proficiency in industry-standard CAD and simulation tools, learning to translate ideas into precise 3D models, validate them through structural and fluid analysis, and produce fabrication-ready technical drawings. The track bridges mechanical theory and real-world robotics, equipping members to design reliable mechanisms, optimize components under load, and collaborate with embedded and electrical teams on integrated projects.",
+        image: "/Tracks/RAS/mechanical.webp",
+        goals: [
+          "Master SolidWorks from foundational sketching and part modeling through advanced assemblies, motion studies, and sheet metal design.",
+          "Apply structural and thermal analysis using ANSYS to validate designs and understand how components behave under real-world loading conditions.",
+          "Develop technical drawing skills with AutoCAD to produce accurate, standards-compliant 2D documentation for manufacturing.",
+          "Explore aerodynamic and fluid concepts such as airfoil geometry and CFD basics to support drone and ROV project work.",
+          "Integrate mechanical designs into full robotic systems through team-based projects that require close coordination with embedded and electrical tracks.",
+        ],
+        activities: [
+          {
+            title: "AutoCAD Technical Drawing Sessions",
+            description:
+              "Hands-on sessions teaching 2D drafting fundamentals in AutoCAD, covering orthographic projections, dimensioning standards, and producing fabrication-ready technical drawings for mechanical components.",
+          },
+          {
+            title: "SolidWorks Modeling and Assembly Workshops",
+            description:
+              "Step-by-step workshops progressing from basic part modeling and sketching to full assemblies, mates, motion studies, and sheet metal design in SolidWorks.",
+          },
+          {
+            title: "ANSYS Simulation and Airfoil Analysis Session",
+            description:
+              "A combined session introducing finite element analysis in ANSYS for structural and thermal problems, alongside an applied exploration of airfoil geometry and aerodynamic performance relevant to drone and ROV design.",
+          },
+          {
+            title: "Robotics Integration Projects",
+            description:
+              "Team-based projects where members design and fabricate mechanical subsystems for real robotics platforms, applying CAD, simulation, and manufacturing knowledge in a collaborative setting.",
+          },
+        ],
+      },
+      {
+        id: ++trackId,
+        name: "IC Design",
+        hashtag: "ic-design",
+        description:
+          "The IC Design track introduces members to the world of integrated circuit design, from concept to silicon. Starting with the fundamentals of digital logic and CMOS technology, members progress through RTL design, simulation, synthesis, and physical design flows. The track combines theoretical foundations with hands-on use of industry-standard EDA tools, preparing members for careers in chip design, VLSI engineering, and semiconductor research.",
+        image: "/Tracks/RAS/ic-design.webp",
+        goals: [
+          "Build a solid understanding of CMOS logic, digital design principles, and the full RTL-to-GDSII design flow.",
+          "Gain practical experience with EDA tools for HDL coding, functional simulation, synthesis, and timing analysis.",
+          "Design, verify, and implement real digital circuits through hands-on projects and team-based chip design exercises.",
+          "Prepare members for opportunities in VLSI, semiconductor, and hardware engineering industries.",
+        ],
+        activities: [
+          {
+            title: "Offline Sessions",
+            description:
+              "Structured sessions covering digital logic fundamentals, Verilog/VHDL coding, CMOS transistor theory, and RTL design methodology with practical exercises.",
+          },
+          {
+            title: "EDA Tool Workshops",
+            description:
+              "Hands-on workshops using industry-standard tools for simulation, synthesis, and physical design, giving members real exposure to professional chip design environments.",
+          },
+          {
+            title: "Design Projects",
+            description:
+              "Team-based projects where members design and verify a complete digital module from specification through RTL, simulation, and synthesis, culminating in a final presentation.",
+          },
+        ],
+      },
+    ],
+    seasons: [
+      {
+        year: 2024,
+        summary: [
+          "The 2024 season for the Robotics Club was marked by significant advancements in autonomous systems.",
+          "We successfully launched our first 'AI Robotics Challenge', where teams developed intelligent robots for complex tasks.",
+          "Workshops focused on advanced topics like SLAM (Simultaneous Localization and Mapping) and reinforcement learning for robotics.",
+          "Our members also participated in international robotics competitions, bringing home several awards.",
+        ],
+      },
+      {
+        year: 2023,
+        summary: [
+          "Expanded robotics program",
+          "Autonomous systems and ROS workshops",
+          "International competition participation",
+        ],
+      },
+      {
+        year: 2022,
+        summary: [
+          "Advanced robotics curriculum",
+          "AI and computer vision integration",
+          "Drone and industrial automation projects",
+        ],
+      },
+    ],
+  },
+];

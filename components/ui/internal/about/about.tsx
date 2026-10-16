@@ -25,10 +25,9 @@ export default function About() {
         <br />
         <br />
         Beyond technical excellence, ZSB fosters holistic development through
-        three technical chapters—the Computer Society (CS), Robotics and
-        Automation Society (RAS), and Power and Energy Society (PES)—as well as
-        the Women in Engineering (WIE) Affinity Group and six dedicated
-        managerial committees. Together, they build a dynamic environment that
+        the Power and Energy Society (PES) chapter, the Women in Engineering
+        (WIE) Affinity Group, two internal clubs—the Computer Club and the
+        Robotics Club—and six dedicated managerial committees. Together, they build a dynamic environment that
         fosters leadership, teamwork, and project management skills, empowering
         them to excel in the modern workforce.
       </Text>

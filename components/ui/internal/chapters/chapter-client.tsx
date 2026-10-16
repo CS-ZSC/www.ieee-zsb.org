@@ -34,6 +34,7 @@ export default function ChapterClient({ chapterData, filteredNews }: Props) {
           logo={chapterData.logo}
           colorScheme={chapterData.color_scheme_1}
           shortName={chapterData.short_name}
+          variant={chapterData.slug}
         />
         <Box w="full">
           <Description
@@ -45,7 +46,7 @@ export default function ChapterClient({ chapterData, filteredNews }: Props) {
         </Box>
         {filteredNews.length > 0 && (
           <Container>
-            <PageTitle title="Chapter News" />
+            <PageTitle title={chapterData.kind === "club" ? "Club News" : "Chapter News"} />
             <Flex
               columns={isDesktop ? (filteredNews.length > 2 ? 2 : 1) : 1}
               paddingX={"0px"}
@@ -64,7 +65,7 @@ export default function ChapterClient({ chapterData, filteredNews }: Props) {
           </Container>
         )}
 
-        <SeasonProvider seasons={getChapterSeasons(chapterData.short_name)}>
+        <SeasonProvider seasons={getChapterSeasons(chapterData)}>
           <Container>
             <SeasonSwitcher />
           </Container>

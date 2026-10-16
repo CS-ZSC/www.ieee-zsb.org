@@ -152,194 +152,6 @@ const season2025: Season = {
     ],
   },
   chapters: {
-    cs: {
-      board: [
-        {
-          name: "Aya Mahmoud",
-          position: "Chairperson",
-          avatarSrc: "/Images/board/2025/chapters/cs/chairperson.webp",
-          linkedin: "https://www.linkedin.com/in/aya-mahmoud-850a0a223",
-          email: "aya_mahmoud@ieee-zsb.org",
-        },
-        {
-          name: "Mohamed Emad",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2025/chapters/cs/vice-chairperson-1.webp",
-          linkedin: "https://www.linkedin.com/in/hulxv",
-          email: "mohamed.elsawy@ieee-zsb.org",
-        },
-        {
-          name: "Essam Shenhab",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2025/chapters/cs/vice-chairperson-2.webp",
-          linkedin: "https://www.linkedin.com/in/essam-shenhab/",
-          email: "essam.shenhab@ieee-zsb.org",
-        },
-      ],
-      tracks: {
-        frontend: [
-          {
-            name: "Ahmed Elsherbiny",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/frontend/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74/",
-            email: "ahmedelsherbiny7474@gmail.com",
-          },
-        ],
-        backend: [
-          {
-            name: "Khaled Mahmoud",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/backend/head.webp",
-            linkedin: "https://www.linkedin.com/in/khaled-mahmoud-",
-            email: "khaild22k12m71f@gmail.com",
-          },
-          {
-            name: "Asmaa Saleh",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/backend/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
-            email: "asmaasaleh185@gmail.com",
-          },
-        ],
-        "mobile-development": [
-          {
-            name: "Ibrahim Eid",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/mobile-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/ibrahimeideng",
-            email: "ebrahimeid1134@gmail.com",
-          },
-        ],
-        "basic-ai": [
-          {
-            name: "Ali Dosoky",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/basic-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ali-dosoqi/",
-            email: "amjdos0190edu@gmail.com",
-          },
-        ],
-        "advanced-ai": [
-          {
-            name: "Ahmed Almohamdy",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/advanced-ai/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedalmohamdy/",
-            email: "ahmedalmohamdy.work@gmail.com",
-          },
-          {
-            name: "Ahmed Sharaf",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmedsharaf9/",
-            email: "ahmed.sharaf.connect@gmail.com",
-          },
-        ],
-        "cyber-security": [
-          {
-            name: "Sayed Ahmed",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/cyber-security/head.webp",
-            linkedin: "https://www.linkedin.com/in/elsayed-ahmed-elsayed",
-            email: "sayedahmed.ieee.25@gmail.com",
-          },
-          {
-            name: "Ahmed Ali",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-ali-abd-elrahman",
-            email: "aali571110@gmail.com",
-          },
-        ],
-        "game-development": [
-          {
-            name: "Salma Swailem",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/game-dev/head.webp",
-            linkedin: "https://www.linkedin.com/in/salma-swailem/",
-            email: "salma.4sa.u@gmail.com",
-          },
-        ],
-      },
-    },
-    ras: {
-      board: [
-        {
-          name: "Marwan Tamer",
-          position: "Chairperson",
-          avatarSrc: "/Images/board/2025/chapters/ras/chairperson.webp",
-          linkedin: "http://www.linkedin.com/in/marwan-tamer-abdelmoneim",
-          email: "marwan-tamer@ieee-zsb.org",
-        },
-        {
-          name: "Merna Atef",
-          position: "Vice Chairperson",
-          avatarSrc: "/Images/board/2025/chapters/ras/vice-chairperson-1.webp",
-          linkedin: "https://www.linkedin.com/in/merna-atef-4252aa287",
-          email: "merna.atef@ieee-zsb.org",
-        },
-      ],
-      tracks: {
-        "embedded-systems": [
-          {
-            name: "Tasnem Sabry",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/embedded-systems/head.webp",
-            linkedin: "https://www.linkedin.com/in/tasnem-sabry-124142254/",
-            email: "tasnemmobasher9@gmail.com",
-          },
-          {
-            name: "Ahmed Yasser",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/embedded-systems/vice-head-1.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-yasser-elgayar-942466253/",
-            email: "ahmedyasserprince@gmail.com",
-          },
-        ],
-        ros: [
-          {
-            name: "Ahmed Medhat",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/ros/head.webp",
-            linkedin: "https://www.linkedin.com/in/ahmed-medhat-212847271/",
-            email: "ahmedmedhat749d1@gmail.com",
-          },
-          {
-            name: "Sohaila bakr",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/ros/vice-head.webp",
-            linkedin: "https://www.linkedin.com/in/sohaila-bakr-awad-25309b254",
-            email: "sohailabakr797@gmail.com",
-          },
-        ],
-        "pcb-design": [
-          {
-            name: "Abdelrahman Ahmed",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/pcb-design/head.webp",
-            linkedin: "https://www.linkedin.com/in/el-ghandour/",
-            email: "elghaandourrr@gmail.com",
-          },
-          {
-            name: "Mohamed Gamal",
-            position: "Vice Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/pcb-design/vice-head-1.webp",
-            linkedin: "http://www.linkedin.com/in/mohamed-gamal-xv",
-            email: "mg355059@gmail.com",
-          },
-        ],
-        mechanical: [
-          {
-            name: "Abdallah Galal",
-            position: "Head",
-            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/mechanical/head.webp",
-            linkedin: "https://www.linkedin.com/in/abdallah-galal-a39115297?",
-            email: "abdallahgalal.eng@gmail.com",
-          },
-        ],
-      },
-    },
     pes: {
       board: [
         {
@@ -455,6 +267,196 @@ const season2025: Season = {
         },
       ],
       tracks: {},
+    },
+  },
+  clubs: {
+    computer: {
+      board: [
+        {
+          name: "Aya Mahmoud",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2025/chapters/cs/chairperson.webp",
+          linkedin: "https://www.linkedin.com/in/aya-mahmoud-850a0a223",
+          email: "aya_mahmoud@ieee-zsb.org",
+        },
+        {
+          name: "Mohamed Emad",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2025/chapters/cs/vice-chairperson-1.webp",
+          linkedin: "https://www.linkedin.com/in/hulxv",
+          email: "mohamed.elsawy@ieee-zsb.org",
+        },
+        {
+          name: "Essam Shenhab",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2025/chapters/cs/vice-chairperson-2.webp",
+          linkedin: "https://www.linkedin.com/in/essam-shenhab/",
+          email: "essam.shenhab@ieee-zsb.org",
+        },
+      ],
+      tracks: {
+        frontend: [
+          {
+            name: "Ahmed Elsherbiny",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/frontend/head.webp",
+            linkedin: "https://www.linkedin.com/in/ahmedelsherbiny74/",
+            email: "ahmedelsherbiny7474@gmail.com",
+          },
+        ],
+        backend: [
+          {
+            name: "Khaled Mahmoud",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/backend/head.webp",
+            linkedin: "https://www.linkedin.com/in/khaled-mahmoud-",
+            email: "khaild22k12m71f@gmail.com",
+          },
+          {
+            name: "Asmaa Saleh",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/backend/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/asmaa-saleh185",
+            email: "asmaasaleh185@gmail.com",
+          },
+        ],
+        "mobile-development": [
+          {
+            name: "Ibrahim Eid",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/mobile-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/ibrahimeideng",
+            email: "ebrahimeid1134@gmail.com",
+          },
+        ],
+        "basic-ai": [
+          {
+            name: "Ali Dosoky",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/basic-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ali-dosoqi/",
+            email: "amjdos0190edu@gmail.com",
+          },
+        ],
+        "advanced-ai": [
+          {
+            name: "Ahmed Almohamdy",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/advanced-ai/head.webp",
+            linkedin: "https://www.linkedin.com/in/ahmedalmohamdy/",
+            email: "ahmedalmohamdy.work@gmail.com",
+          },
+          {
+            name: "Ahmed Sharaf",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/advanced-ai/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/ahmedsharaf9/",
+            email: "ahmed.sharaf.connect@gmail.com",
+          },
+        ],
+        "cyber-security": [
+          {
+            name: "Sayed Ahmed",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/cyber-security/head.webp",
+            linkedin: "https://www.linkedin.com/in/elsayed-ahmed-elsayed",
+            email: "sayedahmed.ieee.25@gmail.com",
+          },
+          {
+            name: "Ahmed Ali",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/cyber-security/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/ahmed-ali-abd-elrahman",
+            email: "aali571110@gmail.com",
+          },
+        ],
+        "game-development": [
+          {
+            name: "Salma Swailem",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/cs/tracks-heads/game-dev/head.webp",
+            linkedin: "https://www.linkedin.com/in/salma-swailem/",
+            email: "salma.4sa.u@gmail.com",
+          },
+        ],
+      },
+    },
+    robotics: {
+      board: [
+        {
+          name: "Marwan Tamer",
+          position: "Club Lead",
+          avatarSrc: "/Images/board/2025/chapters/ras/chairperson.webp",
+          linkedin: "http://www.linkedin.com/in/marwan-tamer-abdelmoneim",
+          email: "marwan-tamer@ieee-zsb.org",
+        },
+        {
+          name: "Merna Atef",
+          position: "Vice Club Lead",
+          avatarSrc: "/Images/board/2025/chapters/ras/vice-chairperson-1.webp",
+          linkedin: "https://www.linkedin.com/in/merna-atef-4252aa287",
+          email: "merna.atef@ieee-zsb.org",
+        },
+      ],
+      tracks: {
+        "embedded-systems": [
+          {
+            name: "Tasnem Sabry",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/embedded-systems/head.webp",
+            linkedin: "https://www.linkedin.com/in/tasnem-sabry-124142254/",
+            email: "tasnemmobasher9@gmail.com",
+          },
+          {
+            name: "Ahmed Yasser",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/embedded-systems/vice-head-1.webp",
+            linkedin: "https://www.linkedin.com/in/ahmed-yasser-elgayar-942466253/",
+            email: "ahmedyasserprince@gmail.com",
+          },
+        ],
+        ros: [
+          {
+            name: "Ahmed Medhat",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/ros/head.webp",
+            linkedin: "https://www.linkedin.com/in/ahmed-medhat-212847271/",
+            email: "ahmedmedhat749d1@gmail.com",
+          },
+          {
+            name: "Sohaila bakr",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/ros/vice-head.webp",
+            linkedin: "https://www.linkedin.com/in/sohaila-bakr-awad-25309b254",
+            email: "sohailabakr797@gmail.com",
+          },
+        ],
+        "pcb-design": [
+          {
+            name: "Abdelrahman Ahmed",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/pcb-design/head.webp",
+            linkedin: "https://www.linkedin.com/in/el-ghandour/",
+            email: "elghaandourrr@gmail.com",
+          },
+          {
+            name: "Mohamed Gamal",
+            position: "Vice Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/pcb-design/vice-head-1.webp",
+            linkedin: "http://www.linkedin.com/in/mohamed-gamal-xv",
+            email: "mg355059@gmail.com",
+          },
+        ],
+        mechanical: [
+          {
+            name: "Abdallah Galal",
+            position: "Head",
+            avatarSrc: "/Images/board/2025/chapters/ras/tracks-heads/mechanical/head.webp",
+            linkedin: "https://www.linkedin.com/in/abdallah-galal-a39115297?",
+            email: "abdallahgalal.eng@gmail.com",
+          },
+        ],
+      },
     },
   },
 };
