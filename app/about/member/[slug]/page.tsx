@@ -8,18 +8,8 @@ import Link from "next/link";
 import PageWrapper from "@/components/ui/internal/page-wrapper";
 import Container from "@/components/ui/internal/container";
 import { getMemberHistory } from "@/data/seasons";
-import { toaster } from "@/components/ui/toaster";
+import { handleCopyEmail } from "@/components/ui/internal/member-card";
 import { Avatar } from "@/components/ui/avatar";
-
-function handleCopyEmail(email: string) {
-  navigator.clipboard.writeText(email);
-  toaster.create({
-    title: "Email copied!",
-    description: `${email} has been copied to your clipboard.`,
-    type: "success",
-    meta: { closable: true },
-  });
-}
 
 export default function MemberProfilePage() {
   const params = useParams();
