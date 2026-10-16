@@ -3,7 +3,7 @@ title: "Hands-On PCB Workshops: From Schematic to Soldering"
 excerpt: "To support our new PCB track, we conducted a series of practical workshops that walked members through the complete process of electronics development—from schematics to final soldered prototypes. These workshops were a major stepping stone in cultivating in-house hardware expertise in the IEEE RAS chapter."
 date: "1 May, 2025"
 author: "Marwan Tamer"
-tags: ["RAS", "PCB", "Workshops"]
+tags: ["Robotics Club", "PCB", "Workshops"]
 mainPhoto: "/News/pcb-track/1.webp"
 homeItem: false
 highlightedItem: false

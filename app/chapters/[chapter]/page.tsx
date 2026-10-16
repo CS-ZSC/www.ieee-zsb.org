@@ -4,7 +4,7 @@ import { chaptersContent } from "@/data/chapters";
 import ChapterClient from "@/components/ui/internal/chapters/chapter-client";
 
 export async function generateStaticParams() {
-  return ["cs", "pes", "ras", "wie"].map((chapter) => ({ chapter }));
+  return chaptersContent.map(({ slug }) => ({ chapter: slug }));
 }
 
 export default async function Chapter({
@@ -14,18 +14,15 @@ export default async function Chapter({
 }) {
   const { chapter } = await params;
 
-  const chapterList = ["cs", "pes", "ras", "wie"];
-  if (!chapter || !chapterList.includes(chapter.toLowerCase())) {
-    notFound();
-  }
-
   const chapterData = chaptersContent.find(
-    (item) => item.short_name.toLowerCase() === chapter.toLowerCase()
+    (item) => item.slug === chapter.toLowerCase()
   );
   if (!chapterData) notFound();
 
   const filteredNews = getAllNews().filter((item) =>
-    item.tags.map((t) => t.toUpperCase()).includes(chapter.toUpperCase())
+    item.tags
+      .map((t) => t.toUpperCase())
+      .includes(chapterData.short_name.toUpperCase())
   );
 
   return <ChapterClient chapterData={chapterData} filteredNews={filteredNews} />;

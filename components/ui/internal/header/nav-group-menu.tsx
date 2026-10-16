@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
-import Chapters from "./chapters";
+import type { NavGroup } from "./nav-groups";
 import { Box, Text, Menu, Portal, VStack, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
@@ -21,7 +21,7 @@ const itemVariants = {
   visible: { opacity: 1, y:  0, transition: { duration: 0.18, ease: "easeOut" as const } },
 };
 
-export default function ChaptersMenu() {
+export default function NavGroupMenu({ group }: { group: NavGroup }) {
   const router         = useRouter();
   const pathname       = usePathname();
   const indicatorColor = useColorModeValue("black", "white");
@@ -54,7 +54,7 @@ export default function ChaptersMenu() {
           color="neutral-1"
           userSelect="none"
         >
-          <Text fontWeight="bold" fontSize="sm">Chapters</Text>
+          <Text fontWeight="bold" fontSize="sm">{group.label}</Text>
           <MotionDiv
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ duration: 0.2 }}
@@ -87,7 +87,7 @@ export default function ChaptersMenu() {
               animate={open ? "visible" : "hidden"}
               style={{ display: "flex", flexDirection: "column", gap: "6px" }}
             >
-              {Chapters.map((chapter) => {
+              {group.items.map((chapter) => {
                 const isActive = pathname.startsWith(chapter.href);
                 const accentVar = `var(--chakra-colors-${chapter.identityColor})`;
 

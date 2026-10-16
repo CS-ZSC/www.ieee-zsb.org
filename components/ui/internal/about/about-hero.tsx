@@ -7,7 +7,7 @@ import Card from "@/components/ui/internal/card";
 
 const stats = [
   { icon: "lucide:calendar",      value: `${new Date().getFullYear() - 1999}+`, label: "Years Active" },
-  { icon: "lucide:cpu",           value: "4",    label: "Technical Chapters" },
+  { icon: "lucide:cpu",           value: "4",    label: "Chapters & Clubs" },
   { icon: "lucide:layout-grid",   value: "6",    label: "Committees" },
   { icon: "lucide:users",         value: "1000+", label: "Alumni" },
 ];

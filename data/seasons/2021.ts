@@ -64,22 +64,23 @@ const season2021: Season = {
       },
     ],
   },
-  chapters: {
-    cs: {
+  chapters: {},
+  clubs: {
+    computer: {
       board: [
         {
           name: "Ahmed Mostafa",
-          position: "Chairman",
+          position: "Club Lead",
           avatarSrc: "/Images/board/2021/chapters/cs/chairperson.webp",
         },
       ],
       tracks: {},
     },
-    ras: {
+    robotics: {
       board: [
         {
           name: "Mayar Hazem",
-          position: "Chairwoman",
+          position: "Club Lead",
           avatarSrc: "/Images/board/2021/chapters/ras/chairperson.webp",
         },
       ],

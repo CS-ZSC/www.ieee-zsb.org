@@ -13,7 +13,7 @@ const MotionBox = motion.create(Box);
 
 const stats = [
   { icon: "lucide:calendar", value: `${new Date().getFullYear() - 1999}+`, label: "Years of Impact" },
-  { icon: "lucide:cpu", value: "4", label: "Technical Chapters" },
+  { icon: "lucide:cpu", value: "4", label: "Chapters & Clubs" },
   { icon: "lucide:layout-grid", value: "6", label: "Committees" },
   { icon: "lucide:users", value: "1000+", label: "Alumni" },
 ];
@@ -74,7 +74,7 @@ export default function Brief() {
             <Text mx={4} fontSize="md" color="neutral-2" lineHeight="1.8">
               IEEE Zagazig University Student Branch is one of the first and most impactful student
               branches in Egypt, with over {new Date().getFullYear() - 1999} years of experience.
-              Through technical chapters, committees, and our flagship MUTEX event, the Delta
+              Through chapters, clubs, committees, and our flagship MUTEX event, the Delta
               region's largest technology and entrepreneurship gathering, we prepare students for
               the demands of the modern workforce.
             </Text>

@@ -3,7 +3,7 @@ title: "Knowva attained the glory in Hackathon Banha 2025"
 excerpt: "Knowva proudly secured second place in the Language Learning Platforms track at Hackathon Banha 2025. After four intense days of dedication, collaboration, and tireless effort, our team successfully developed and presented a compelling concept that showcased innovative ways to demonstrate the role of artificial intelligence in language education. We explored how AI can be effectively integrated into learning processes to enhance engagement, personalization, and accessibility."
 date: "11 Feb, 2025"
 author: "Ahmed Elsherbiny"
-tags: ["Competitions", "CS", "AI"]
+tags: ["Competitions", "Computer Club", "AI"]
 mainPhoto: "/News/knowva/1.webp"
 homeItem: true
 highlightedItem: false
