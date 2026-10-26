@@ -15,6 +15,7 @@ import season2023 from "./2023";
 import season2024 from "./2024";
 import season2025 from "./2025";
 import season2026 from "./2026";
+import season2027 from "./2027";
 
 export type { Season } from "./types";
 
@@ -23,6 +24,7 @@ export type { Season } from "./types";
  * file, put its photos under `public/Images/board/<year>/`, and add it here.
  */
 export const seasons: Season[] = [
+  season2027,
   season2026,
   season2025,
   season2024,
